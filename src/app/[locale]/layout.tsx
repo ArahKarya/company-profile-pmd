@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { MarqueeStrip } from "@/components/public/MarqueeStrip";
 import { Navbar } from "@/components/public/Navbar";
 import { Footer } from "@/components/public/Footer";
+import { OrganizationJsonLd } from "@/components/public/OrganizationJsonLd";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
+      <OrganizationJsonLd />
       <MarqueeStrip />
       <Navbar />
       <div className="flex-1">{children}</div>
