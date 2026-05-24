@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model SiteSetting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String @db.Text
+
+  @@map("site_settings")
+}
+
+model Page {
+  id       String        @id @default(cuid())
+  slug     String        @unique
+  sections PageSection[]
+
+  @@map("pages")
+}
+
+model PageSection {
+  id        String   @id @default(cuid())
+  pageId    String   @map("page_id")
+  key       String
+  titleId   String   @default("") @map("title_id") @db.Text
+  titleEn   String   @default("") @map("title_en") @db.Text
+  contentId String   @default("") @map("content_id") @db.Text
+  contentEn String   @default("") @map("content_en") @db.Text
+  imageUrl  String?  @map("image_url")
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  metadata  String?  @db.Text
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  page      Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  @@unique([pageId, key])
+  @@map("page_sections")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  nameId      String   @map("name_id")
+  nameEn      String   @map("name_en")
+  descId      String   @map("desc_id") @db.Text
+  descEn      String   @map("desc_en") @db.Text
+  imageUrl    String?  @map("image_url")
+  category    String   @default("main")
+  features    String?  @db.Text
+  sortOrder   Int      @default(0) @map("sort_order")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("products")
+}
+
+model Career {
+  id          String   @id @default(cuid())
+  titleId     String   @map("title_id")
+  titleEn     String   @map("title_en")
+  descId      String   @map("desc_id") @db.Text
+  descEn      String   @map("desc_en") @db.Text
+  location    String
+  type        String
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("careers")
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  name      String
+  logoUrl   String?  @map("logo_url")
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("clients")
+}
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  name      String
+  roleId    String   @map("role_id")
+  roleEn    String   @map("role_en")
+  photoUrl  String?  @map("photo_url")
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("team_members")
+}
