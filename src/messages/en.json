@@ -1,0 +1,112 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "career": "Career",
+    "contact": "Contact",
+    "ariaPrimary": "Primary navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Marquee": {
+    "items": "MODERN RICE MILLING · 300 TONS / DAY · INDRAMAYU · ZERO WASTE PRODUCTION · ISO 22000 · HALAL · SNI"
+  },
+  "Footer": {
+    "tagline": "Modern rice milling factory for Indonesia",
+    "columnAbout": "About",
+    "columnProducts": "Products",
+    "columnContact": "Contact",
+    "columnCertifications": "Certifications",
+    "address": "Jl. Raya Indramayu, West Java, Indonesia",
+    "copyright": "PT Pangan Masa Depan. All rights reserved."
+  },
+  "Home": {
+    "eyebrow": "01 — PMD INDUSTRY",
+    "title": "Modern Rice Milling for Indonesia",
+    "subtitle": "Trusted partner for distributors, retailers, and food industry. 300 tons/day capacity in Indramayu, West Java.",
+    "ctaPrimary": "View Products",
+    "ctaSecondary": "Contact Us",
+    "statsEstLabel": "EST.",
+    "statsCapacityLabel": "TONS / DAY",
+    "statsProcessLabel": "PROCESS STAGES",
+    "statsPartnersLabel": "PARTNERS +",
+    "aboutTitle": "About PMD",
+    "aboutBody": "Founded in 2021, we are committed to advancing Indonesian food industry with modern technology and sustainable practices.",
+    "aboutLink": "Learn more",
+    "productsTitle": "Featured Products",
+    "productsLink": "View all products",
+    "ctaTitle": "Ready to Partner with Us?",
+    "ctaBody": "Contact our sales team for quotation or facility visit."
+  },
+  "About": {
+    "eyebrow": "02 — ABOUT",
+    "title": "PT Pangan Masa Depan",
+    "missionTitle": "Our Mission",
+    "missionBody": "Providing premium quality rice for household, horeca, and food industry needs through modern, sustainable production practices.",
+    "valuesTitle": "TERDEPAN Values",
+    "processTitle": "6-Stage Production Process",
+    "facilityTitle": "Production Facility",
+    "teamTitle": "Leadership Team"
+  },
+  "Products": {
+    "eyebrow": "03 — CATALOG",
+    "title": "Quality Rice for Every Need",
+    "subtitle": "Premium rice selection and derivative products with standardized quality control.",
+    "filterAll": "All",
+    "filterMain": "Main Products",
+    "filterCircular": "Circular Products",
+    "searchPlaceholder": "Search products...",
+    "emptyState": "No products match the filter."
+  },
+  "Career": {
+    "eyebrow": "04 — CAREER",
+    "title": "Join Our Team",
+    "subtitle": "Grow with Indonesia's modern food industry.",
+    "openingsTitle": "Active Openings",
+    "emptyState": "No active openings. Send your CV to careers@panganmasadepan.com.",
+    "applyVia": "Apply via WhatsApp",
+    "fallback": "Can't find a fitting position?"
+  },
+  "Contact": {
+    "eyebrow": "05 — CONTACT",
+    "title": "Contact Us",
+    "subtitle": "Our sales team is ready to assist with quotations, partnerships, or facility visits.",
+    "phoneLabel": "Phone / WA",
+    "emailLabel": "Email",
+    "addressLabel": "Address",
+    "formTitle": "Send Message",
+    "formName": "Full name",
+    "formCompany": "Company (optional)",
+    "formEmail": "Email",
+    "formPhone": "WhatsApp number",
+    "formMessage": "Message",
+    "formSubmit": "Send Message",
+    "formFallback": "Or contact us directly via WhatsApp",
+    "operatingHours": "Monday–Friday · 08:00–17:00 WIB"
+  },
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "Lang": {
+    "switch": "Language",
+    "id": "ID",
+    "en": "EN"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "back": "Back"
+  }
+}

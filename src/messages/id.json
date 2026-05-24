@@ -1,0 +1,112 @@
+{
+  "Nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "products": "Produk",
+    "career": "Karier",
+    "contact": "Kontak",
+    "ariaPrimary": "Navigasi utama",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu"
+  },
+  "Marquee": {
+    "items": "PENGGILINGAN BERAS MODERN · KAPASITAS 300 TON/HARI · INDRAMAYU · ZERO WASTE PRODUCTION · ISO 22000 · HALAL · SNI"
+  },
+  "Footer": {
+    "tagline": "Pabrik penggilingan beras modern untuk Indonesia",
+    "columnAbout": "Tentang",
+    "columnProducts": "Produk",
+    "columnContact": "Kontak",
+    "columnCertifications": "Sertifikasi",
+    "address": "Jl. Raya Indramayu, Jawa Barat, Indonesia",
+    "copyright": "PT Pangan Masa Depan. Hak cipta dilindungi."
+  },
+  "Home": {
+    "eyebrow": "01 — PMD INDUSTRY",
+    "title": "Penggilingan Beras Modern Untuk Indonesia",
+    "subtitle": "Mitra terpercaya distributor, retailer, dan industri pangan. Kapasitas 300 ton per hari di Indramayu, Jawa Barat.",
+    "ctaPrimary": "Lihat Produk",
+    "ctaSecondary": "Hubungi Kami",
+    "statsEstLabel": "DIDIRIKAN",
+    "statsCapacityLabel": "TON / HARI",
+    "statsProcessLabel": "TAHAP PROSES",
+    "statsPartnersLabel": "MITRA +",
+    "aboutTitle": "Tentang PMD",
+    "aboutBody": "Berdiri sejak 2021, kami berdedikasi memajukan industri pangan Indonesia dengan teknologi modern dan praktik berkelanjutan.",
+    "aboutLink": "Pelajari lebih lanjut",
+    "productsTitle": "Produk Unggulan",
+    "productsLink": "Lihat semua produk",
+    "ctaTitle": "Siap Bermitra dengan Kami?",
+    "ctaBody": "Hubungi tim sales untuk kuotasi atau kunjungan fasilitas."
+  },
+  "About": {
+    "eyebrow": "02 — TENTANG KAMI",
+    "title": "PT Pangan Masa Depan",
+    "missionTitle": "Misi Kami",
+    "missionBody": "Menyediakan beras berkualitas premium untuk kebutuhan rumah tangga, horeca, dan industri pangan dengan praktik produksi modern dan ramah lingkungan.",
+    "valuesTitle": "Nilai TERDEPAN",
+    "processTitle": "Proses Produksi 6 Tahap",
+    "facilityTitle": "Fasilitas Produksi",
+    "teamTitle": "Tim Kepemimpinan"
+  },
+  "Products": {
+    "eyebrow": "03 — KATALOG",
+    "title": "Beras Berkualitas Untuk Setiap Kebutuhan",
+    "subtitle": "Pilihan beras premium dan produk turunan dengan kontrol kualitas terstandarisasi.",
+    "filterAll": "Semua",
+    "filterMain": "Produk Utama",
+    "filterCircular": "Produk Sirkular",
+    "searchPlaceholder": "Cari produk...",
+    "emptyState": "Tidak ada produk yang cocok dengan filter."
+  },
+  "Career": {
+    "eyebrow": "04 — KARIER",
+    "title": "Bergabung dengan Tim Kami",
+    "subtitle": "Tumbuh bersama industri pangan modern Indonesia.",
+    "openingsTitle": "Lowongan Aktif",
+    "emptyState": "Belum ada lowongan aktif. Kirim CV ke careers@panganmasadepan.com.",
+    "applyVia": "Lamar via WhatsApp",
+    "fallback": "Tidak menemukan posisi yang cocok?"
+  },
+  "Contact": {
+    "eyebrow": "05 — HUBUNGI KAMI",
+    "title": "Hubungi Kami",
+    "subtitle": "Tim sales kami siap melayani pertanyaan kuotasi, kemitraan, atau kunjungan fasilitas.",
+    "phoneLabel": "Telepon / WA",
+    "emailLabel": "Email",
+    "addressLabel": "Alamat",
+    "formTitle": "Kirim Pesan",
+    "formName": "Nama lengkap",
+    "formCompany": "Perusahaan (opsional)",
+    "formEmail": "Email",
+    "formPhone": "Nomor WhatsApp",
+    "formMessage": "Pesan",
+    "formSubmit": "Kirim Pesan",
+    "formFallback": "Atau hubungi langsung via WhatsApp",
+    "operatingHours": "Senin–Jumat · 08:00–17:00 WIB"
+  },
+  "Theme": {
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem",
+    "toggle": "Ganti tema"
+  },
+  "Lang": {
+    "switch": "Bahasa",
+    "id": "ID",
+    "en": "EN"
+  },
+  "Common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "close": "Tutup",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "create": "Buat",
+    "search": "Cari",
+    "back": "Kembali"
+  }
+}

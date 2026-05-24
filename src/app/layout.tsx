@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Archivo_Black } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { Toaster } from "@/components/ui/Toast";
+import { defaultLocale } from "@/i18n/routing";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -78,7 +80,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
-      lang="id"
+      lang={defaultLocale}
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} h-full`}
     >
@@ -97,7 +99,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           Lompat ke konten utama
         </a>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Toaster>{children}</Toaster>
+        </ThemeProvider>
       </body>
     </html>
   );
