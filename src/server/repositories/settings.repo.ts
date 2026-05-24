@@ -1,7 +1,20 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
 
-const DEFAULTS = {
+export interface Settings {
+  companyName: string;
+  taglineId: string;
+  taglineEn: string;
+  foundedYear: string;
+  capacityTonsPerDay: string;
+  address: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  mapUrl: string;
+}
+
+const DEFAULTS: Settings = {
   companyName: "PT Pangan Masa Depan",
   taglineId: "Penggilingan Beras Modern Untuk Indonesia",
   taglineEn: "Modern Rice Milling for Indonesia",
@@ -12,19 +25,17 @@ const DEFAULTS = {
   whatsapp: "6281234567890",
   email: "info@panganmasadepan.com",
   mapUrl: "https://maps.google.com/?q=Indramayu+Jawa+Barat+Indonesia",
-} as const;
-
-export type Settings = typeof DEFAULTS;
+};
 
 export async function getSettings(): Promise<Settings> {
   const rows = await prisma.siteSetting.findMany();
   const map = Object.fromEntries(rows.map((r) => [r.key, r.value]));
-  return {
-    ...DEFAULTS,
-    ...(Object.fromEntries(
-      Object.keys(DEFAULTS).map((k) => [k, map[k] ?? DEFAULTS[k as keyof Settings]])
-    ) as Settings),
-  };
+  const merged = { ...DEFAULTS };
+  for (const key of Object.keys(DEFAULTS) as Array<keyof Settings>) {
+    const v = map[key];
+    if (typeof v === "string") merged[key] = v;
+  }
+  return merged;
 }
 
 export async function setSetting(key: string, value: string) {

@@ -7,11 +7,11 @@ import { cn } from "@/lib/cn";
 
 interface AdminTopbarProps {
   user?: { name?: string | null; email?: string | null };
-  onLogout?: () => void;
+  logoutAction?: () => Promise<void>;
   className?: string;
 }
 
-export function AdminTopbar({ user, onLogout, className }: AdminTopbarProps) {
+export function AdminTopbar({ user, logoutAction, className }: AdminTopbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -59,15 +59,18 @@ export function AdminTopbar({ user, onLogout, className }: AdminTopbarProps) {
                     {user.email}
                   </div>
                 </div>
-                <button
-                  type="button"
-                  onClick={onLogout}
-                  className="w-full px-4 py-3 flex items-center gap-3 text-body-sm text-danger hover:bg-surface-sunken transition-colors"
-                  role="menuitem"
-                >
-                  <LogOut size={16} strokeWidth={1.75} />
-                  Keluar
-                </button>
+                {logoutAction && (
+                  <form action={logoutAction}>
+                    <button
+                      type="submit"
+                      className="w-full px-4 py-3 flex items-center gap-3 text-body-sm text-danger hover:bg-surface-sunken transition-colors"
+                      role="menuitem"
+                    >
+                      <LogOut size={16} strokeWidth={1.75} />
+                      Keluar
+                    </button>
+                  </form>
+                )}
               </div>
             </>
           )}
