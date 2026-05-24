@@ -3,6 +3,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { MarqueeStrip } from "@/components/public/MarqueeStrip";
+import { Navbar } from "@/components/public/Navbar";
+import { Footer } from "@/components/public/Footer";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -25,7 +28,10 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      {children}
+      <MarqueeStrip />
+      <Navbar />
+      <div className="flex-1">{children}</div>
+      <Footer />
     </NextIntlClientProvider>
   );
 }
