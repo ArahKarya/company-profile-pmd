@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/layout/Container";
 import { cn } from "@/lib/cn";
 
@@ -8,17 +7,22 @@ interface HeroIndustrialProps {
   subtitle?: string;
   actions?: React.ReactNode;
   stats?: React.ReactNode;
-  backgroundImage?: string;
   className?: string;
 }
 
+/**
+ * Industrial editorial hero with abstract bg:
+ *  - ink-900 base
+ *  - radial gradient pmd-gold accent (top-right)
+ *  - grid pattern overlay (8% opacity, 80px square)
+ *  - rotated gold accent block (bottom-right)
+ */
 export function HeroIndustrial({
   eyebrow,
   title,
   subtitle,
   actions,
   stats,
-  backgroundImage,
   className,
 }: HeroIndustrialProps) {
   return (
@@ -28,22 +32,35 @@ export function HeroIndustrial({
         className
       )}
     >
-      {backgroundImage && (
-        <>
-          <Image
-            src={backgroundImage}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-30"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/85 to-transparent"
-          />
-        </>
-      )}
+      {/* Layer 1: Radial gradient accent (top-right gold halo) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--pmd-gold-900)_0%,transparent_55%)]"
+      />
+
+      {/* Layer 2: Grid pattern overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Layer 3: Diagonal accent block (bottom-right) */}
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] bg-pmd-gold-500/10 -rotate-12 pointer-events-none"
+      />
+
+      {/* Layer 4: Bottom-left thin line accent */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 h-1 w-1/3 bg-pmd-gold-500"
+      />
+
       <Container size="2xl" padded className="relative z-10 py-20 md:py-32 lg:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-end">
           <div className="max-w-3xl">
