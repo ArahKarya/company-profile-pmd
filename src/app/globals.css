@@ -12,88 +12,88 @@
    ============================================================================ */
 
 :root {
-  /* PRIMARY — pmd-gold scale (extended from #D4A017) */
-  --pmd-gold-50:  #fbf6e6;
-  --pmd-gold-100: #f5e8b8;
-  --pmd-gold-200: #eed88a;
-  --pmd-gold-300: #e5c45c;
-  --pmd-gold-400: #dcb22e;
-  --pmd-gold-500: #d4a017;
-  --pmd-gold-600: #b7860d;
-  --pmd-gold-700: #946b00;
-  --pmd-gold-800: #6e5000;
-  --pmd-gold-900: #4a3500;
-  --pmd-gold-950: #2a1e00;
+  /* PRIMARY — pmd-gold (padi gold, warm rice tone) */
+  --pmd-gold-50:  #fdf9ea;
+  --pmd-gold-100: #faf0c5;
+  --pmd-gold-200: #f4e08a;
+  --pmd-gold-300: #ecc955;
+  --pmd-gold-400: #dbb236;
+  --pmd-gold-500: #c9a436;
+  --pmd-gold-600: #ad8521;
+  --pmd-gold-700: #8a661c;
+  --pmd-gold-800: #6b4f1c;
+  --pmd-gold-900: #4a361a;
+  --pmd-gold-950: #2a1f0d;
 
-  /* SECONDARY — pmd-green (sustainability / circular products) */
-  --pmd-green-50:  #e8f5ec;
-  --pmd-green-100: #d6f0dc;
-  --pmd-green-200: #a8dfb6;
-  --pmd-green-300: #6dc785;
-  --pmd-green-400: #3ba85c;
-  --pmd-green-500: #1b7a2f;
-  --pmd-green-600: #156627;
-  --pmd-green-700: #145a22;
-  --pmd-green-800: #0e441a;
-  --pmd-green-900: #082c10;
+  /* SECONDARY — sage (daun padi, soft natural green) */
+  --pmd-green-50:  #f4f7e8;
+  --pmd-green-100: #e6ecd1;
+  --pmd-green-200: #d0d9a8;
+  --pmd-green-300: #b6c47e;
+  --pmd-green-400: #9caa6a;
+  --pmd-green-500: #818e54;
+  --pmd-green-600: #687442;
+  --pmd-green-700: #525c34;
+  --pmd-green-800: #3d4527;
+  --pmd-green-900: #2a2f1b;
 
-  /* NEUTRAL — ink (text + heavy surfaces) */
-  --ink-50:  #f7f7f8;
-  --ink-100: #ebebee;
-  --ink-200: #d4d4db;
-  --ink-300: #a8a8b3;
-  --ink-400: #76767f;
-  --ink-500: #51515a;
-  --ink-600: #3a3a42;
-  --ink-700: #2a2a30;
-  --ink-800: #1a1a1f;
-  --ink-900: #0d0d11;
+  /* NEUTRAL — ink (text, warm dark brown not cool gray) */
+  --ink-50:  #f7f5f0;
+  --ink-100: #ece8de;
+  --ink-200: #d6d0bf;
+  --ink-300: #afa794;
+  --ink-400: #837a64;
+  --ink-500: #5e564a;
+  --ink-600: #45403a;
+  --ink-700: #36312b;
+  --ink-800: #2a2618;
+  --ink-900: #1a160d;
 
-  /* NEUTRAL — paper (backgrounds) */
-  --paper-base:   #ffffff;
-  --paper-soft:   #fafaf7;
-  --paper-sunken: #f4f2ec;
-  --paper-dark:   #1a1a1f;
-  --paper-darker: #0d0d11;
+  /* NEUTRAL — paper (warm cream backgrounds) */
+  --paper-base:   #faf6ec;
+  --paper-soft:   #fff9e8;
+  --paper-sunken: #f1ead6;
+  --paper-dark:   #2a2618;
+  --paper-darker: #1a160d;
 
-  /* NEUTRAL — steel (industrial gray) */
-  --steel-50:  #f2f3f5;
-  --steel-100: #e1e4e8;
-  --steel-200: #c2c8cf;
-  --steel-300: #9da5ae;
-  --steel-400: #71798a;
-  --steel-500: #4f5562;
-  --steel-600: #353a45;
-  --steel-700: #242832;
-  --steel-800: #16181f;
+  /* NEUTRAL — steel (warm husk tan, replaces cool steel) */
+  --steel-50:  #f5f1e6;
+  --steel-100: #ebe3cf;
+  --steel-200: #d6c9a8;
+  --steel-300: #b8a884;
+  --steel-400: #8b7b5c;
+  --steel-500: #6e604a;
+  --steel-600: #564b3a;
+  --steel-700: #40382b;
+  --steel-800: #2a251b;
 
   /* SEMANTIC */
-  --semantic-success: #15803d;
-  --semantic-warning: #b7860d;
-  --semantic-danger:  #b91c1c;
-  --semantic-info:    #1e40af;
+  --semantic-success: #4a6b2e;
+  --semantic-warning: #ad8521;
+  --semantic-danger:  #a4451c;
+  --semantic-info:    #4a6b8a;
 
-  /* SURFACE ROLES (light mode default) */
-  --surface-page:        #ffffff;
-  --surface-section:     #fafaf7;
-  --surface-sunken:      #f4f2ec;
-  --surface-card:        #ffffff;
-  --surface-inverted:    #0d0d11;
-  --surface-border:      #ebebee;
-  --surface-border-bold: #d4d4db;
-  --text-primary:        #1a1a1f;
-  --text-secondary:      #3a3a42;
-  --text-muted:          #76767f;
-  --text-on-inverted:    #ffffff;
-  --text-brand:          #946b00;
+  /* SURFACE ROLES (warm light mode default) */
+  --surface-page:        #faf6ec;
+  --surface-section:     #fff9e8;
+  --surface-sunken:      #f1ead6;
+  --surface-card:        #fffcf2;
+  --surface-inverted:    #1a160d;
+  --surface-border:      #ece8de;
+  --surface-border-bold: #d6d0bf;
+  --text-primary:        #2a2618;
+  --text-secondary:      #45403a;
+  --text-muted:          #837a64;
+  --text-on-inverted:    #fff9e8;
+  --text-brand:          #8a661c;
 
-  /* SHADOW (hard offset, no blur — industrial) */
-  --shadow-sm: 2px 2px 0 0 rgb(13 13 17 / 1);
-  --shadow-md: 4px 4px 0 0 rgb(13 13 17 / 1);
-  --shadow-lg: 8px 8px 0 0 rgb(13 13 17 / 1);
-  --shadow-xl: 12px 12px 0 0 rgb(13 13 17 / 1);
+  /* SHADOW (warm dark brown offset, food-grade soft industrial) */
+  --shadow-sm: 2px 2px 0 0 rgb(26 22 13 / 0.9);
+  --shadow-md: 4px 4px 0 0 rgb(26 22 13 / 0.9);
+  --shadow-lg: 6px 6px 0 0 rgb(26 22 13 / 0.85);
+  --shadow-xl: 10px 10px 0 0 rgb(26 22 13 / 0.8);
   --shadow-gold-md: 4px 4px 0 0 var(--pmd-gold-500);
-  --shadow-inset: inset 0 2px 0 0 rgb(13 13 17 / 0.15);
+  --shadow-inset: inset 0 2px 0 0 rgb(26 22 13 / 0.12);
 
   /* MOTION */
   --duration-instant: 100ms;
@@ -109,25 +109,25 @@
   --ease-snap: cubic-bezier(0.9, 0, 0.1, 1);
 }
 
-/* DARK MODE — semantic token swap */
+/* DARK MODE — warm cocoa dark, not industrial cool */
 .dark {
-  --surface-page:        #0d0d11;
-  --surface-section:     #1a1a1f;
-  --surface-sunken:      #11131a;
-  --surface-card:        #1a1a1f;
-  --surface-inverted:    #ffffff;
-  --surface-border:      #2a2a30;
-  --surface-border-bold: #3a3a42;
-  --text-primary:        #ffffff;
-  --text-secondary:      #d4d4db;
-  --text-muted:          #76767f;
-  --text-on-inverted:    #0d0d11;
-  --text-brand:          #dcb22e;
+  --surface-page:        #1a160d;
+  --surface-section:     #2a2618;
+  --surface-sunken:      #14110a;
+  --surface-card:        #2a2618;
+  --surface-inverted:    #fff9e8;
+  --surface-border:      #36312b;
+  --surface-border-bold: #45403a;
+  --text-primary:        #fff9e8;
+  --text-secondary:      #ece8de;
+  --text-muted:          #afa794;
+  --text-on-inverted:    #1a160d;
+  --text-brand:          #ecc955;
 
-  --shadow-sm: 2px 2px 0 0 rgb(255 255 255 / 0.95);
-  --shadow-md: 4px 4px 0 0 rgb(255 255 255 / 0.95);
-  --shadow-lg: 8px 8px 0 0 rgb(255 255 255 / 0.95);
-  --shadow-xl: 12px 12px 0 0 rgb(255 255 255 / 0.95);
+  --shadow-sm: 2px 2px 0 0 rgb(250 246 236 / 0.85);
+  --shadow-md: 4px 4px 0 0 rgb(250 246 236 / 0.85);
+  --shadow-lg: 6px 6px 0 0 rgb(250 246 236 / 0.80);
+  --shadow-xl: 10px 10px 0 0 rgb(250 246 236 / 0.75);
   --shadow-gold-md: 4px 4px 0 0 var(--pmd-gold-400);
 }
 
@@ -376,7 +376,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: var(--pmd-gold-500);
+  background: var(--pmd-gold-300);
   color: var(--ink-900);
 }
 

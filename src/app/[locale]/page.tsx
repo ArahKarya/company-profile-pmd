@@ -41,6 +41,7 @@ export default async function HomePage({ params }: PageProps) {
         eyebrow={t("eyebrow")}
         title={t("title")}
         subtitle={t("subtitle")}
+        backgroundImage="/images/hero-bg.png"
         actions={
           <>
             <Button asChild variant="secondary" size="xl" trailingIcon={<ArrowRight size={18} />}>

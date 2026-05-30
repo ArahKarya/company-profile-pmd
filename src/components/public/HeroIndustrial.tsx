@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/layout/Container";
 import { cn } from "@/lib/cn";
 
@@ -7,15 +8,14 @@ interface HeroIndustrialProps {
   subtitle?: string;
   actions?: React.ReactNode;
   stats?: React.ReactNode;
+  /** Optional photographic background (rice grains / paddy field). Falls back to abstract warm pattern. */
+  backgroundImage?: string;
   className?: string;
 }
 
 /**
- * Industrial editorial hero with abstract bg:
- *  - ink-900 base
- *  - radial gradient pmd-gold accent (top-right)
- *  - grid pattern overlay (8% opacity, 80px square)
- *  - rotated gold accent block (bottom-right)
+ * Warm food-grade hero for rice industry.
+ * Light cream base + optional photo + warm gradient overlay + sage accent.
  */
 export function HeroIndustrial({
   eyebrow,
@@ -23,39 +23,46 @@ export function HeroIndustrial({
   subtitle,
   actions,
   stats,
+  backgroundImage,
   className,
 }: HeroIndustrialProps) {
   return (
     <section
       className={cn(
-        "relative isolate overflow-hidden bg-ink-900 text-paper-base",
+        "relative isolate overflow-hidden bg-paper-soft text-text-primary",
         className
       )}
     >
-      {/* Layer 1: Radial gradient accent (top-right gold halo) */}
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-50 mix-blend-multiply"
+        />
+      )}
+
+      {/* Layer 1: warm gold halo from right */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--pmd-gold-900)_0%,transparent_55%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_right,var(--pmd-gold-200)_0%,transparent_55%)]"
       />
 
-      {/* Layer 2: Grid pattern overlay */}
+      {/* Layer 2: cream wash for legibility */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
+        className="absolute inset-0 bg-gradient-to-r from-paper-soft via-paper-soft/85 to-paper-soft/30"
       />
 
-      {/* Layer 3: Diagonal accent block (bottom-right) */}
+      {/* Layer 3: sage daun padi accent bottom-right */}
       <div
         aria-hidden="true"
-        className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] bg-pmd-gold-500/10 -rotate-12 pointer-events-none"
+        className="absolute -bottom-32 -right-20 w-[28rem] h-[28rem] bg-pmd-green-300/30 -rotate-12 pointer-events-none"
       />
 
-      {/* Layer 4: Bottom-left thin line accent */}
+      {/* Layer 4: gold accent bar bottom-left */}
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 h-1 w-1/3 bg-pmd-gold-500"
@@ -65,15 +72,15 @@ export function HeroIndustrial({
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-end">
           <div className="max-w-3xl">
             {eyebrow && (
-              <div className="font-mono text-mono-sm uppercase tracking-[0.15em] text-pmd-gold-400 mb-6">
+              <div className="font-mono text-mono-sm uppercase tracking-[0.15em] text-pmd-gold-700 mb-6">
                 {eyebrow}
               </div>
             )}
-            <h1 className="font-display text-display-md md:text-display-xl lg:text-display-2xl text-paper-base leading-none mb-6">
+            <h1 className="font-display text-display-md md:text-display-xl lg:text-display-2xl text-ink-900 leading-none mb-6">
               {title}
             </h1>
             {subtitle && (
-              <p className="text-body-lg text-paper-base/80 max-w-2xl mb-8">
+              <p className="text-body-lg text-text-secondary max-w-2xl mb-8">
                 {subtitle}
               </p>
             )}
@@ -82,7 +89,7 @@ export function HeroIndustrial({
             )}
           </div>
           {stats && (
-            <div className="border-t-2 lg:border-t-0 lg:border-l-2 border-pmd-gold-500 pt-6 lg:pt-0 lg:pl-10">
+            <div className="dark bg-paper-darker text-text-on-inverted p-6 lg:p-8 border-l-4 border-pmd-gold-500 shadow-lg">
               {stats}
             </div>
           )}
@@ -108,17 +115,21 @@ export function HeroCompact({
   return (
     <section
       className={cn(
-        "bg-surface-section border-b-2 border-ink-900 dark:border-paper-base",
+        "relative bg-surface-section border-b-2 border-pmd-gold-500/40 overflow-hidden",
         className
       )}
     >
-      <Container size="2xl" padded className="py-16 md:py-24">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--pmd-gold-100)_0%,transparent_60%)]"
+      />
+      <Container size="2xl" padded className="relative py-16 md:py-24">
         {eyebrow && (
-          <div className="font-mono text-mono-sm uppercase tracking-[0.15em] text-pmd-gold-700 dark:text-pmd-gold-400 mb-4">
+          <div className="font-mono text-mono-sm uppercase tracking-[0.15em] text-pmd-gold-700 mb-4">
             {eyebrow}
           </div>
         )}
-        <h1 className="font-display text-display-md md:text-display-lg text-text-primary max-w-4xl">
+        <h1 className="font-display text-display-md md:text-display-lg text-ink-900 max-w-4xl">
           {title}
         </h1>
         {subtitle && (
