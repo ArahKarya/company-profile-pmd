@@ -51,7 +51,7 @@ async function main() {
       id: 1,
       name: site.name,
       logoLightPath: site.logo.src,
-      logoDarkPath: "/brand/logo-dark.svg",
+      logoDarkPath: "/brand/logo-dark.png",
       faviconPath: site.favicon,
       email: site.email,
       careersEmail: site.careersEmail,

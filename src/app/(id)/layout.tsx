@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getSite, getTheme, themeStyleSheet } from "@/server/content";
+import { jakarta } from "../fonts";
 import "../globals.css";
 
 /**
@@ -26,7 +27,7 @@ export default async function RootLayout({
   const theme = await getTheme();
 
   return (
-    <html lang="id">
+    <html lang="id" className={jakarta.variable}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: themeStyleSheet(theme) }} />
       </head>

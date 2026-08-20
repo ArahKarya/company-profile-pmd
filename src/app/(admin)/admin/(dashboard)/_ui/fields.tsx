@@ -325,7 +325,7 @@ export function ImageInput({
       <label>{label}</label>
       <div className="image-picker">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="preview" src={value.src || "/brand/logo-dark.svg"} alt="" />
+        <img className="preview" src={value.src || "/brand/logo-dark.png"} alt="" />
         <div className="fields">
           <select
             value={options.some((option) => option.path === value.src) ? value.src : ""}

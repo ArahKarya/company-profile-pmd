@@ -11,29 +11,31 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Brand palette. Change these five and the whole site follows. */
-  --brand-dark: #14331f;        /* dark section backgrounds, solid navbar — hijau sawah */
-  --brand-darker: #0b2114;      /* footer */
-  --brand-accent: #d9a520;      /* primary accent — pills, active states — emas gabah */
-  --brand-accent-soft: #efc766; /* secondary accent — headings, markers */
-  --brand-accent-deep: #7d5f0c; /* accent on light backgrounds */
+  /* Brand palette — sistem warna PMD ("Website Color System v2", gaya Reethau).
+     Proporsi yang dituju: ±72% putih, ±25% sekam gelap, ±3% emas. Emas menandai,
+     bukan mengisi: pil bahasa, segitiga penanda, satu tombol utama, angka aksen. */
+  --brand-dark: #1e1a10;        /* Sekam 900 — navbar solid & seksi gelap */
+  --brand-darker: #100e08;      /* Sekam 950 — footer */
+  --brand-accent: #e9bd0c;      /* Emas PMD — pil, status aktif, penanda */
+  --brand-accent-soft: #f2ce45; /* Emas 400 — heading & marker di latar gelap */
+  --brand-accent-deep: #8c7200; /* Emas 700 — label & tautan di latar terang (WCAG AA) */
 
-  /* Neutrals */
-  --surface-overlay: #14181a;   /* mobile menu backdrop */
+  /* Neutrals — netral hangat, bukan abu murni, agar menyatu dengan sekam bertinta emas */
+  --surface-overlay: #1e1a10;   /* mobile menu backdrop */
   --text-on-dark: #ffffff;
-  --text-muted: #b2b2b3;
-  --hairline: rgba(128, 128, 129, 0.2);
+  --text-muted: #a8a296;        /* teks sekunder di latar gelap */
+  --hairline: rgba(30, 26, 16, 0.16);
 
-  /* Typography. Override --font-body / --font-display from the app layout when
-     wiring a real typeface through next/font. */
-  --font-body: var(--bs-font-sans-serif);
+  /* Typography. Plus Jakarta Sans di-wire lewat next/font di tiap root layout;
+     --font-body / --font-display di-override dari sana. */
+  --font-body: var(--font-jakarta, var(--bs-font-sans-serif));
   --font-display: var(--font-body);
 
   /* Layout */
   --nav-height: 100px;
   --page-gutter: 40px;
   --content-max: 1920px;
-  --hero-overlay: rgba(11, 33, 20, 0.55);
+  --hero-overlay: rgba(16, 14, 8, 0.55);
 }
 
 /* --------------------------------------------------------------------------
@@ -76,7 +78,10 @@ p {
 h1, .h1 {
   font-family: var(--font-display);
   font-size: 3rem;
-  font-weight: 300;
+  /* Judul besar bobot 200 — ringan tapi masih terbaca di layar kecil; <b> di dalam
+     headline naik ke 700, sesuai sistem tipografi PMD. */
+  font-weight: 200;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   position: relative;
 }
@@ -96,7 +101,7 @@ h4.marker::before {
   width: 0.7rem;
   height: 0.7rem;
   clip-path: polygon(0 0, 100% 50%, 0 100%);
-  background-color: var(--brand-accent-soft);
+  background-color: var(--brand-accent);
 }
 
 h1.text-center::before,
@@ -234,7 +239,7 @@ section {
   height: 0.4rem;
   margin-top: 4px;
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  background-color: var(--brand-accent-soft);
+  background-color: var(--brand-accent);
 }
 
 .site-header .lang-btn {
@@ -253,7 +258,7 @@ section {
   font-weight: 700;
 }
 
-.site-header .brand-logo { height: 80px; width: auto; }
+.site-header .brand-logo { height: 56px; width: auto; }
 
 .site-header .navbar-toggler {
   border: none !important;
@@ -307,7 +312,7 @@ section {
 
 .site-footer p { font-size: 1rem; margin: 0; }
 .site-footer .footer-heading { font-size: 1.2em; font-weight: 600; }
-.site-footer .brand-logo { max-width: 150px; height: auto; }
+.site-footer .brand-logo { max-width: 190px; height: auto; }
 .site-footer .certification { width: 100px; }
 
 /* --------------------------------------------------------------------------
@@ -440,7 +445,7 @@ section {
   width: 0.6rem;
   height: 0.6rem;
   clip-path: polygon(0 0, 100% 50%, 0 100%);
-  background-color: var(--brand-accent-soft);
+  background-color: var(--brand-accent);
 }
 
 .showcase-panel {
@@ -556,7 +561,7 @@ section {
   width: 0.6rem;
   height: 0.6rem;
   clip-path: polygon(0 0, 100% 50%, 0 100%);
-  background-color: var(--brand-accent-soft);
+  background-color: var(--brand-accent);
 }
 
 .switcher-panel {
@@ -653,7 +658,7 @@ section {
   display: inline-block;
   padding: 2px 14px;
   border-radius: 999px;
-  background: var(--brand-accent-soft);
+  background: var(--brand-accent);
   color: var(--brand-darker);
 }
 

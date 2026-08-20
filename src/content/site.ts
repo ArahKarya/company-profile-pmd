@@ -6,6 +6,9 @@ import type { SiteConfig } from "./types";
  * This is the first file to edit when rebranding. Colours live in
  * `src/styles/theme.css` under `:root`.
  *
+ * Logo resmi ada di public/brand/: logo-light.png (versi putih, untuk latar gelap),
+ * logo-dark.png (versi warna, untuk latar terang), favicon.png (mark tanpa tagline).
+ *
  * TODO(PMD): the contact block below is still placeholder — ganti dengan alamat,
  * telepon dan email PT Pangan Masa Depan yang sebenarnya (atau ubah lewat /admin).
  */
@@ -13,12 +16,12 @@ export const site: SiteConfig = {
   name: "Pangan Masa Depan",
 
   logo: {
-    src: "/brand/logo-light.svg",
+    src: "/brand/logo-light.png",
     alt: "PT Pangan Masa Depan",
-    width: 340,
-    height: 120,
+    width: 1604,
+    height: 405,
   },
-  favicon: "/brand/logo-dark.svg",
+  favicon: "/brand/favicon.png",
 
   /**
    * Routes per locale. The Indonesian pages sit at the root and the English ones under

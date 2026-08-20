@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palet Warna PMD — Gaya Reethau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Gelap bertinta emas — pengganti #11302D milik Reethau */
+    --d-950:#100E08; --d-900:#1E1A10; --d-800:#2E2818; --d-700:#443C26;
+    /* Emas PMD */
+    --y-800:#6B5700; --y-700:#8C7200; --y-600:#A88A00;
+    --y-500:#E9BD0C; --y-400:#F2CE45; --y-300:#F7DE7E; --y-100:#FBF4DF;
+    /* Netral hangat */
+    --t-900:#1F1D19; --t-700:#5C574E; --t-500:#7A7468; --t-400:#A8A296; --t-300:#C9C4B8;
+    --line:#E6E3DC; --paper:#FAF9F6; --paper-2:#F2F0EA; --white:#FFFFFF;
+    /* Semantik */
+    --ok:#1E7F45; --warn:#B45309; --danger:#C0261F; --info:#15578F;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--white);color:var(--t-900);
+    font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+  h1,h2,h3{margin:0;line-height:1.14;letter-spacing:-.03em;font-weight:200}
+  h1 b,h2 b,h3 b{font-weight:700}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--y-700);font-weight:700;
+    display:flex;align-items:center;gap:9px}
+  .eyebrow::before{content:"";width:0;height:0;border:5px solid transparent;border-left-color:var(--y-500);border-right:0}
+  section{padding:84px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:clamp(30px,4.2vw,50px);margin:14px 0 16px}
+  .lede{color:var(--t-700);margin:0 0 34px;max-width:64ch;font-size:16px}
+  .num{font-size:12px;letter-spacing:.18em;color:var(--t-500);font-weight:700}
+
+  /* Masthead */
+  .masthead{background:var(--d-900);color:#fff;padding:96px 0 88px;position:relative;overflow:hidden}
+  .masthead::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,rgba(233,189,12,.20),transparent 66%)}
+  .masthead .wrap{position:relative;z-index:1}
+  .masthead h1{font-size:clamp(34px,5.6vw,62px);margin:18px 0 20px;color:#fff}
+  .masthead h1 b{color:var(--y-500)}
+  .masthead p{margin:0;max-width:60ch;color:var(--t-300)}
+  .masthead .eyebrow{color:var(--y-400)}
+  .mark{display:inline-flex;align-items:flex-end;gap:4px;height:40px;margin-bottom:26px}
+  .mark span{display:block;width:9px;background:var(--t-400);border-radius:1px}
+  .mark span:nth-child(1){height:27px;background:linear-gradient(to top,var(--y-500) 34%,var(--t-400) 34%)}
+  .mark span:nth-child(2){height:37px} .mark span:nth-child(3){height:31px}
+  .mark i{width:21px;height:25px;margin-left:-4px;align-self:flex-start;background:var(--y-500);
+    clip-path:polygon(0 100%,42% 40%,72% 6%,100% 0,86% 34%,56% 66%,18% 100%)}
+
+  /* Formula compare */
+  .formula{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+  .fcol{padding:26px 28px}
+  .fcol+.fcol{border-left:1px solid var(--line)}
+  .fcol h4{margin:0 0 4px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--t-500)}
+  .fcol .who{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:18px}
+  .frow{display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+  .frow .sq{width:26px;height:26px;flex:0 0 26px;border:1px solid rgba(0,0,0,.1)}
+  .frow code{font-size:12px;color:var(--t-500);font-variant-numeric:tabular-nums}
+  .frow .lbl{color:var(--t-700)}
+
+  /* Swatch */
+  .ramp{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:2px;margin-bottom:30px;
+    border:1px solid var(--line)}
+  .sw{border:0;font:inherit;text-align:left;cursor:pointer;padding:18px 14px;min-height:128px;
+    display:flex;flex-direction:column;justify-content:flex-end;gap:3px;position:relative;
+    transition:opacity .18s ease}
+  .sw:hover{opacity:.86}
+  .sw:focus-visible{outline:2px solid var(--y-500);outline-offset:-4px}
+  .sw .name{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+  .sw .hex{font-size:14px;font-weight:400;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  .sw .role{font-size:11.5px;opacity:.72;line-height:1.4}
+  .sw.light{color:var(--t-900)} .sw.dark{color:#fff}
+  .sw .star{position:absolute;top:12px;left:14px;font-size:9.5px;font-weight:700;letter-spacing:.12em;
+    padding:2px 7px;background:rgba(0,0,0,.16)}
+  .sw.dark .star{background:rgba(255,255,255,.22)}
+  .copied{position:absolute;top:12px;right:14px;font-size:9.5px;font-weight:700;letter-spacing:.1em;
+    background:rgba(0,0,0,.62);color:#fff;padding:3px 8px;opacity:0;transition:opacity .2s}
+  .sw.is-copied .copied{opacity:1}
+  .hint{font-size:13px;color:var(--t-500);margin:-16px 0 26px}
+
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+  th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--t-500);font-weight:700}
+  td.n{font-variant-numeric:tabular-nums;font-weight:700}
+  .badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:3px 9px}
+  .b-aaa{background:var(--d-900);color:var(--y-400)}
+  .b-aa{background:var(--y-100);color:var(--y-800)}
+  .chip{display:inline-block;width:13px;height:13px;vertical-align:-2px;margin-right:7px;border:1px solid rgba(0,0,0,.14)}
+
+  /* ---- DEMO: homepage PMD gaya Reethau ---- */
+  .demo{border:1px solid var(--line);overflow:hidden;background:#fff}
+  .dnav{display:flex;align-items:center;gap:34px;padding:20px 34px;background:var(--d-900)}
+  .dnav .brand{display:flex;align-items:center;gap:11px;color:#fff}
+  .dnav .brand .mark{height:26px;margin:0}
+  .dnav .brand .mark span{width:6px;background:#fff}
+  .dnav .brand .mark span:nth-child(1){height:17px;background:linear-gradient(to top,var(--y-500) 34%,#fff 34%)}
+  .dnav .brand .mark span:nth-child(2){height:24px} .dnav .brand .mark span:nth-child(3){height:20px}
+  .dnav .brand .mark i{width:13px;height:16px;margin-left:-3px}
+  .dnav .brand b{font-size:16px;letter-spacing:.16em;font-weight:700;line-height:1}
+  .dnav .brand small{display:block;font-size:7px;letter-spacing:.22em;color:var(--t-400);margin-top:3px}
+  .dnav a{font-size:13.5px;color:var(--t-300);text-decoration:none}
+  .dnav a.on{color:#fff;font-weight:700;position:relative}
+  .dnav a.on::after{content:"";position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);
+    width:0;height:0;border:4px solid transparent;border-bottom-color:var(--y-500);border-top:0}
+  .dnav .sp{margin-left:auto}
+  .lang{display:flex;align-items:center;gap:10px;font-size:12px}
+  .lang b{background:var(--y-500);color:var(--d-900);padding:5px 13px;border-radius:99px;font-weight:700}
+  .lang span{color:var(--t-400)}
+
+  .dhero{position:relative;min-height:330px;display:flex;align-items:flex-end;
+    background:linear-gradient(105deg,#2E2818,#443C26 45%,#6b6046);padding:44px 34px;overflow:hidden}
+  .dhero::before{content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(102deg,rgba(255,255,255,.05) 0 3px,transparent 3px 22px)}
+  .dhero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(16,14,8,.82),rgba(16,14,8,.15))}
+  .dhero .in{position:relative;z-index:2;width:100%;display:flex;gap:40px;align-items:flex-end;flex-wrap:wrap}
+  .dhero h3{color:#fff;font-size:clamp(26px,3.6vw,42px);font-weight:200;letter-spacing:-.03em;flex:1 1 380px;margin:0}
+  .dhero h3 b{font-weight:700}
+  .dhero p{color:var(--t-300);font-size:13.5px;max-width:34ch;margin:0;flex:0 1 300px}
+  .photo-note{position:absolute;left:34px;top:26px;z-index:2;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+  .dsplit{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .dsplit .pane{padding:56px 40px}
+  .dsplit .pane+.pane{border-left:1px solid var(--line)}
+  .dsplit h4{font-size:clamp(22px,2.6vw,32px);font-weight:200;letter-spacing:-.03em;margin:12px 0 14px;line-height:1.16}
+  .dsplit h4 b{font-weight:700}
+  .dsplit p{color:var(--t-700);font-size:14px;margin:0 0 26px}
+  .imgbox{height:150px;background:linear-gradient(120deg,var(--paper-2),var(--t-300));position:relative;overflow:hidden}
+  .imgbox::after{content:"FOTO";position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.18em;color:var(--t-700)}
+  .btn{display:inline-flex;align-items:center;gap:14px;font:inherit;font-size:13px;font-weight:600;
+    padding:13px 22px;border-radius:0;cursor:pointer;text-decoration:none;border:1px solid rgba(31,29,25,.18);
+    background:transparent;color:var(--t-900);transition:.18s}
+  .btn::after{content:"";width:22px;height:1px;background:currentColor;position:relative}
+  .btn:hover{border-color:var(--y-500);color:var(--y-800)}
+  .btn-solid{background:var(--y-500);border-color:var(--y-500);color:var(--d-900);font-weight:700}
+  .btn-solid:hover{background:var(--y-400);border-color:var(--y-400);color:var(--d-900)}
+  .btn-light{border-color:rgba(255,255,255,.36);color:#fff}
+  .btn-light:hover{border-color:var(--y-500);color:var(--y-400)}
+
+  .dstats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+  .dstat{padding:34px 40px}
+  .dstat+.dstat{border-left:1px solid var(--line)}
+  .dstat b{display:block;font-size:38px;font-weight:200;letter-spacing:-.04em;line-height:1}
+  .dstat b em{font-style:normal;font-weight:700;color:var(--y-700)}
+  .dstat span{font-size:12.5px;color:var(--t-500);display:block;margin-top:8px}
+  .dfoot{background:var(--d-950);color:var(--t-400);padding:44px 40px;font-size:13px}
+  .dfoot .top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .dfoot .big{color:#fff;font-size:26px;font-weight:200;letter-spacing:-.03em;max-width:20ch;line-height:1.2}
+  .dfoot .big b{font-weight:700;color:var(--y-500)}
+  .dfoot .bot{padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line)}
+  .rule{padding:22px 24px;background:#fff}
+  .rule h4{margin:0 0 10px;font-size:14px;font-weight:700;letter-spacing:-.01em}
+  .rule ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--t-700)}
+  .rule li{margin-bottom:7px}
+  .rule code{background:var(--paper-2);padding:1px 6px;font-size:12.5px}
+  .ratio{display:flex;height:52px;margin:8px 0 30px;border:1px solid var(--line)}
+  .ratio div{display:grid;place-items:center;font-size:11px;font-weight:700;letter-spacing:.1em}
+  pre{background:var(--d-900);color:var(--t-300);padding:26px;overflow:auto;
+    font-size:12.5px;line-height:1.8;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  pre .c{color:var(--y-500)}
+  footer.page{padding:40px 0 72px;color:var(--t-500);font-size:13px}
+  @media(max-width:820px){.two,.formula,.dsplit,.dstats{grid-template-columns:1fr}
+    .fcol+.fcol,.dsplit .pane+.pane,.dstat+.dstat{border-left:0;border-top:1px solid var(--line)}
+    .dnav a{display:none}.dnav a.on{display:inline}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="mark"><span></span><span></span><span></span><i></i></div>
+    <div class="eyebrow" style="color:var(--y-400)">Website Color System · v2</div>
+    <h1>Palet PMD dengan<br><b>formula Reethau</b></h1>
+    <p>Reethau tidak istimewa karena warnanya hijau — melainkan karena <em>caranya menyusun</em>: kanvas putih yang luas, satu warna gelap pekat bertinta brand untuk navigasi dan footer, aksen cerah dalam porsi sangat kecil, dan tipografi tipis berukuran besar. Formula itu yang saya pindahkan ke kuning emas, abu, dan hitam milik PMD.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="num">01</div>
+    <div class="eyebrow">Cara Kerjanya</div>
+    <h2>Formula yang <b>diterjemahkan</b></h2>
+    <p class="lede">Setiap peran warna di Reethau punya padanan di PMD. Yang berpindah adalah <em>perannya</em>, bukan warnanya — jadi hasilnya tetap terasa seperti PMD, bukan tiruan.</p>
+    <div class="formula">
+      <div class="fcol">
+        <h4>Referensi</h4>
+        <div class="who">Reethau — Clean Energy</div>
+        <div class="frow"><span class="sq" style="background:#FFFFFF"></span><span class="lbl">Kanvas dominan</span><span class="sp" style="margin-left:auto"></span><code>#FFFFFF</code></div>
+        <div class="frow"><span class="sq" style="background:#11302D"></span><span class="lbl">Gelap bertinta brand</span><span style="margin-left:auto"></span><code>#11302D</code></div>
+        <div class="frow"><span class="sq" style="background:#02110E"></span><span class="lbl">Gelap terdalam (footer)</span><span style="margin-left:auto"></span><code>#02110E</code></div>
+        <div class="frow"><span class="sq" style="background:#54B67B"></span><span class="lbl">Aksen cerah (pill, marker)</span><span style="margin-left:auto"></span><code>#54B67B</code></div>
+        <div class="frow"><span class="sq" style="background:#78AD5A"></span><span class="lbl">Label eyebrow</span><span style="margin-left:auto"></span><code>#78AD5A</code></div>
+        <div class="frow"><span class="sq" style="background:#212529"></span><span class="lbl">Teks isi</span><span style="margin-left:auto"></span><code>#212529</code></div>
+        <div class="frow"><span class="sq" style="background:#fff;border-color:#ccc"></span><span class="lbl">Judul 60px · bobot 100</span><span style="margin-left:auto"></span><code>light + bold</code></div>
+      </div>
+      <div class="fcol">
+        <h4>Terjemahan</h4>
+        <div class="who">PT Pangan Masa Depan</div>
+        <div class="frow"><span class="sq" style="background:#FFFFFF"></span><span class="lbl">Kanvas dominan</span><span style="margin-left:auto"></span><code>#FFFFFF</code></div>
+        <div class="frow"><span class="sq" style="background:#1E1A10"></span><span class="lbl">Sekam 900 — nav &amp; section gelap</span><span style="margin-left:auto"></span><code>#1E1A10</code></div>
+        <div class="frow"><span class="sq" style="background:#100E08"></span><span class="lbl">Sekam 950 — footer</span><span style="margin-left:auto"></span><code>#100E08</code></div>
+        <div class="frow"><span class="sq" style="background:#E9BD0C"></span><span class="lbl">Emas PMD (pill, marker)</span><span style="margin-left:auto"></span><code>#E9BD0C</code></div>
+        <div class="frow"><span class="sq" style="background:#8C7200"></span><span class="lbl">Label eyebrow (kontras aman)</span><span style="margin-left:auto"></span><code>#8C7200</code></div>
+        <div class="frow"><span class="sq" style="background:#5C574E"></span><span class="lbl">Teks isi</span><span style="margin-left:auto"></span><code>#5C574E</code></div>
+        <div class="frow"><span class="sq" style="background:#fff;border-color:#ccc"></span><span class="lbl">Judul 50px · bobot 200</span><span style="margin-left:auto"></span><code>light + bold</code></div>
+      </div>
+    </div>
+    <p class="hint" style="margin-top:20px">Dua penyesuaian sengaja saya lakukan, bukan menyalin mentah. <strong>Pertama</strong>, Reethau memakai hijau muda <code>#78AD5A</code> untuk label kecil di latar putih — rasio kontrasnya hanya 2.65 dan gagal WCAG. Padanan PMD-nya dinaikkan ke <code>#8C7200</code>. <strong>Kedua</strong>, bobot judul 100 terlalu tipis untuk huruf Latin berukuran sedang; PMD memakai 200 agar tetap ringan tapi terbaca di layar kecil.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="num">02</div>
+    <div class="eyebrow">Gelap Bertinta</div>
+    <h2>Bukan hitam, tapi <b>hitam gabah</b></h2>
+    <p class="lede">Inti gaya Reethau ada di sini. Navigasinya bukan hitam netral, melainkan hijau yang digelapkan sampai hampir hitam — sehingga warna gelap itu tetap membawa DNA brand. Untuk PMD, hitamnya diberi tinta kuning emas yang sangat tipis: mata membacanya sebagai "hitam", tapi terasa hangat dan menyatu saat disandingkan dengan emas.</p>
+    <div class="ramp" id="ramp-d"></div>
+
+    <div class="num" style="margin-top:14px">03</div>
+    <div class="eyebrow">Aksen</div>
+    <h2>Emas dalam <b>porsi kecil</b></h2>
+    <p class="lede">Di Reethau, hijau cerah hanya muncul di tombol bahasa, segitiga penanda, dan label — total mungkin 2% dari layar. Emas PMD diperlakukan sama: ia menandai, bukan mengisi.</p>
+    <div class="ramp" id="ramp-y"></div>
+
+    <div class="num" style="margin-top:14px">04</div>
+    <div class="eyebrow">Netral Hangat</div>
+    <h2>Kanvas dan <b>teks</b></h2>
+    <p class="lede">Netral di sini sedikit dihangatkan (bukan abu murni seperti versi sebelumnya) supaya menyatu dengan hitam bertinta emas. Perbedaannya halus, tapi membuat halaman terasa satu keluarga.</p>
+    <div class="ramp" id="ramp-n"></div>
+    <p class="hint">Klik swatch mana pun untuk menyalin kode HEX.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="num">05</div>
+    <div class="eyebrow">Penerapan</div>
+    <h2>Beranda PMD, <b>gaya Reethau</b></h2>
+    <p class="lede">Perhatikan ciri khasnya: navigasi gelap penuh lebar, hero foto besar dengan judul tipis di atasnya, tombol kotak tanpa radius dengan garis tipis dan tanda panah, garis pemisah rambut, serta angka statistik berbobot ringan.</p>
+
+    <div class="demo">
+      <div class="dnav">
+        <div class="brand">
+          <div class="mark"><span></span><span></span><span></span><i></i></div>
+          <div><b>PMD</b><small>PANGAN MASA DEPAN</small></div>
+        </div>
+        <span class="sp"></span>
+        <a href="#" class="on">Beranda</a>
+        <a href="#">Tentang Kami</a>
+        <a href="#">Produk</a>
+        <a href="#">Fasilitas</a>
+        <a href="#">Kontak</a>
+        <div class="lang" style="margin-left:26px"><b>IDN</b><span>ENG</span></div>
+      </div>
+
+      <div class="dhero">
+        <span class="photo-note">Foto sawah / area penggilingan</span>
+        <div class="in">
+          <h3>Menumbuhkan <b>masa depan</b><br>dari butir <b>beras terbaik</b></h3>
+          <p>Penggilingan modern yang berdiri di atas tiga pilar: kualitas produk, kemitraan petani, dan ketahanan pangan jangka panjang.</p>
+        </div>
+      </div>
+
+      <div class="dsplit">
+        <div class="pane">
+          <div class="eyebrow">Visi &amp; Misi</div>
+          <h4>Beras bermutu untuk <b>ketahanan pangan</b> nasional</h4>
+          <p>Kami menyerap gabah petani dengan harga yang adil, lalu mengolahnya dengan kontrol mutu berlapis sampai siap didistribusikan.</p>
+          <a href="#" class="btn">Selengkapnya</a>
+        </div>
+        <div class="pane" style="padding:0"><div class="imgbox" style="height:100%;min-height:240px"></div></div>
+      </div>
+
+      <div class="dstats">
+        <div class="dstat"><b>120<em> ton</em></b><span>Kapasitas giling harian</span></div>
+        <div class="dstat"><b>1.400<em>+</em></b><span>Petani mitra binaan</span></div>
+        <div class="dstat"><b>27<em> tahun</em></b><span>Pengalaman industri</span></div>
+      </div>
+
+      <div class="dsplit" style="background:var(--paper)">
+        <div class="pane">
+          <div class="eyebrow">Produk</div>
+          <h4>Tiga lini <b>beras PMD</b></h4>
+          <p>Dari beras premium bermutu tinggi sampai suplai curah untuk kebutuhan industri.</p>
+          <a href="#" class="btn btn-solid">Lihat Produk</a>
+        </div>
+        <div class="pane">
+          <div class="imgbox" style="height:120px;margin-bottom:18px"></div>
+          <div style="display:flex;gap:14px;font-size:12.5px;color:var(--t-500)">
+            <span>Premium</span><span>·</span><span>Reguler</span><span>·</span><span>Curah Industri</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dfoot">
+        <div class="top">
+          <div class="big">Mari <b>tumbuh</b> bersama PMD</div>
+          <a href="#" class="btn btn-light">Hubungi Kami</a>
+        </div>
+        <div class="bot">
+          <div>PT Pangan Masa Depan · Pangan Masa Depan</div>
+          <div>© 2026 · Semua hak dilindungi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="num">06</div>
+    <div class="eyebrow">Aksesibilitas</div>
+    <h2>Rasio kontras <b>WCAG 2.1</b></h2>
+    <p class="lede">Semua kombinasi sudah diverifikasi. Ambang: 4.5 untuk teks normal (AA), 7.0 untuk AAA.</p>
+    <table><thead><tr><th>Kombinasi</th><th>Rasio</th><th>Status</th><th>Pemakaian</th></tr></thead><tbody id="ctab"></tbody></table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="num">07</div>
+    <div class="eyebrow">Aturan Pakai</div>
+    <h2>Yang membuat gaya ini <b>bekerja</b></h2>
+    <div class="ratio">
+      <div style="flex:72;background:#FFFFFF;color:#1F1D19;border-right:1px solid var(--line)">72% PUTIH</div>
+      <div style="flex:25;background:#1E1A10;color:#fff">25% SEKAM</div>
+      <div style="flex:3;background:#E9BD0C;color:#1E1A10">3%</div>
+    </div>
+    <div class="two">
+      <div class="rule">
+        <h4>Proporsi 72 / 25 / 3</h4>
+        <ul>
+          <li>Jauh lebih ekstrem dari 60/30/10 — inilah yang membuat Reethau terasa lapang</li>
+          <li>Emas hanya di: pill bahasa, segitiga penanda, satu tombol utama, dan angka aksen</li>
+          <li>Kalau emas mulai terasa "banyak", biasanya memang sudah kelebihan</li>
+        </ul>
+      </div>
+      <div class="rule">
+        <h4>Ruang kosong itu wajib</h4>
+        <ul>
+          <li>Padding section 80–120px atas-bawah, bukan 40px</li>
+          <li>Satu gagasan per layar — jangan menumpuk tiga kartu di satu baris padat</li>
+          <li>Lebar paragraf maksimal 64 karakter</li>
+        </ul>
+      </div>
+      <div class="rule">
+        <h4>Tipografi campur bobot</h4>
+        <ul>
+          <li>Judul besar bobot 200, dengan 2–3 kata kunci di-<strong>bold 700</strong></li>
+          <li>Kata yang di-bold adalah pesan intinya: "masa depan", "beras terbaik"</li>
+          <li>Jangan menambah warna pada kata bold di latar putih — cukup bobotnya</li>
+        </ul>
+      </div>
+      <div class="rule">
+        <h4>Detail yang menentukan</h4>
+        <ul>
+          <li>Tombol <code>border-radius: 0</code> — sudut kotak, garis tipis, ada tanda panah</li>
+          <li>Garis pemisah rambut <code>#E6E3DC</code>, bukan abu tebal</li>
+          <li>Tanpa bayangan kartu — pemisahan lewat garis dan ruang, bukan shadow</li>
+          <li>Foto full-bleed dengan overlay <code>rgba(16,14,8,.7)</code> bila ditimpa teks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="num">08</div>
+    <div class="eyebrow">Implementasi</div>
+    <h2>CSS <b>design token</b></h2>
+    <pre id="tokens"></pre>
+  </div>
+</section>
+
+<footer class="page">
+  <div class="wrap">Palet PT Pangan Masa Depan — warna dari logo PMD (#E9BD0C / #757575 / #000000), struktur dan proporsi terinspirasi reethau.com.</div>
+</footer>
+
+<script>
+const P={
+ d:[["Sekam 950","#100E08","Footer, area terdalam"],["Sekam 900","#1E1A10","★ Navigasi & section gelap"],
+    ["Sekam 800","#2E2818","Permukaan di atas gelap"],["Sekam 700","#443C26","Overlay foto, border gelap"]],
+ y:[["Emas 800","#6B5700","Teks aksen (AAA)"],["Emas 700","#8C7200","★ Label eyebrow, link"],
+    ["Emas 600","#A88A00","Border, ikon"],["Emas 500","#E9BD0C","★ Warna logo — pill, marker, CTA"],
+    ["Emas 400","#F2CE45","Hover, aksen di latar gelap"],["Emas 300","#F7DE7E","Highlight halus"],
+    ["Emas 100","#FBF4DF","Latar badge"]],
+ n:[["Teks 900","#1F1D19","Judul & teks utama"],["Teks 700","#5C574E","★ Teks isi"],
+    ["Teks 500","#7A7468","Caption, meta"],["Teks 400","#A8A296","Teks di latar gelap"],
+    ["Teks 300","#C9C4B8","Paragraf di latar gelap"],["Garis","#E6E3DC","Pemisah rambut"],
+    ["Kertas 2","#F2F0EA","Latar section"],["Kertas","#FAF9F6","Latar alternatif"],["Putih","#FFFFFF","Kanvas utama"]]
+};
+function lum(h){h=h.slice(1);const v=[0,2,4].map(i=>parseInt(h.substr(i,2),16)/255)
+ .map(c=>c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4));
+ return 0.2126*v[0]+0.7152*v[1]+0.0722*v[2];}
+function ratio(a,b){const l=[lum(a),lum(b)].sort((x,y)=>y-x);return (l[0]+0.05)/(l[1]+0.05);}
+
+function render(id,list){
+ const el=document.getElementById(id);
+ list.forEach(([name,hex,role])=>{
+  const star=role.indexOf('★')===0;
+  const b=document.createElement('button');
+  b.className='sw '+(ratio(hex,'#FFFFFF')>3.4?'dark':'light');
+  b.style.background=hex;
+  b.innerHTML=(star?'<span class="star">KUNCI</span>':'')+'<span class="copied">TERSALIN</span>'+
+   '<span class="name">'+name+'</span><span class="hex">'+hex+'</span>'+
+   '<span class="role">'+role.replace('★ ','')+'</span>';
+  b.addEventListener('click',()=>{
+   const done=()=>{b.classList.add('is-copied');setTimeout(()=>b.classList.remove('is-copied'),1200);};
+   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(hex).then(done,done);}
+   else{const t=document.createElement('textarea');t.value=hex;document.body.appendChild(t);t.select();
+    try{document.execCommand('copy');}catch(e){} t.remove(); done();}
+  });
+  el.appendChild(b);
+ });
+}
+render('ramp-d',P.d); render('ramp-y',P.y); render('ramp-n',P.n);
+
+const combos=[
+ ["Teks 900","#1F1D19","Putih","#FFFFFF","Judul & teks utama"],
+ ["Teks 700","#5C574E","Putih","#FFFFFF","Paragraf isi"],
+ ["Teks 500","#7A7468","Putih","#FFFFFF","Caption (batas minimum)"],
+ ["Emas 700","#8C7200","Putih","#FFFFFF","Label eyebrow & link"],
+ ["Emas 800","#6B5700","Putih","#FFFFFF","Teks aksen tebal"],
+ ["Putih","#FFFFFF","Sekam 900","#1E1A10","Navigasi & hero"],
+ ["Putih","#FFFFFF","Sekam 950","#100E08","Footer"],
+ ["Teks 300","#C9C4B8","Sekam 900","#1E1A10","Paragraf di latar gelap"],
+ ["Teks 400","#A8A296","Sekam 900","#1E1A10","Meta di latar gelap"],
+ ["Emas 500","#E9BD0C","Sekam 900","#1E1A10","Aksen & marker di nav"],
+ ["Emas 400","#F2CE45","Sekam 900","#1E1A10","Kata kunci di judul gelap"],
+ ["Sekam 900","#1E1A10","Emas 500","#E9BD0C","Pill bahasa & tombol emas"],
+ ["Teks 900","#1F1D19","Kertas","#FAF9F6","Teks di section alternatif"],
+ ["Teks 700","#5C574E","Kertas 2","#F2F0EA","Paragraf di latar kertas"],
+ ["Emas 800","#6B5700","Emas 100","#FBF4DF","Badge"]
+];
+document.getElementById('ctab').innerHTML=combos.map(([an,a,bn,b,use])=>{
+ const r=ratio(a,b), lv=r>=7?['AAA','b-aaa']:['AA','b-aa'];
+ return '<tr><td><span class="chip" style="background:'+a+'"></span>'+an+
+  ' <span style="color:var(--t-400)">di atas</span> <span class="chip" style="background:'+b+'"></span>'+bn+
+  '</td><td class="n">'+r.toFixed(2)+'</td><td><span class="badge '+lv[1]+'">'+lv[0]+
+  '</span></td><td style="color:var(--t-700)">'+use+'</td></tr>';
+}).join('');
+
+document.getElementById('tokens').innerHTML=
+`<span class="c">/* PT Pangan Masa Depan — Website Token (gaya Reethau) */</span>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600;700;800&amp;display=swap');
+
+:root {
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  <span class="c">/* Gelap bertinta emas — pengganti hitam netral */</span>
+  --dark-950: #100E08;   <span class="c">/* footer */</span>
+  --dark-900: #1E1A10;   <span class="c">/* nav, hero, section gelap */</span>
+  --dark-800: #2E2818;
+  --dark-700: #443C26;   <span class="c">/* overlay foto */</span>
+
+  <span class="c">/* Emas PMD — logo #E9BD0C */</span>
+  --gold:        #E9BD0C;
+  --gold-hover:  #F2CE45;
+  --gold-text:   #8C7200;   <span class="c">/* label & link di latar terang */</span>
+  --gold-strong: #6B5700;
+  --gold-bg:     #FBF4DF;
+
+  <span class="c">/* Netral hangat */</span>
+  --text:          #1F1D19;
+  --text-body:     #5C574E;
+  --text-muted:    #7A7468;
+  --text-on-dark:  #C9C4B8;
+  --text-on-dark-muted: #A8A296;
+
+  --line:      #E6E3DC;
+  --paper:     #FAF9F6;
+  --paper-alt: #F2F0EA;
+  --white:     #FFFFFF;
+
+  <span class="c">/* Semantik */</span>
+  --success: #1E7F45;  --warning: #B45309;
+  --danger:  #C0261F;  --info:    #15578F;
+}
+
+<span class="c">/* Ciri khas gaya ini — jangan dilewat */</span>
+h1, h2, h3 { font-weight: 200; letter-spacing: -.03em; line-height: 1.14; }
+h1 b, h2 b, h3 b { font-weight: 700; }        <span class="c">/* kata kunci saja */</span>
+section  { padding: 96px 0; }                  <span class="c">/* ruang kosong = mewah */</span>
+hr, .divider { border: 0; border-top: 1px solid var(--line); }
+.btn {
+  border: 1px solid rgba(31,29,25,.18);
+  border-radius: 0;                            <span class="c">/* sudut kotak, bukan pill */</span>
+  background: transparent;
+  padding: 13px 22px;
+  font-weight: 600;
+}
+.btn-primary { background: var(--gold); border-color: var(--gold); color: var(--dark-900); }
+.overlay-foto { background: rgba(16,14,8,.7); }`;
+</script>
+</body>
+</html>

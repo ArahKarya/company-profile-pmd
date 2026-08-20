@@ -1,44 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 460" role="img" aria-label="PMD-1 — Milling unit">
-  <rect width="1460" height="460" fill="#f3f6f2"/>
-  <text x="60" y="100" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="600" fill="#14331f">PMD-1 — Milling unit</text>
-  <text x="60" y="134" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#5f7065">Hover a stage to highlight it.</text>
+  <rect width="1460" height="460" fill="#FAF9F6"/>
+  <text x="60" y="100" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="600" fill="#1F1D19">PMD-1 — Milling unit</text>
+  <text x="60" y="134" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#7A7468">Hover a stage to highlight it.</text>
   <path d="M330 275 H374 M364 265 L378 275 L364 285"
-                  stroke="#d9a520" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M680 275 H724 M714 265 L728 275 L714 285"
-                  stroke="#d9a520" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1030 275 H1074 M1064 265 L1078 275 L1064 285"
-                  stroke="#d9a520" stroke-width="3" fill="none" stroke-linecap="round"/>
+                  stroke="#E9BD0C" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M680 275 H724 M714 265 L728 275 L714 285"
+                  stroke="#E9BD0C" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1030 275 H1074 M1064 265 L1078 275 L1064 285"
+                  stroke="#E9BD0C" stroke-width="3" fill="none" stroke-linecap="round"/>
     <g>
-      <rect x="60" y="180" width="270" height="190" rx="14"
-            fill="#ffffff" stroke="#cbd8cd" stroke-width="2"/>
-      <circle cx="195" cy="240" r="26" fill="#efc766" opacity=".65"/>
+      <rect x="60" y="180" width="270" height="190" rx="0"
+            fill="#ffffff" stroke="#E6E3DC" stroke-width="1.5"/>
+      <circle cx="195" cy="240" r="26" fill="#FBF4DF"/>
       <text x="195" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
-            font-size="22" font-weight="700" fill="#14331f">1</text>
+            font-size="22" font-weight="700" fill="#8C7200">1</text>
       <text x="195" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
-            font-size="20" font-weight="600" fill="#14331f">Paddy intake</text>
+            font-size="20" font-weight="600" fill="#1F1D19">Paddy intake</text>
     </g>
     <g>
-      <rect x="410" y="180" width="270" height="190" rx="14"
-            fill="#ffffff" stroke="#cbd8cd" stroke-width="2"/>
-      <circle cx="545" cy="240" r="26" fill="#efc766" opacity=".65"/>
+      <rect x="410" y="180" width="270" height="190" rx="0"
+            fill="#ffffff" stroke="#E6E3DC" stroke-width="1.5"/>
+      <circle cx="545" cy="240" r="26" fill="#FBF4DF"/>
       <text x="545" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
-            font-size="22" font-weight="700" fill="#14331f">2</text>
+            font-size="22" font-weight="700" fill="#8C7200">2</text>
       <text x="545" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
-            font-size="20" font-weight="600" fill="#14331f">Drying</text>
+            font-size="20" font-weight="600" fill="#1F1D19">Drying</text>
     </g>
     <g>
-      <rect x="760" y="180" width="270" height="190" rx="14"
-            fill="#ffffff" stroke="#cbd8cd" stroke-width="2"/>
-      <circle cx="895" cy="240" r="26" fill="#efc766" opacity=".65"/>
+      <rect x="760" y="180" width="270" height="190" rx="0"
+            fill="#ffffff" stroke="#E6E3DC" stroke-width="1.5"/>
+      <circle cx="895" cy="240" r="26" fill="#FBF4DF"/>
       <text x="895" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
-            font-size="22" font-weight="700" fill="#14331f">3</text>
+            font-size="22" font-weight="700" fill="#8C7200">3</text>
       <text x="895" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
-            font-size="20" font-weight="600" fill="#14331f">Husking</text>
+            font-size="20" font-weight="600" fill="#1F1D19">Husking</text>
     </g>
     <g>
-      <rect x="1110" y="180" width="270" height="190" rx="14"
-            fill="#2f7a44" stroke="#2f7a44" stroke-width="2"/>
-      <circle cx="1245" cy="240" r="26" fill="#ffffff" opacity=".9"/>
+      <rect x="1110" y="180" width="270" height="190" rx="0"
+            fill="#1E1A10" stroke="#1E1A10" stroke-width="1.5"/>
+      <circle cx="1245" cy="240" r="26" fill="#E9BD0C"/>
       <text x="1245" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
-            font-size="22" font-weight="700" fill="#2f7a44">4</text>
+            font-size="22" font-weight="700" fill="#1E1A10">4</text>
       <text x="1245" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
             font-size="20" font-weight="600" fill="#ffffff">Brown rice</text>
     </g>

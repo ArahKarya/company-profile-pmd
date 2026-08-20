@@ -19,13 +19,13 @@ export interface ThemeTokens {
 }
 
 export const DEFAULT_THEME: ThemeTokens = {
-  brandDark: "#14331f",
-  brandDarker: "#0b2114",
-  brandAccent: "#d9a520",
-  brandAccentSoft: "#efc766",
-  brandAccentDeep: "#7d5f0c",
-  surfaceOverlay: "#14181a",
-  textMuted: "#b2b2b3",
+  brandDark: "#1e1a10",
+  brandDarker: "#100e08",
+  brandAccent: "#e9bd0c",
+  brandAccentSoft: "#f2ce45",
+  brandAccentDeep: "#8c7200",
+  surfaceOverlay: "#1e1a10",
+  textMuted: "#a8a296",
   navHeightPx: 100,
   pageGutterPx: 40,
 };

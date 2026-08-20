@@ -1,5 +1,6 @@
 /**
- * Overwrites the content rows in the database with the bundled defaults in src/content/.
+ * Overwrites the content rows in the database with the bundled defaults in src/content/,
+ * including the theme tokens — a palette change in theme.ts only reaches the site through here.
  *
  * `db:seed` deliberately leaves existing rows alone so a re-seed never clobbers what the
  * client edited in /admin. That makes it useless while the site is still being written in
@@ -15,6 +16,7 @@ import { site } from "../src/content/site";
 import { id } from "../src/content/id";
 import { en } from "../src/content/en";
 import { PAGE_ORDER, type LocaleContent, type PageKey } from "../src/content/types";
+import { DEFAULT_THEME } from "../src/content/theme";
 
 try {
   process.loadEnvFile(".env");
@@ -49,7 +51,7 @@ async function main() {
   const siteRow = {
     name: site.name,
     logoLightPath: site.logo.src,
-    logoDarkPath: "/brand/logo-dark.svg",
+    logoDarkPath: "/brand/logo-dark.png",
     faviconPath: site.favicon,
     email: site.email,
     careersEmail: site.careersEmail,
@@ -65,6 +67,13 @@ async function main() {
     update: siteRow,
   });
   console.log("site settings resynced");
+
+  await prisma.themeSettings.upsert({
+    where: { id: 1 },
+    create: { id: 1, ...DEFAULT_THEME },
+    update: DEFAULT_THEME,
+  });
+  console.log("theme settings resynced");
 
   for (const content of [id, en] as const) {
     const locale = content === id ? "id" : "en";
