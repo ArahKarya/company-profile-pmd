@@ -17,6 +17,7 @@
     "db:migrate": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:seed": "tsx prisma/seed.ts",
+    "db:resync": "tsx prisma/resync.ts",
     "db:studio": "prisma studio",
     "postinstall": "prisma generate"
   },

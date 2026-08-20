@@ -45,7 +45,7 @@ export const id: LocaleContent = {
 
   home: {
     hero: {
-      headline: ["Dari Sawah", "ke Meja Makan —", "Satu Rantai Terintegrasi."],
+      headline: ["Penggilingan Beras Modern Terintegrasi", "untuk Ketahanan Pangan", "Indonesia."],
       body: "PT Pangan Masa Depan mengolah gabah petani menjadi beras bermutu melalui dua unit produksi yang saling terhubung: pengeringan dan penggilingan di PMD-1, penyosohan dan pengemasan di PMD-2.",
       scrollCue: "Gulir untuk Jelajahi",
       background: { desktop: "/images/hero-home-desktop.jpg", mobile: "/images/hero-home-mobile.jpg" },

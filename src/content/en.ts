@@ -45,7 +45,7 @@ export const en: LocaleContent = {
 
   home: {
     hero: {
-      headline: ["From the Paddy Field", "to the Table —", "One Integrated Chain."],
+      headline: ["Modern, Integrated Rice Milling", "for Indonesia's", "Food Security."],
       body: "PT Pangan Masa Depan turns farmers' paddy into quality rice across two connected production units: drying and husking at PMD-1, polishing and packing at PMD-2.",
       scrollCue: "Scroll to Explore",
       background: { desktop: "/images/hero-home-desktop.jpg", mobile: "/images/hero-home-mobile.jpg" },
