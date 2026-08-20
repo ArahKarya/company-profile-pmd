@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" role="img" aria-label="Meridian">
+  <g fill="none">
+    <path d="M14 26 L52 60 L14 94 Z" fill="#2f9e8f"/>
+    <path d="M44 26 L82 60 L44 94 Z" fill="#6cc2a8" opacity=".75"/>
+  </g>
+  <text x="98" y="70" font-family="Helvetica,Arial,sans-serif" font-size="46" font-weight="600" fill="#0f2d3d">Meridian</text>
+  <text x="100" y="94" font-family="Helvetica,Arial,sans-serif" font-size="13" letter-spacing="4.5" fill="#2f9e8f">INDUSTRIAL</text>
+</svg>

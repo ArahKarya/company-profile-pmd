@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 460" role="img" aria-label="Plant operations">
+  <rect width="1460" height="460" fill="#f2f6f7"/>
+  <text x="60" y="100" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="600" fill="#0f2d3d">Plant operations</text>
+  <text x="60" y="134" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#5d6f76">Placeholder diagram — hover a stage to highlight it.</text>
+  <path d="M330 275 H374 M364 265 L378 275 L364 285"
+                  stroke="#2f9e8f" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M680 275 H724 M714 265 L728 275 L714 285"
+                  stroke="#2f9e8f" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M1030 275 H1074 M1064 265 L1078 275 L1064 285"
+                  stroke="#2f9e8f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g>
+      <rect x="60" y="180" width="270" height="190" rx="14"
+            fill="#ffffff" stroke="#c9d4d8" stroke-width="2"/>
+      <circle cx="195" cy="240" r="26" fill="#6cc2a8" opacity=".55"/>
+      <text x="195" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="22" font-weight="700" fill="#0f2d3d">1</text>
+      <text x="195" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="21" font-weight="600" fill="#0f2d3d">Intake</text>
+    </g>
+    <g>
+      <rect x="410" y="180" width="270" height="190" rx="14"
+            fill="#2f9e8f" stroke="#2f9e8f" stroke-width="2"/>
+      <circle cx="545" cy="240" r="26" fill="#ffffff" opacity=".9"/>
+      <text x="545" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="22" font-weight="700" fill="#2f9e8f">2</text>
+      <text x="545" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="21" font-weight="600" fill="#ffffff">Processing</text>
+    </g>
+    <g>
+      <rect x="760" y="180" width="270" height="190" rx="14"
+            fill="#ffffff" stroke="#c9d4d8" stroke-width="2"/>
+      <circle cx="895" cy="240" r="26" fill="#6cc2a8" opacity=".55"/>
+      <text x="895" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="22" font-weight="700" fill="#0f2d3d">3</text>
+      <text x="895" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="21" font-weight="600" fill="#0f2d3d">Quality</text>
+    </g>
+    <g>
+      <rect x="1110" y="180" width="270" height="190" rx="14"
+            fill="#ffffff" stroke="#c9d4d8" stroke-width="2"/>
+      <circle cx="1245" cy="240" r="26" fill="#6cc2a8" opacity=".55"/>
+      <text x="1245" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="22" font-weight="700" fill="#0f2d3d">4</text>
+      <text x="1245" y="308" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+            font-size="21" font-weight="600" fill="#0f2d3d">Output</text>
+    </g>
+</svg>

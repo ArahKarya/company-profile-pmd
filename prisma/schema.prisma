@@ -1,0 +1,147 @@
+// Company profile template — data model.
+//
+// The public site reads from here; the admin panel writes to it. Content that the admin
+// edits as a whole section is stored as JSON on PageContent, because the shapes are deeply
+// nested (services → categories → children → diagrams → hotspots) and normalising them
+// would trade one readable document for a dozen join tables without making any form easier
+// to build. Everything that is edited field-by-field — brand, contact, theme — gets real
+// columns so it stays queryable and validatable.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  /// scrypt digest, formatted `scrypt$N$r$p$salt$hash` — see src/server/password.ts
+  passwordHash String
+  role         Role      @default(EDITOR)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+
+  @@map("users")
+}
+
+model Session {
+  /// Opaque random token; also the value of the session cookie.
+  id        String   @id
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+/// Single-row table holding the locale-independent brand and contact facts.
+model SiteSettings {
+  id            Int      @id @default(1)
+  name          String
+  logoLightPath String
+  logoDarkPath  String
+  faviconPath   String
+  email         String
+  careersEmail  String
+  phones        String[]
+  addressLines  String[]
+  mapEmbedUrl   String
+  copyright     String
+  /// { id: { home, about, services, careers, contact }, en: { … } }
+  routes        Json
+  updatedAt     DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+/// Single-row table mirroring the `:root` custom properties in theme.css.
+model ThemeSettings {
+  id              Int      @id @default(1)
+  brandDark       String
+  brandDarker     String
+  brandAccent     String
+  brandAccentSoft String
+  brandAccentDeep String
+  surfaceOverlay  String
+  textMuted       String
+  navHeightPx     Int
+  pageGutterPx    Int
+  updatedAt       DateTime @updatedAt
+
+  @@map("theme_settings")
+}
+
+enum Locale {
+  id
+  en
+}
+
+enum PageKey {
+  home
+  about
+  services
+  careers
+  contact
+}
+
+/// One row per (locale, page): the nav label, page metadata and the section content.
+model PageContent {
+  id          String   @id @default(cuid())
+  locale      Locale
+  page        PageKey
+  navLabel    String
+  metaTitle   String
+  metaDesc    String
+  /// Matches the per-page interfaces in src/content/types.ts.
+  data        Json
+  updatedAt   DateTime @updatedAt
+  updatedById String?
+
+  @@unique([locale, page])
+  @@map("page_content")
+}
+
+/// Locale strings that are not tied to one page.
+model LocaleStrings {
+  locale             Locale   @id
+  /// Short code shown on the language switch, e.g. "IDN".
+  localeName         String
+  footerOfficeLabel  String
+  footerContactLabel String
+  updatedAt          DateTime @updatedAt
+
+  @@map("locale_strings")
+}
+
+/// Uploaded images. Bytes live in the row so the site is portable across hosts — including
+/// serverless, where the filesystem is read-only. Served by /api/media/[id] with an
+/// immutable cache header, since the id changes whenever the bytes do.
+model MediaAsset {
+  id        String   @id @default(cuid())
+  filename  String
+  mimeType  String
+  bytes     Bytes
+  size      Int
+  width     Int?
+  height    Int?
+  alt       String   @default("")
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@map("media_assets")
+}

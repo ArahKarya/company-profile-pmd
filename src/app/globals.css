@@ -1,0 +1,10 @@
+/*
+ * Global stylesheet.
+ *
+ * Bootstrap 5 provides the grid, utilities and reboot; bootstrap-icons provides the few
+ * glyphs used in the navigation and gallery; theme.css layers the design on top. Order
+ * matters — theme.css must come last so its rules win.
+ */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "../styles/theme.css";
