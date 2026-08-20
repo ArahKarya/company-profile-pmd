@@ -2,8 +2,10 @@ import { Headline } from "@/components/ui/RichText";
 import type { SplitSection } from "@/content/types";
 
 /**
- * Copy beside one or more images. With two images the layout brackets the text; with one
- * it is a plain two-column split.
+ * Naskah diapit satu atau dua foto.
+ *
+ * Paragraf pertama dirender sebagai *lead*: berukuran lebih besar dan rata kiri, supaya
+ * pernyataan pembuka terbaca sebagai pernyataan — bukan sebagai paragraf brosur.
  */
 export function Split({
   content,
@@ -23,11 +25,13 @@ export function Split({
             <img src={first.src} alt={first.alt} width={first.width} height={first.height} />
           </div>
 
-          <div className="col-12 col-md-4 order-md-2 text-md-center px-md-4">
+          <div className="col-12 col-md-4 order-md-2 px-md-4 split-copy">
             {content.eyebrow && <span className="eyebrow">{content.eyebrow}</span>}
             {content.headline && <Headline lines={content.headline} className="marker-none" />}
-            {content.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {content.body.map((paragraph, position) => (
+              <p key={paragraph} className={position === 0 ? "split-lead" : undefined}>
+                {paragraph}
+              </p>
             ))}
           </div>
 

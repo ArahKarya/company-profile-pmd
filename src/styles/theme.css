@@ -466,6 +466,18 @@ section {
 
 /* --- Split (image + copy) --- */
 
+/* Kalimat pembuka: lebih besar dan lebih rapat, berdiri sebagai pernyataan. */
+.split-copy .split-lead {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--brand-dark);
+  margin-bottom: 1rem;
+}
+
+.split-copy p { color: var(--text-body); }
+
 .split-media img {
   width: 100%;
   height: auto;

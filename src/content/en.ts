@@ -56,9 +56,10 @@ export const en: LocaleContent = {
     },
 
     intro: {
+      eyebrow: "OUR VISION",
       body: [
-        "Rice quality is decided long before polishing — by the moisture content of the paddy on arrival, by how thoroughly it is dried, and by the precision of every separation stage. That is why we run the whole chain in our own facilities rather than handing it to third parties.",
-        "Every paddy intake, milling output and by-product is recorded against a batch number, so a sack of rice can always be traced back to the paddy it came from.",
+        "To pioneer the transformation of the rice industry through innovation, technology and collaboration.",
+        "All three point at a single aim: farming that is efficient, sustainable and prosperous. That principle carries through to what the process leaves behind — our by-products are turned into biomass, renewable fuel that returns the remainder to the cycle it came from.",
       ],
       media: [
         { src: "/images/intro-1.jpg", alt: "Paddy drying on the drying floor", width: 1200, height: 900 },

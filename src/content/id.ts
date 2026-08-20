@@ -56,9 +56,10 @@ export const id: LocaleContent = {
     },
 
     intro: {
+      eyebrow: "VISI KAMI",
       body: [
-        "Mutu beras ditentukan jauh sebelum penyosohan — pada kadar air gabah saat diterima, pada lama pengeringan, dan pada ketelitian pemisahan di setiap tahap. Karena itu kami menjalankan seluruh rantai di fasilitas sendiri, bukan menyerahkannya ke pihak ketiga.",
-        "Setiap penerimaan gabah, hasil giling, dan produk samping tercatat dengan nomor batch, sehingga satu karung beras selalu dapat ditelusuri kembali ke gabah yang menjadi asalnya.",
+        "Menjadi pelopor transformasi industri beras melalui inovasi, teknologi, dan kolaborasi.",
+        "Kami mengarahkan ketiganya pada satu tujuan: pertanian yang efisien, berkelanjutan, dan menyejahterakan. Prinsip itu berlaku sampai ke sisa prosesnya — hasil samping pengolahan kami olah menjadi biomassa, energi terbarukan yang mengembalikan sisa produksi ke dalam siklusnya.",
       ],
       media: [
         { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
