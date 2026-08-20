@@ -227,7 +227,10 @@ export function HomeEditor({
 
       <div className="admin-card">
         <h2>Alur produksi</h2>
-        <p className="hint">Satu-satunya pita gelap di beranda.</p>
+        <p className="hint">
+          Rel bernomor di pita gelap. Kartu membalik saat disentuh kursor dan membuka
+          rincian saat diklik, jadi tiap tahap butuh foto dan penjelasan.
+        </p>
         <div className="admin-grid">
           <TextInput
             label="Judul"
@@ -239,14 +242,90 @@ export function HomeEditor({
             value={value.process.note ?? ""}
             onChange={(note) => patch({ process: { ...value.process, note } })}
           />
+          <TextInput
+            label="Teks tautan kartu"
+            value={value.process.moreLabel}
+            onChange={(moreLabel) => patch({ process: { ...value.process, moreLabel } })}
+          />
+          <TextInput
+            label="Teks tautan saat terbuka"
+            value={value.process.closeLabel}
+            onChange={(closeLabel) => patch({ process: { ...value.process, closeLabel } })}
+          />
         </div>
+
+        <div className="admin-nested">
+          <p className="help mb-2">Ujung rel: bahan yang masuk dan produk yang keluar.</p>
+          <div className="admin-grid">
+            <TextInput
+              label="Ujung kiri — nama"
+              value={value.process.from?.label ?? ""}
+              onChange={(label) =>
+                patch({
+                  process: {
+                    ...value.process,
+                    from: { label, image: value.process.from?.image ?? emptyImage() },
+                  },
+                })
+              }
+            />
+            <TextInput
+              label="Ujung kanan — nama"
+              value={value.process.to?.label ?? ""}
+              onChange={(label) =>
+                patch({
+                  process: {
+                    ...value.process,
+                    to: { label, image: value.process.to?.image ?? emptyImage() },
+                  },
+                })
+              }
+            />
+          </div>
+          <div className="admin-grid">
+            <ImageInput
+              label="Ujung kiri — foto"
+              value={value.process.from?.image ?? emptyImage()}
+              onChange={(image) =>
+                patch({
+                  process: {
+                    ...value.process,
+                    from: { label: value.process.from?.label ?? "", image },
+                  },
+                })
+              }
+              options={options}
+            />
+            <ImageInput
+              label="Ujung kanan — foto"
+              value={value.process.to?.image ?? emptyImage()}
+              onChange={(image) =>
+                patch({
+                  process: {
+                    ...value.process,
+                    to: { label: value.process.to?.label ?? "", image },
+                  },
+                })
+              }
+              options={options}
+            />
+          </div>
+        </div>
+
         <Repeater<ProcessStep>
           label="Tahap"
           items={value.process.steps}
           onChange={(steps) => patch({ process: { ...value.process, steps } })}
           title={(step) => step.title || "Tahap"}
           addLabel="Tambah tahap"
-          newItem={() => ({ step: "", title: "", body: "" })}
+          newItem={() => ({
+            step: "",
+            title: "",
+            body: "",
+            unit: "",
+            image: emptyImage(),
+            detail: { body: [""], points: [] },
+          })}
           renderItem={(step, update) => (
             <>
               <div className="admin-grid">
@@ -260,12 +339,38 @@ export function HomeEditor({
                   value={step.title}
                   onChange={(title) => update({ ...step, title })}
                 />
+                <TextInput
+                  label="Unit"
+                  value={step.unit ?? ""}
+                  onChange={(unit) => update({ ...step, unit })}
+                  help="Mis. PMD-1. Kosongkan untuk menyembunyikannya."
+                />
               </div>
               <TextArea
-                label="Isi"
+                label="Ringkasan di kartu"
                 value={step.body}
                 onChange={(body) => update({ ...step, body })}
               />
+              <ImageInput
+                label="Foto — muncul di balik kartu dan di panel rincian"
+                value={step.image}
+                onChange={(image) => update({ ...step, image })}
+                options={options}
+              />
+              <div className="admin-nested">
+                <p className="help mb-2">Rincian yang terbuka saat kartu diklik.</p>
+                <StringList
+                  label="Paragraf"
+                  value={step.detail.body}
+                  onChange={(body) => update({ ...step, detail: { ...step.detail, body } })}
+                />
+                <StringList
+                  label="Poin"
+                  value={step.detail.points ?? []}
+                  onChange={(points) => update({ ...step, detail: { ...step.detail, points } })}
+                  help="Mis. apa yang dicatat pada tahap ini, apa keluarannya."
+                />
+              </div>
             </>
           )}
         />

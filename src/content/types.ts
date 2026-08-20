@@ -111,17 +111,41 @@ export interface CardsSection {
   readonly items: readonly CardItem[];
 }
 
-/** Satu tahap pada pita alur produksi. */
+/**
+ * Satu tahap pada rel alur produksi.
+ *
+ * `image` muncul saat kartu dibalik (hover atau fokus keyboard); `detail` muncul di panel
+ * bawah rel ketika tahapnya dibuka.
+ */
 export interface ProcessStep {
   readonly step: string;
   readonly title: string;
   readonly body: string;
+  /** Penanda unit, mis. "PMD-1". */
+  readonly unit?: string;
+  readonly image: ImageAsset;
+  readonly detail: {
+    readonly body: readonly string[];
+    /** Poin ringkas: apa yang dicatat, apa keluarannya. */
+    readonly points?: readonly string[];
+  };
+}
+
+/** Ujung rel: bahan yang masuk dan produk yang keluar. */
+export interface ProcessEndpoint {
+  readonly label: string;
+  readonly image: ImageAsset;
 }
 
 /** Satu-satunya pita gelap di beranda: alur PMD-1 → PMD-2. */
 export interface ProcessSection {
   readonly title: string;
   readonly note?: string;
+  readonly from?: ProcessEndpoint;
+  readonly to?: ProcessEndpoint;
+  /** Teks tautan pada kartu: saat tertutup dan saat terbuka. */
+  readonly moreLabel: string;
+  readonly closeLabel: string;
   readonly steps: readonly ProcessStep[];
 }
 

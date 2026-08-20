@@ -106,12 +106,98 @@ export const en: LocaleContent = {
 
     process: {
       title: "How it runs",
-      note: "PMD-1 → PMD-2",
+      note: "Hover a stage; click to open its detail.",
+      from: {
+        label: "Paddy",
+        image: { src: "/images/gallery-3.jpg", alt: "Paddy grain before milling", width: 1000, height: 700 },
+      },
+      moreLabel: "Detail",
+      closeLabel: "Close",
+      to: {
+        label: "Packed rice",
+        image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 1000 },
+      },
       steps: [
-        { step: "01", title: "Paddy intake", body: "Weighed, moisture tested, batch numbered." },
-        { step: "02", title: "Drying", body: "Down to a safe storage moisture level." },
-        { step: "03", title: "Milling", body: "Husked, then polished and graded." },
-        { step: "04", title: "Packing", body: "Packed per brand, ready to ship." },
+        {
+          step: "01",
+          title: "Paddy intake",
+          body: "Weighed, moisture tested, batch numbered.",
+          unit: "PMD-1",
+          image: { src: "/images/about-mission-1.jpg", alt: "Paddy being unloaded at intake", width: 1000, height: 800 },
+          detail: {
+            body: [
+              "Freshly harvested and pre-dried paddy alike is weighed in front of whoever delivered it, then sampled for moisture and cleanliness. That test sets the price and the handling that follows — not an estimate made in the yard.",
+            ],
+            points: [
+              "Recorded: weight, moisture, variety, origin and batch number",
+              "In: paddy from farmers and farmer groups",
+            ],
+          },
+        },
+        {
+          step: "02",
+          title: "Drying",
+          body: "Down to a safe storage moisture level.",
+          unit: "PMD-1",
+          image: { src: "/images/intro-1.jpg", alt: "Paddy drying on the drying floor", width: 1200, height: 900 },
+          detail: {
+            body: [
+              "Moisture is brought down in stages to a level safe for storage. Drying too fast cracks the grain and raises breakage during milling, so the rate is held steady rather than rushed.",
+            ],
+            points: [
+              "Recorded: moisture in and out, drying time",
+              "Aim: the highest possible share of whole grain downstream",
+            ],
+          },
+        },
+        {
+          step: "03",
+          title: "Husking",
+          body: "The husk comes off; brown rice comes out.",
+          unit: "PMD-1",
+          image: { src: "/images/feature-milling.jpg", alt: "Paddy and machinery at PMD-1", width: 1400, height: 900 },
+          detail: {
+            body: [
+              "The husk is removed, leaving brown rice. What comes off is not waste: husk enters stock as a product in its own right, like every other by-product.",
+            ],
+            points: [
+              "Out: brown rice — the feedstock for PMD-2",
+              "By-product: husk, batch numbered",
+            ],
+          },
+        },
+        {
+          step: "04",
+          title: "Polishing & grading",
+          body: "Degree of milling set, grain sorted by quality.",
+          unit: "PMD-2",
+          image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
+          detail: {
+            body: [
+              "The outer layer is polished to the intended degree, then the grain is separated by how much of it is whole. The quality tier — Medium through Premium Super — is assigned after grading, so what the pack says is what was actually measured.",
+            ],
+            points: [
+              "Recorded: degree of milling, whole-grain share, milling yield",
+              "By-products: bran, broken rice, fine grain and rejects",
+            ],
+          },
+        },
+        {
+          step: "05",
+          title: "Packing",
+          body: "Packed per brand, ready to ship.",
+          unit: "PMD-2",
+          image: { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck", width: 1000, height: 700 },
+          detail: {
+            body: [
+              "Rice is packed by tier, varietal classification and brand — a customer's own brand included. The batch number travels with the sack, so a pack can always be traced back to the paddy it came from.",
+            ],
+            points: [
+              "Out: packed rice per brand and size",
+              "Traceable: batch number from intake to delivery",
+            ],
+          },
+        },
       ],
     },
 

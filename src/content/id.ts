@@ -106,12 +106,98 @@ export const id: LocaleContent = {
 
     process: {
       title: "Alur produksi",
-      note: "PMD-1 → PMD-2",
+      note: "Arahkan kursor ke sebuah tahap, klik untuk membuka rinciannya.",
+      from: {
+        label: "Gabah",
+        image: { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling", width: 1000, height: 700 },
+      },
+      moreLabel: "Rincian",
+      closeLabel: "Tutup",
+      to: {
+        label: "Beras kemasan",
+        image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 1000 },
+      },
       steps: [
-        { step: "01", title: "Penerimaan gabah", body: "Timbang, uji kadar air, catat nomor batch." },
-        { step: "02", title: "Pengeringan", body: "Turun sampai kadar air aman simpan." },
-        { step: "03", title: "Penggilingan", body: "Pecah kulit, lalu sosoh dan grading." },
-        { step: "04", title: "Pengemasan", body: "Kemas per merk, siap distribusi." },
+        {
+          step: "01",
+          title: "Penerimaan gabah",
+          body: "Timbang, uji kadar air, catat nomor batch.",
+          unit: "PMD-1",
+          image: { src: "/images/about-mission-1.jpg", alt: "Gabah dibongkar di unit penerimaan", width: 1000, height: 800 },
+          detail: {
+            body: [
+              "Gabah kering panen maupun gabah kering giling ditimbang di hadapan pengirimnya, lalu diambil sampelnya untuk diuji kadar air dan kebersihannya. Hasil uji itu yang menentukan harga dan perlakuan berikutnya — bukan taksiran di lapangan.",
+            ],
+            points: [
+              "Dicatat: berat, kadar air, varietas, asal, dan nomor batch",
+              "Masuk: GKP atau GKG dari petani dan kelompok tani",
+            ],
+          },
+        },
+        {
+          step: "02",
+          title: "Pengeringan",
+          body: "Turun sampai kadar air aman simpan.",
+          unit: "PMD-1",
+          image: { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
+          detail: {
+            body: [
+              "Gabah diturunkan kadar airnya secara bertahap sampai batas aman simpan. Pengeringan yang terlalu cepat membuat butir retak dan meningkatkan beras patah saat digiling, jadi lajunya dijaga, bukan dikejar.",
+            ],
+            points: [
+              "Dicatat: kadar air awal dan akhir, lama pengeringan",
+              "Tujuan: butir utuh maksimal pada tahap berikutnya",
+            ],
+          },
+        },
+        {
+          step: "03",
+          title: "Pemecah kulit",
+          body: "Sekam dilepas, keluar beras pecah kulit.",
+          unit: "PMD-1",
+          image: { src: "/images/feature-milling.jpg", alt: "Gabah dan mesin di unit PMD-1", width: 1400, height: 900 },
+          detail: {
+            body: [
+              "Kulit gabah dilepas sehingga tersisa beras pecah kulit. Sekam yang terpisah tidak dibuang: ia masuk stok sebagai produk tersendiri, sama seperti hasil samping lainnya.",
+            ],
+            points: [
+              "Keluar: beras pecah kulit — bahan baku unit PMD-2",
+              "Hasil samping: sekam, bernomor batch",
+            ],
+          },
+        },
+        {
+          step: "04",
+          title: "Penyosohan & grading",
+          body: "Derajat sosoh diatur, butir dipisah menurut mutu.",
+          unit: "PMD-2",
+          image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
+          detail: {
+            body: [
+              "Lapisan luar beras disosoh sampai derajat yang dituju, lalu butirnya dipisahkan menurut keutuhan. Tingkat mutu — Medium sampai Premium Super — ditetapkan setelah grading, jadi yang tertulis pada kemasan adalah hasil yang benar-benar terukur.",
+            ],
+            points: [
+              "Dicatat: derajat sosoh, proporsi butir utuh, rendemen",
+              "Hasil samping: bekatul, broken, menir, dan reject",
+            ],
+          },
+        },
+        {
+          step: "05",
+          title: "Pengemasan",
+          body: "Dikemas per merk, siap distribusi.",
+          unit: "PMD-2",
+          image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk", width: 1000, height: 700 },
+          detail: {
+            body: [
+              "Beras dikemas menurut kombinasi tingkat mutu, klasifikasi varietas, dan merk — termasuk merk milik pelanggan. Nomor batch ikut sampai ke karung, sehingga satu kemasan selalu bisa ditelusuri kembali ke gabah asalnya.",
+            ],
+            points: [
+              "Keluar: beras kemasan per merk dan ukuran",
+              "Ditelusuri: nomor batch dari penerimaan sampai pengiriman",
+            ],
+          },
+        },
       ],
     },
 
