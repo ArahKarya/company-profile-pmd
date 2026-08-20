@@ -60,7 +60,7 @@ export function Navbar({
           </Link>
 
           <button
-            className="navbar-toggler d-lg-none ms-auto"
+            className={`navbar-toggler d-lg-none ms-auto${menuOpen ? " open" : ""}`}
             type="button"
             aria-expanded={menuOpen}
             aria-controls="site-menu"
