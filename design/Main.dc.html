@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: "Plus Jakarta Sans", system-ui, sans-serif; }
+    a { color: #8C7200; text-decoration: none; }
+    a:hover { color: #6B5700; }
+    p { margin: 0; }
+    h1, h2, h3, h4 { margin: 0; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; background: #FFFFFF; color: #1F1D19;">
+
+  <!-- Nav: terang, logo warna, satu tombol emas -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 20px 56px; border-bottom: 1px solid #E6E3DC; background: #FFFFFF;">
+    <img src="logo-warna.png" alt="PT Pangan Masa Depan" style="height: 38px; width: auto;">
+    <div style="display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 600; color: #1F1D19;">
+      <span style="border-bottom: 2px solid #E9BD0C; padding-bottom: 3px;">Beranda</span>
+      <span style="color: #5C574E;">Tentang Kami</span>
+      <span style="color: #5C574E;">Produk</span>
+      <span style="color: #5C574E;">Fasilitas</span>
+      <span style="color: #5C574E;">Karier</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #7A7468;">ID / EN</span>
+      <span style="display: inline-block; background: #E9BD0C; color: #1E1A10; font-size: 14px; font-weight: 700; padding: 11px 22px;">Hubungi Kami</span>
+    </div>
+  </div>
+
+  <!-- Hero: teks di kiri atas kanvas terang, foto sebagai blok di kanan -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: center; padding: 72px 56px 64px; background: #FAF9F6;">
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C7200;">PT PANGAN MASA DEPAN</span>
+      <h1 style="font-size: 58px; font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; color: #1E1A10;">Penggilingan beras modern, terintegrasi dari gabah sampai kemasan.</h1>
+      <p style="font-size: 17px; line-height: 1.65; color: #5C574E; max-width: 46ch;">Dua unit produksi yang saling terhubung: pengeringan dan penggilingan di PMD-1, penyosohan dan pengemasan di PMD-2. Setiap batch tercatat, dari gabah petani sampai karung siap kirim.</p>
+      <div style="display: flex; align-items: center; gap: 14px; padding-top: 8px;">
+        <span style="display: inline-block; background: #1E1A10; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 15px 28px;">Lihat Produk</span>
+        <span style="display: inline-block; border: 1px solid #1E1A10; color: #1E1A10; font-size: 15px; font-weight: 700; padding: 14px 28px;">Kemitraan Petani</span>
+      </div>
+    </div>
+    <div style="position: relative; padding: 0 0 22px 22px;">
+      <div style="position: absolute; left: 0; bottom: 0; width: 260px; height: 200px; background: #E9BD0C;"></div>
+      <img src="foto-sawah.jpg" alt="Sawah menjelang panen" style="position: relative; display: block; width: 100%; height: 420px; object-fit: cover;">
+    </div>
+  </div>
+
+  <!-- Angka: kartu bergaris, bukan sekadar deret teks -->
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid #E6E3DC; border-bottom: 1px solid #E6E3DC;">
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 30px 32px; border-right: 1px solid #E6E3DC;">
+      <span style="font-size: 34px; font-weight: 800; color: #1E1A10; letter-spacing: -0.02em;">[ANGKA]<span style="font-size: 16px; font-weight: 700; color: #8C7200;"> ton/hari</span></span>
+      <span style="font-size: 13px; color: #7A7468;">Kapasitas giling</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 30px 32px; border-right: 1px solid #E6E3DC;">
+      <span style="font-size: 34px; font-weight: 800; color: #1E1A10; letter-spacing: -0.02em;">[ANGKA]<span style="font-size: 16px; font-weight: 700; color: #8C7200;"> petani</span></span>
+      <span style="font-size: 13px; color: #7A7468;">Mitra pemasok gabah</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 30px 32px; border-right: 1px solid #E6E3DC;">
+      <span style="font-size: 34px; font-weight: 800; color: #1E1A10; letter-spacing: -0.02em;">4<span style="font-size: 16px; font-weight: 700; color: #8C7200;"> tingkat</span></span>
+      <span style="font-size: 13px; color: #7A7468;">Medium sampai Premium Super</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 30px 32px;">
+      <span style="font-size: 34px; font-weight: 800; color: #1E1A10; letter-spacing: -0.02em;">5<span style="font-size: 16px; font-weight: 700; color: #8C7200;"> produk samping</span></span>
+      <span style="font-size: 13px; color: #7A7468;">Semua bernomor batch</span>
+    </div>
+  </div>
+
+  <!-- Produk: kartu, bukan penelusur dua tingkat -->
+  <div style="display: flex; flex-direction: column; gap: 28px; padding: 72px 56px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8C7200;">PRODUK</span>
+        <h2 style="font-size: 36px; font-weight: 800; letter-spacing: -0.02em; color: #1E1A10;">Tiga lini yang keluar dari satu rantai</h2>
+      </div>
+      <span style="font-size: 14px; font-weight: 700; color: #8C7200; white-space: nowrap;">Semua produk →</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <div style="display: flex; flex-direction: column; border: 1px solid #E6E3DC; background: #FFFFFF;">
+        <img src="foto-beras.jpg" alt="Butir beras hasil sosoh" style="display: block; width: 100%; height: 180px; object-fit: cover;">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px;">
+          <h3 style="font-size: 20px; font-weight: 700; color: #1E1A10;">Beras kemasan</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #5C574E;">Empat tingkat mutu, dikemas menurut klasifikasi varietas dan merk — termasuk merk milik pelanggan.</p>
+          <span style="font-size: 14px; font-weight: 700; color: #8C7200; padding-top: 4px;">Selengkapnya →</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; border: 1px solid #E6E3DC; background: #FFFFFF;">
+        <img src="foto-jemur.jpg" alt="Gabah di lantai jemur" style="display: block; width: 100%; height: 180px; object-fit: cover;">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px;">
+          <h3 style="font-size: 20px; font-weight: 700; color: #1E1A10;">Produk samping</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #5C574E;">Bekatul, broken, menir, sekam, dan reject — bernomor batch, masuk stok, dan siap dibeli.</p>
+          <span style="font-size: 14px; font-weight: 700; color: #8C7200; padding-top: 4px;">Selengkapnya →</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; border: 1px solid #E6E3DC; background: #FFFFFF;">
+        <img src="foto-giling.jpg" alt="Mesin penggilingan" style="display: block; width: 100%; height: 180px; object-fit: cover;">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px;">
+          <h3 style="font-size: 20px; font-weight: 700; color: #1E1A10;">Jasa penggilingan</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #5C574E;">Pengeringan, penggilingan, sampai pengemasan bermerk sendiri — dilaporkan lengkap dengan rendemen.</p>
+          <span style="font-size: 14px; font-weight: 700; color: #8C7200; padding-top: 4px;">Selengkapnya →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Satu pita gelap saja, untuk alur produksi -->
+  <div style="display: flex; flex-direction: column; gap: 28px; padding: 56px; background: #1E1A10; color: #FFFFFF;">
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em;">Alur produksi</h2>
+      <span style="font-size: 14px; color: #A8A296;">PMD-1 → PMD-2</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px; background: #2E2818;">
+        <span style="font-size: 13px; font-weight: 800; color: #E9BD0C;">01</span>
+        <span style="font-size: 17px; font-weight: 700;">Penerimaan gabah</span>
+        <span style="font-size: 14px; line-height: 1.55; color: #C9C4B8;">Timbang, uji kadar air, catat batch.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px; background: #2E2818;">
+        <span style="font-size: 13px; font-weight: 800; color: #E9BD0C;">02</span>
+        <span style="font-size: 17px; font-weight: 700;">Pengeringan</span>
+        <span style="font-size: 14px; line-height: 1.55; color: #C9C4B8;">Turun ke kadar air aman simpan.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px; background: #2E2818;">
+        <span style="font-size: 13px; font-weight: 800; color: #E9BD0C;">03</span>
+        <span style="font-size: 17px; font-weight: 700;">Penggilingan</span>
+        <span style="font-size: 14px; line-height: 1.55; color: #C9C4B8;">Pecah kulit lalu sosoh dan grading.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px; background: #2E2818;">
+        <span style="font-size: 13px; font-weight: 800; color: #E9BD0C;">04</span>
+        <span style="font-size: 17px; font-weight: 700;">Pengemasan</span>
+        <span style="font-size: 14px; line-height: 1.55; color: #C9C4B8;">Kemas per merk, siap distribusi.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ajakan + footer -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 48px 56px; background: #FBF4DF;">
+    <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: #1E1A10; max-width: 24ch;">Menjual gabah, atau mencari pemasok beras?</h2>
+    <span style="display: inline-block; background: #1E1A10; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 15px 28px; white-space: nowrap;">Hubungi tim kami</span>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 32px 56px; background: #100E08;">
+    <img src="logo-putih.png" alt="PT Pangan Masa Depan" style="height: 30px; width: auto;">
+    <span style="font-size: 13px; color: #A8A296;">©2026 PT Pangan Masa Depan</span>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1200,"height":1720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

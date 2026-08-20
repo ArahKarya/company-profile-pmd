@@ -1,0 +1,61 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "A — Kartu Komoditas",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 2120
+    },
+    {
+      "file": "OptionB.dc.html",
+      "title": "B — Papan Gabah",
+      "x": 1360,
+      "y": 0,
+      "w": 1200,
+      "h": 1780
+    },
+    {
+      "file": "OptionC.dc.html",
+      "title": "C — Lembar Spesifikasi",
+      "x": 2720,
+      "y": 0,
+      "w": 1200,
+      "h": 1620
+    }
+  ],
+  "annotations": [
+    {
+      "id": "catatan-a",
+      "x": 0,
+      "y": -230,
+      "w": 460,
+      "text": "A — KARTU KOMODITAS\n\nNavigasi terang dengan logo warna, hero terbelah (teks kiri, foto sebagai blok kanan), angka dalam kartu bergaris, produk sebagai tiga kartu. Emas dipakai tegas: tombol, blok di belakang foto, pita ajakan.\n\nKenapa: paling mudah dipahami calon pembeli dan paling gampang ditambah halaman baru.\nRisikonya: paling aman, paling mirip company profile kebanyakan."
+    },
+    {
+      "id": "catatan-b",
+      "x": 1360,
+      "y": -230,
+      "w": 460,
+      "text": "B — PAPAN GABAH\n\nPita emas jadi navigasi, judul Archivo 86px huruf besar dengan satu kata di atas slab emas, foto memotong kolom, blok sekam berisi angka raksasa, produk sebagai indeks bergaris.\n\nKenapa: paling berkarakter dan paling sulit ditiru; emas terasa seperti warna perusahaan, bukan hiasan.\nRisikonya: paling berani — perlu foto yang kuat dan copy yang pendek."
+    },
+    {
+      "id": "catatan-c",
+      "x": 2720,
+      "y": -230,
+      "w": 460,
+      "text": "C — LEMBAR SPESIFIKASI\n\nIBM Plex Sans + Mono. Tanpa hero foto besar: alur produksi dan tabel tingkat mutu langsung di layar pertama, produk samping sebagai kode (BKT, BRK, MNR, SKM, RJT), foto kecil sebagai bukti.\n\nKenapa: bicara ke pembeli industri dan mitra — jujur, teknis, mudah dibandingkan.\nRisikonya: terasa dingin untuk pembeli ritel, dan tabelnya menuntut data asli."
+    },
+    {
+      "id": "catatan-umum",
+      "x": 0,
+      "y": -400,
+      "w": 900,
+      "text": "Tiga arah beranda PMD. Semua memakai logo resmi dan palet sekam + emas, tapi meninggalkan formula lama: tidak ada lagi hero foto satu layar penuh dengan judul tipis di atasnya, navigasi gelap selebar layar, dan emas yang hanya muncul sebagai segitiga kecil.\n\nAngka dalam kurung siku ([ANGKA], [%], [kg]) adalah tempat kosong — menunggu data asli PMD."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

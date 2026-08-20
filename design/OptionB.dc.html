@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: "Plus Jakarta Sans", system-ui, sans-serif; }
+    a { color: #8C7200; text-decoration: none; }
+    a:hover { color: #6B5700; }
+    p { margin: 0; }
+    h1, h2, h3, h4 { margin: 0; font-family: "Archivo", "Arial Narrow", system-ui, sans-serif; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; background: #FFFFFF; color: #1F1D19;">
+
+  <!-- Pita emas sebagai navigasi — kebalikan dari nav gelap -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 16px 48px; background: #E9BD0C; color: #1E1A10;">
+    <span style="font-family: 'Archivo', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 0.14em;">PANGAN MASA DEPAN</span>
+    <div style="display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em;">
+      <span>BERANDA</span>
+      <span>TENTANG</span>
+      <span>PRODUK</span>
+      <span>FASILITAS</span>
+      <span>KONTAK</span>
+      <span style="padding-left: 10px; border-left: 1px solid rgba(30,26,16,0.35);">ID / EN</span>
+    </div>
+  </div>
+
+  <!-- Hero: tipografi berat, slab emas, foto memotong tepi kanan -->
+  <div style="display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 0; padding: 0; background: #FAF9F6;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 56px 0; border-right: 1px solid #E6E3DC;">
+      <img src="logo-warna.png" alt="PT Pangan Masa Depan" style="width: 54px; height: auto;">
+      <span style="font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.18em; color: #7A7468; writing-mode: vertical-rl;">EST. [TAHUN]</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 34px; padding: 56px 0 0 48px;">
+      <h1 style="font-size: 86px; font-weight: 800; line-height: 0.94; letter-spacing: -0.035em; color: #1E1A10; text-transform: uppercase; max-width: 15ch;">Beras yang bisa <span style="background: #E9BD0C; padding: 0 10px;">ditelusuri</span> sampai sawahnya</h1>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 40px; align-items: end;">
+        <div style="display: flex; flex-direction: column; gap: 20px; padding-bottom: 30px;">
+          <p style="font-size: 17px; line-height: 1.62; color: #5C574E; max-width: 42ch;">Gabah petani masuk lewat PMD-1, keluar sebagai beras kemasan di PMD-2. Satu nomor batch mengikat seluruh perjalanannya.</p>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="display: inline-block; background: #1E1A10; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; padding: 15px 26px;">LIHAT PRODUK</span>
+            <span style="font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #8C7200;">JUAL GABAH ANDA →</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <img src="foto-jemur.jpg" alt="Lantai jemur gabah" style="display: block; width: 100%; height: 300px; object-fit: cover;">
+          <span style="font-size: 11px; letter-spacing: 0.1em; color: #7A7468;">LANTAI JEMUR — UNIT PMD-1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blok sekam pekat dengan angka raksasa -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #2E2818; border-top: 8px solid #E9BD0C;">
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 40px 36px; background: #1E1A10;">
+      <span style="font-family: 'Archivo', sans-serif; font-size: 52px; font-weight: 800; line-height: 1; color: #E9BD0C;">[ANGKA]</span>
+      <span style="font-size: 13px; letter-spacing: 0.1em; color: #C9C4B8;">TON GABAH / HARI</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 40px 36px; background: #1E1A10;">
+      <span style="font-family: 'Archivo', sans-serif; font-size: 52px; font-weight: 800; line-height: 1; color: #E9BD0C;">[ANGKA]</span>
+      <span style="font-size: 13px; letter-spacing: 0.1em; color: #C9C4B8;">PETANI MITRA</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 40px 36px; background: #1E1A10;">
+      <span style="font-family: 'Archivo', sans-serif; font-size: 52px; font-weight: 800; line-height: 1; color: #E9BD0C;">02</span>
+      <span style="font-size: 13px; letter-spacing: 0.1em; color: #C9C4B8;">UNIT PRODUKSI TERPADU</span>
+    </div>
+  </div>
+
+  <!-- Produk sebagai indeks, bukan kartu -->
+  <div style="display: flex; flex-direction: column; gap: 4px; padding: 72px 48px 64px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 22px;">
+      <h2 style="font-size: 44px; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; color: #1E1A10;">Indeks produk</h2>
+      <span style="font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #7A7468;">03 LINI</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 28px; padding: 22px 0; border-top: 2px solid #1E1A10;">
+      <span style="font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 800; color: #8C7200; width: 36px;">01</span>
+      <img src="foto-beras.jpg" alt="Butir beras" style="width: 96px; height: 64px; object-fit: cover;">
+      <h3 style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: #1E1A10; flex-grow: 1;">Beras kemasan</h3>
+      <span style="font-size: 14px; color: #5C574E; width: 320px;">Medium · Medium Super · Premium · Premium Super</span>
+      <span style="font-size: 20px; color: #E9BD0C;">→</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 28px; padding: 22px 0; border-top: 1px solid #E6E3DC;">
+      <span style="font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 800; color: #8C7200; width: 36px;">02</span>
+      <img src="foto-jemur.jpg" alt="Gabah kering" style="width: 96px; height: 64px; object-fit: cover;">
+      <h3 style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: #1E1A10; flex-grow: 1;">Produk samping</h3>
+      <span style="font-size: 14px; color: #5C574E; width: 320px;">Bekatul · Broken · Menir · Sekam · Reject</span>
+      <span style="font-size: 20px; color: #E9BD0C;">→</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 28px; padding: 22px 0; border-top: 1px solid #E6E3DC; border-bottom: 1px solid #E6E3DC;">
+      <span style="font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 800; color: #8C7200; width: 36px;">03</span>
+      <img src="foto-giling.jpg" alt="Mesin penggilingan" style="width: 96px; height: 64px; object-fit: cover;">
+      <h3 style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: #1E1A10; flex-grow: 1;">Jasa penggilingan</h3>
+      <span style="font-size: 14px; color: #5C574E; width: 320px;">Maklon · Kemitraan petani · Pengemasan merk sendiri</span>
+      <span style="font-size: 20px; color: #E9BD0C;">→</span>
+    </div>
+  </div>
+
+  <!-- Pita emas kedua sebagai ajakan -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 44px 48px; background: #E9BD0C;">
+    <h2 style="font-size: 38px; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; color: #1E1A10; max-width: 20ch;">Bawa gabah Anda ke PMD</h2>
+    <span style="display: inline-block; background: #1E1A10; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; padding: 16px 30px; white-space: nowrap;">HUBUNGI PEMBELIAN GABAH</span>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 34px 48px; background: #100E08;">
+    <img src="logo-putih.png" alt="PT Pangan Masa Depan" style="height: 30px; width: auto;">
+    <span style="font-size: 12px; letter-spacing: 0.08em; color: #A8A296;">©2026 PT PANGAN MASA DEPAN</span>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1200,"height":1620}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
