@@ -45,10 +45,14 @@ export const en: LocaleContent = {
 
   home: {
     hero: {
-      headline: ["Modern, Integrated Rice Milling", "for Indonesia's", "Food Security."],
-      body: "PT Pangan Masa Depan turns farmers' paddy into quality rice across two connected production units: drying and husking at PMD-1, polishing and packing at PMD-2.",
-      scrollCue: "Scroll to Explore",
-      background: { desktop: "/images/hero-home-desktop.jpg", mobile: "/images/hero-home-mobile.jpg" },
+      eyebrow: "PT PANGAN MASA DEPAN",
+      headline: ["Modern, integrated rice milling —", "from paddy to packed rice."],
+      body: "Two connected production units: drying and husking at PMD-1, polishing and packing at PMD-2. Every batch is recorded, from the farmer's paddy to the sack that leaves the gate.",
+      image: { src: "/images/hero-home-desktop.jpg", alt: "Paddy fields close to harvest", width: 2000, height: 1200 },
+      actions: [
+        { label: "See our products", href: site.routes.en.services, variant: "solid" },
+        { label: "Farmer partnership", href: site.routes.en.contact, variant: "outline" },
+      ],
     },
 
     intro: {
@@ -62,35 +66,52 @@ export const en: LocaleContent = {
       ],
     },
 
-    features: {
+    stats: {
+      items: [
+        { value: "[FIGURE]", unit: "tonnes/day", label: "Milling capacity" },
+        { value: "[FIGURE]", unit: "farmers", label: "Paddy supply partners" },
+        { value: "4", unit: "tiers", label: "Medium through Premium Super" },
+        { value: "5", unit: "by-products", label: "All batch numbered" },
+      ],
+    },
+
+    products: {
+      eyebrow: "PRODUCTS",
+      headline: ["Three lines out of one chain"],
+      link: { href: site.routes.en.services, label: "All products" },
       items: [
         {
-          id: "milling",
-          label: "Milling",
-          eyebrow: "Production Line",
-          headline: ["Paddy is dried", "and husked into", "brown rice"],
-          body: "At PMD-1, both freshly harvested and pre-dried paddy is received, tested for moisture, dried down to a safe storage level, then husked into brown rice.",
-          image: { src: "/images/feature-milling.jpg", alt: "Paddy and machinery at PMD-1", width: 1400, height: 900 },
-          link: { href: site.routes.en.services, label: "Learn more", shortLabel: "Explore" },
-        },
-        {
-          id: "polishing",
-          label: "Polishing",
-          eyebrow: "Production Line",
-          headline: ["Polishing and", "grading with quality", "control on every batch"],
-          body: "At PMD-2, brown rice is polished, sorted by degree of milling and grain integrity, then packed according to the quality tier and brand it is destined for.",
-          image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
-          link: { href: site.routes.en.services, label: "Learn more", shortLabel: "Explore" },
+          id: "rice",
+          title: "Packed rice",
+          body: "Four quality tiers, packed by varietal classification and brand — including a customer's own brand.",
+          image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 1000 },
+          link: { href: site.routes.en.services, label: "Learn more" },
         },
         {
           id: "by-products",
-          label: "By-products",
-          eyebrow: "Production Line",
-          headline: ["No part of the", "paddy is", "wasted"],
-          body: "Rice bran, broken rice, fine broken grain, husk and rejected rice all carry batch numbers and enter stock like any main product — each has its own buyers and its own value.",
-          image: { src: "/images/feature-byproducts.jpg", alt: "By-product sacks in the warehouse", width: 1400, height: 900 },
-          link: { href: site.routes.en.services, label: "Learn more", shortLabel: "Explore" },
+          title: "By-products",
+          body: "Bran, broken rice, fine grain, husk and rejects — batch numbered, carried in stock, available to buy.",
+          image: { src: "/images/gallery-4.jpg", alt: "Workers spreading paddy on the drying floor", width: 1000, height: 700 },
+          link: { href: site.routes.en.services, label: "Learn more" },
         },
+        {
+          id: "services",
+          title: "Contract milling",
+          body: "Drying, husking and packing under your own brand — reported with the milling yield in full.",
+          image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
+          link: { href: site.routes.en.services, label: "Learn more" },
+        },
+      ],
+    },
+
+    process: {
+      title: "How it runs",
+      note: "PMD-1 → PMD-2",
+      steps: [
+        { step: "01", title: "Paddy intake", body: "Weighed, moisture tested, batch numbered." },
+        { step: "02", title: "Drying", body: "Down to a safe storage moisture level." },
+        { step: "03", title: "Milling", body: "Husked, then polished and graded." },
+        { step: "04", title: "Packing", body: "Packed per brand, ready to ship." },
       ],
     },
 
@@ -107,9 +128,9 @@ export const en: LocaleContent = {
       ],
     },
 
-    closing: {
-      headline: ["Let us build a food chain", "that can be **traced**."],
-      art: "/brand/closing-art.svg",
+    cta: {
+      headline: ["Selling paddy, or looking for", "a rice supplier?"],
+      button: { href: site.routes.en.contact, label: "Talk to our team" },
     },
   },
 

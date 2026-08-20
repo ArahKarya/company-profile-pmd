@@ -45,10 +45,14 @@ export const id: LocaleContent = {
 
   home: {
     hero: {
-      headline: ["Penggilingan Beras Modern Terintegrasi", "untuk Ketahanan Pangan", "Indonesia."],
-      body: "PT Pangan Masa Depan mengolah gabah petani menjadi beras bermutu melalui dua unit produksi yang saling terhubung: pengeringan dan penggilingan di PMD-1, penyosohan dan pengemasan di PMD-2.",
-      scrollCue: "Gulir untuk Jelajahi",
-      background: { desktop: "/images/hero-home-desktop.jpg", mobile: "/images/hero-home-mobile.jpg" },
+      eyebrow: "PT PANGAN MASA DEPAN",
+      headline: ["Penggilingan beras modern, terintegrasi", "dari gabah sampai kemasan."],
+      body: "Dua unit produksi yang saling terhubung: pengeringan dan penggilingan di PMD-1, penyosohan dan pengemasan di PMD-2. Setiap batch tercatat, dari gabah petani sampai karung siap kirim.",
+      image: { src: "/images/hero-home-desktop.jpg", alt: "Hamparan sawah menjelang panen", width: 2000, height: 1200 },
+      actions: [
+        { label: "Lihat Produk", href: site.routes.id.services, variant: "solid" },
+        { label: "Kemitraan Petani", href: site.routes.id.contact, variant: "outline" },
+      ],
     },
 
     intro: {
@@ -58,39 +62,56 @@ export const id: LocaleContent = {
       ],
       media: [
         { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
-        { src: "/images/intro-2.jpg", alt: "Operator memeriksa mesin penggilingan", width: 1200, height: 900 },
+        { src: "/images/intro-2.jpg", alt: "Operator mengoperasikan mesin penggilingan", width: 1200, height: 900 },
       ],
     },
 
-    features: {
+    stats: {
+      items: [
+        { value: "[ANGKA]", unit: "ton/hari", label: "Kapasitas giling" },
+        { value: "[ANGKA]", unit: "petani", label: "Mitra pemasok gabah" },
+        { value: "4", unit: "tingkat", label: "Medium sampai Premium Super" },
+        { value: "5", unit: "produk samping", label: "Semua bernomor batch" },
+      ],
+    },
+
+    products: {
+      eyebrow: "PRODUK",
+      headline: ["Tiga lini yang keluar dari satu rantai"],
+      link: { href: site.routes.id.services, label: "Semua produk" },
       items: [
         {
-          id: "penggilingan",
-          label: "Penggilingan",
-          eyebrow: "Lini Produksi",
-          headline: ["Gabah dikeringkan", "dan digiling menjadi", "beras pecah kulit"],
-          body: "Di unit PMD-1, gabah kering panen maupun gabah kering giling diterima, diperiksa kadar airnya, dikeringkan sampai batas aman simpan, lalu dipecah kulitnya menjadi beras pecah kulit.",
-          image: { src: "/images/feature-milling.jpg", alt: "Gabah dan mesin di unit PMD-1", width: 1400, height: 900 },
-          link: { href: site.routes.id.services, label: "Pelajari lebih lanjut", shortLabel: "Telusuri" },
+          id: "beras",
+          title: "Beras kemasan",
+          body: "Empat tingkat mutu, dikemas menurut klasifikasi varietas dan merk — termasuk merk milik pelanggan.",
+          image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 1000 },
+          link: { href: site.routes.id.services, label: "Selengkapnya" },
         },
         {
-          id: "penyosohan",
-          label: "Penyosohan",
-          eyebrow: "Lini Produksi",
-          headline: ["Penyosohan dan", "grading dengan", "kendali mutu tiap batch"],
-          body: "Di unit PMD-2, beras pecah kulit disosoh, dipisahkan menurut derajat sosoh dan keutuhan butir, lalu dikemas sesuai tingkat mutu dan merk yang dituju.",
+          id: "samping",
+          title: "Produk samping",
+          body: "Bekatul, broken, menir, sekam, dan reject — bernomor batch, masuk stok, dan siap dibeli.",
+          image: { src: "/images/gallery-4.jpg", alt: "Pekerja menghamparkan gabah di lantai jemur", width: 1000, height: 700 },
+          link: { href: site.routes.id.services, label: "Selengkapnya" },
+        },
+        {
+          id: "jasa",
+          title: "Jasa penggilingan",
+          body: "Pengeringan, penggilingan, sampai pengemasan bermerk sendiri — dilaporkan lengkap dengan rendemen.",
           image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
-          link: { href: site.routes.id.services, label: "Pelajari lebih lanjut", shortLabel: "Telusuri" },
+          link: { href: site.routes.id.services, label: "Selengkapnya" },
         },
-        {
-          id: "produk-samping",
-          label: "Produk Samping",
-          eyebrow: "Lini Produksi",
-          headline: ["Tidak ada bagian", "gabah yang", "terbuang percuma"],
-          body: "Bekatul, broken, menir, sekam, dan beras reject dicatat dengan nomor batch dan masuk stok seperti produk utama — masing-masing punya pembeli dan nilai jualnya sendiri.",
-          image: { src: "/images/feature-byproducts.jpg", alt: "Karung produk samping di gudang", width: 1400, height: 900 },
-          link: { href: site.routes.id.services, label: "Pelajari lebih lanjut", shortLabel: "Telusuri" },
-        },
+      ],
+    },
+
+    process: {
+      title: "Alur produksi",
+      note: "PMD-1 → PMD-2",
+      steps: [
+        { step: "01", title: "Penerimaan gabah", body: "Timbang, uji kadar air, catat nomor batch." },
+        { step: "02", title: "Pengeringan", body: "Turun sampai kadar air aman simpan." },
+        { step: "03", title: "Penggilingan", body: "Pecah kulit, lalu sosoh dan grading." },
+        { step: "04", title: "Pengemasan", body: "Kemas per merk, siap distribusi." },
       ],
     },
 
@@ -107,9 +128,9 @@ export const id: LocaleContent = {
       ],
     },
 
-    closing: {
-      headline: ["Mari bangun rantai pangan", "yang **dapat ditelusuri**."],
-      art: "/brand/closing-art.svg",
+    cta: {
+      headline: ["Menjual gabah, atau mencari", "pemasok beras?"],
+      button: { href: site.routes.id.contact, label: "Hubungi tim kami" },
     },
   },
 

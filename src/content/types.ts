@@ -65,33 +65,83 @@ export interface SplitSection {
   readonly mediaFirst?: boolean;
 }
 
-/** One entry in the home page's feature switcher. */
-export interface FeatureItem {
-  readonly id: string;
+/** Tombol di bawah hero beranda. */
+export interface HeroAction {
   readonly label: string;
-  readonly eyebrow: string;
-  readonly headline: readonly string[];
-  readonly body: string;
-  readonly image: ImageAsset;
-  readonly link?: { readonly href: string; readonly label: string; readonly shortLabel: string };
+  readonly href: string;
+  /** "solid" (isi gelap) atau "outline" (bergaris). Default: solid. */
+  readonly variant?: "solid" | "outline";
 }
 
-export interface ClosingSection {
+/** Hero beranda: naskah di kiri di atas kanvas terang, satu foto sebagai blok di kanan. */
+export interface SplitHeroSection {
+  readonly eyebrow?: string;
+  /** Satu entri per baris visual; `**tebal**` di dalamnya dirender sebagai <b>. */
   readonly headline: readonly string[];
-  readonly art: string;
+  readonly body?: string;
+  readonly image: ImageAsset;
+  readonly actions?: readonly HeroAction[];
+}
+
+/** Satu sel pada pita angka. `value` sengaja string: bisa berisi "[ANGKA]" saat data belum ada. */
+export interface StatItem {
+  readonly value: string;
+  readonly unit?: string;
+  readonly label: string;
+}
+
+export interface StatsSection {
+  readonly items: readonly StatItem[];
+}
+
+/** Satu kartu pada grid produk beranda. */
+export interface CardItem {
+  readonly id: string;
+  readonly title: string;
+  readonly body: string;
+  readonly image: ImageAsset;
+  readonly link?: { readonly href: string; readonly label: string };
+}
+
+export interface CardsSection {
+  readonly eyebrow: string;
+  readonly headline: readonly string[];
+  /** Tautan di kanan judul, mis. "Semua produk". */
+  readonly link?: { readonly href: string; readonly label: string };
+  readonly items: readonly CardItem[];
+}
+
+/** Satu tahap pada pita alur produksi. */
+export interface ProcessStep {
+  readonly step: string;
+  readonly title: string;
+  readonly body: string;
+}
+
+/** Satu-satunya pita gelap di beranda: alur PMD-1 → PMD-2. */
+export interface ProcessSection {
+  readonly title: string;
+  readonly note?: string;
+  readonly steps: readonly ProcessStep[];
+}
+
+/** Pita ajakan sebelum footer. */
+export interface CtaSection {
+  readonly headline: readonly string[];
+  readonly button: { readonly href: string; readonly label: string };
 }
 
 export interface HomeContent {
-  readonly hero: HeroSection;
+  readonly hero: SplitHeroSection;
   readonly intro: SplitSection;
-  readonly features: {
-    readonly items: readonly FeatureItem[];
-  };
+  readonly stats: StatsSection;
+  readonly products: CardsSection;
+  readonly process: ProcessSection;
   readonly gallery: {
     readonly caption: string;
     readonly images: readonly ImageAsset[];
   };
-  readonly closing: ClosingSection;
+  readonly cta: CtaSection;
 }
 
 export interface AboutContent {

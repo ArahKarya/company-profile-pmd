@@ -24,6 +24,11 @@
   --surface-overlay: #1e1a10;   /* mobile menu backdrop */
   --text-on-dark: #ffffff;
   --text-muted: #a8a296;        /* teks sekunder di latar gelap */
+  --text-body: #5c574e;         /* teks isi di latar terang */
+  --text-muted-light: #7a7468;  /* teks sekunder di latar terang */
+  --paper: #faf9f6;             /* kanvas hangat untuk pita terang */
+  --paper-alt: #f2f0ea;
+  --gold-tint: #fbf4df;         /* emas 100 — latar pita ajakan */
   --hairline: rgba(30, 26, 16, 0.16);
 
   /* Typography. Plus Jakarta Sans di-wire lewat next/font di tiap root layout;
@@ -78,59 +83,41 @@ p {
 h1, .h1 {
   font-family: var(--font-display);
   font-size: 3rem;
-  /* Judul besar bobot 200 — ringan tapi masih terbaca di layar kecil; <b> di dalam
-     headline naik ke 700, sesuai sistem tipografi PMD. */
-  font-weight: 200;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  /* Judul tebal, bukan tipis: naskah dibaca di atas kanvas terang, jadi bobotnya boleh
+     berat — dan itu yang memisahkan tampilan ini dari versi sebelumnya. */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
   position: relative;
 }
 
-h1 b, .h1 b {
-  font-weight: 600;
+h1 b, .h1 b { font-weight: 800; }
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
 }
 
-/* Small caret that marks a headline. `.marker-none` opts out. */
-h1:not(.marker-none)::before,
-.h1:not(.marker-none)::before,
-h4.marker::before {
-  content: "";
-  position: absolute;
-  top: 1.4rem;
-  left: -1.6rem;
-  width: 0.7rem;
-  height: 0.7rem;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-  background-color: var(--brand-accent);
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-h1.text-center::before,
-.h1.text-center::before {
-  content: none;
-}
-
-h4.marker {
-  position: relative;
-}
-
-h4.marker::before {
-  top: 0.5rem;
-}
-
-@media (max-width: 575.98px) {
-  h1:not(.marker-none)::before,
-  .h1:not(.marker-none)::before {
-    top: 1rem;
-    left: -1.2rem;
-  }
-}
+h4.marker { position: relative; }
 
 .eyebrow {
   display: inline-block;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--brand-accent-deep);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .accent { color: var(--brand-accent); }
@@ -140,12 +127,13 @@ h4.marker::before {
    3. Layout primitives
    -------------------------------------------------------------------------- */
 
+/* Seksi setinggi isinya. Halaman ini padat dan bertumpuk — bukan deret layar penuh yang
+   digulir satu per satu. `.section-auto` tetap ada karena banyak dipakai di markup. */
 section {
-  min-height: 100vh;
+  min-height: auto;
   height: auto;
 }
 
-/* Sections that should size to their content instead of filling the viewport. */
 .section-auto {
   min-height: auto;
   height: auto;
@@ -205,64 +193,77 @@ section {
 
 .site-header { position: relative; }
 
+/* Satu wujud saja: kanvas terang, logo warna, garis rambut di bawahnya. Tidak ada lagi
+   keadaan transparan-lalu-gelap, karena halaman tidak lagi dibuka dengan foto penuh. */
 .site-header .navbar {
   position: fixed;
   z-index: 1030;
   width: 100%;
   height: var(--nav-height);
-  padding: 20px 0 0;
+  padding: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.site-header .navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .site-header .navbar-nav {
-  width: 100%;
   margin-left: auto;
-  margin-top: 40px;
+  align-items: center;
 }
 
-.site-header .nav-item { margin-inline: 1.8em; }
+.site-header .nav-item { margin-inline: 0.9em; }
 
 .site-header .nav-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 0;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 0.95rem;
-  color: var(--text-on-dark);
+  color: var(--text-body);
+  border-bottom: 2px solid transparent;
 }
 
-.site-header .nav-link.active { font-weight: 600; }
+.site-header .nav-link:hover { color: var(--brand-dark); }
 
-/* Caret under the current page. */
-.site-header .nav-marker {
-  width: 0.5rem;
-  height: 0.4rem;
-  margin-top: 4px;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  background-color: var(--brand-accent);
+.site-header .nav-link.active {
+  color: var(--brand-dark);
+  border-bottom-color: var(--brand-accent);
 }
+
+.site-header .nav-tail {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: 28px;
+}
+
+.site-header .lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.site-header .lang-sep { color: var(--text-muted-light); margin: 0 4px; }
 
 .site-header .lang-btn {
-  cursor: pointer;
-  padding: 2px 12px;
-  border: 1px solid transparent;
-  border-radius: 20px;
-  color: var(--text-on-dark);
+  color: var(--text-muted-light);
   text-decoration: none;
 }
 
-.site-header .lang-btn.active {
-  background-color: var(--brand-accent);
-  border-color: var(--brand-accent);
-  color: var(--brand-dark);
-  font-weight: 700;
-}
+.site-header .lang-btn.active { color: var(--brand-dark); }
 
-.site-header .brand-logo { height: 56px; width: auto; }
+.site-header .brand-logo { height: 40px; width: auto; }
 
 .site-header .navbar-toggler {
   border: none !important;
-  color: var(--text-on-dark);
+  color: var(--brand-dark);
 }
 
 .site-header .navbar-toggler:hover,
@@ -279,26 +280,32 @@ section {
     width: 100vw;
     height: 100vh;
     padding: 20px 37.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     background: var(--surface-overlay);
     transition: 0.3s ease;
   }
 
   .site-header .navbar-menu .nav-item { margin: 0; }
 
+  .site-header .navbar-nav { margin-top: 56px; align-items: flex-start; }
+
   .site-header .nav-link {
-    margin-top: 32px;
-    align-items: flex-start;
-    font-size: 2rem;
+    margin-top: 28px;
+    font-size: 1.9rem;
     color: var(--text-muted);
+    border-bottom: none;
   }
 
-  .site-header .nav-link.active { color: var(--text-on-dark); }
-  .site-header .nav-marker { display: none; }
+  .site-header .nav-link.active { color: var(--text-on-dark); border-bottom: none; }
 
-  .site-header .lang-mobile {
-    position: absolute;
-    bottom: 24px;
+  .site-header .nav-tail {
+    margin: auto 0 32px;
   }
+
+  .site-header .lang-btn { color: var(--text-muted); }
+  .site-header .lang-btn.active { color: var(--text-on-dark); }
 }
 
 /* --------------------------------------------------------------------------
@@ -375,9 +382,9 @@ section {
 .hero-compact::before {
   background: linear-gradient(
     90deg,
-    rgba(7, 26, 36, 0.9) 0%,
-    rgba(7, 26, 36, 0.7) 55%,
-    rgba(7, 26, 36, 0.75) 100%
+    rgba(16, 14, 8, 0.92) 0%,
+    rgba(16, 14, 8, 0.72) 55%,
+    rgba(16, 14, 8, 0.78) 100%
   );
 }
 
@@ -723,5 +730,324 @@ section {
 .hotspot-figure .hotspot:hover,
 .hotspot-figure .hotspot:focus-visible {
   outline: 2px solid var(--brand-accent);
-  background: rgba(47, 158, 143, 0.12);
+  background: rgba(233, 189, 12, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   9. Beranda
+
+   Susunan beranda: hero terbelah di atas kanvas terang, pita angka, kartu produk,
+   satu pita gelap untuk alur produksi, lalu pita ajakan. Emas dipakai sebagai bidang
+   dan tombol di sini, bukan sekadar penanda kecil.
+   -------------------------------------------------------------------------- */
+
+/* --- Tombol dan tautan --- */
+
+.btn-fill,
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--brand-dark);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-fill {
+  background-color: var(--brand-dark);
+  color: var(--text-on-dark);
+}
+
+.btn-fill:hover {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+  color: var(--brand-dark);
+}
+
+.btn-line {
+  background-color: transparent;
+  color: var(--brand-dark);
+}
+
+.btn-line:hover {
+  background-color: var(--brand-dark);
+  color: var(--text-on-dark);
+}
+
+/* Tombol kontak di navigasi: emas, lebih pendek. */
+.site-header .btn-fill.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+  color: var(--brand-dark);
+}
+
+.site-header .btn-fill.btn-sm:hover {
+  background-color: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: var(--text-on-dark);
+}
+
+.text-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--brand-accent-deep);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.text-link:hover { color: var(--brand-dark); }
+
+p.lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  max-width: 46ch;
+}
+
+/* --- Hero terbelah --- */
+
+.hero-split {
+  background-color: var(--paper);
+  padding-top: calc(var(--nav-height) + 56px);
+  padding-bottom: 64px;
+}
+
+.hero-split-copy h1 { margin-bottom: 1.25rem; }
+
+.hero-split-figure {
+  position: relative;
+  padding: 0 0 22px 22px;
+}
+
+/* Bidang emas yang menyembul di belakang foto — pengganti tirai gelap di atas foto. */
+.hero-split-block {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  height: 55%;
+  background-color: var(--brand-accent);
+}
+
+.hero-split-figure img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+  .hero-split { padding-top: calc(var(--nav-height) + 32px); }
+  .hero-split-figure img { height: 300px; }
+}
+
+/* --- Pita angka --- */
+
+.stat-band {
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stat-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 30px 32px;
+  border-right: 1px solid var(--hairline);
+}
+
+.stat-cell:last-child { border-right: 0; }
+
+.stat-value {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--brand-dark);
+}
+
+.stat-unit {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand-accent-deep);
+}
+
+.stat-label { font-size: 0.85rem; color: var(--text-muted-light); }
+
+@media (max-width: 991.98px) {
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-cell { padding: 22px 20px; border-bottom: 1px solid var(--hairline); }
+  .stat-cell:nth-child(2n) { border-right: 0; }
+  .stat-cell:nth-last-child(-n + 2) { border-bottom: 0; }
+}
+
+/* --- Kartu produk --- */
+
+.cards { padding: 72px 0; }
+
+.cards-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--hairline);
+  background-color: #ffffff;
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+}
+
+.product-card-body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.product-card-body .text-link { margin-top: 4px; }
+
+@media (max-width: 991.98px) {
+  .cards { padding: 48px 0; }
+  .card-grid { grid-template-columns: 1fr; }
+  .cards-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* --- Pita alur produksi (satu-satunya bagian gelap di beranda) --- */
+
+.process-band {
+  background-color: var(--brand-dark);
+  color: var(--text-on-dark);
+  padding: 56px 0;
+}
+
+.process-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.process-head h2 { font-size: 1.75rem; font-weight: 700; }
+.process-note { font-size: 0.9rem; color: var(--text-muted); }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+  background-color: #2e2818;
+}
+
+.process-number {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--brand-accent);
+}
+
+.process-title { font-size: 1.05rem; font-weight: 700; }
+.process-body { font-size: 0.9rem; line-height: 1.55; color: #c9c4b8; }
+
+@media (max-width: 991.98px) {
+  .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 575.98px) {
+  .process-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Pita ajakan --- */
+
+.cta-band {
+  background-color: var(--gold-tint);
+  padding: 48px 0;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta-inner h2 { max-width: 24ch; margin: 0; }
+
+@media (max-width: 767.98px) {
+  .cta-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+}
+
+/* --- Galeri --- */
+
+.gallery { padding: 64px 0 72px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-tile { display: block; }
+
+.gallery-tile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery-caption {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: var(--text-muted-light);
+}
+
+.gallery-caption .bi { color: var(--brand-accent-deep); }
+
+@media (max-width: 991.98px) {
+  .gallery { padding: 40px 0 48px; }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

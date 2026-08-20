@@ -48,7 +48,7 @@ export const getSite = cache(async (): Promise<SiteConfig> => {
   };
 });
 
-/** The dark-background logo, which the admin can set separately from the light one. */
+/** Logo untuk latar terang (versi warna) — navbar memakainya; footer memakai versi putih. */
 export const getLogoDark = cache(async (): Promise<string> => {
   if (!prisma) return defaultSite.logo.src;
   const row = await prisma.siteSettings.findUnique({

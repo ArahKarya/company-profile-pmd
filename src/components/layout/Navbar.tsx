@@ -4,13 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LOCALES, PAGE_ORDER, type Locale, type PageKey } from "@/content/types";
 
-/** Scroll offset past which the navbar paints its solid background. */
-const SOLID_AFTER = 50;
-
 export interface NavbarProps {
   readonly locale: Locale;
   readonly current: PageKey;
   readonly siteName: string;
+  /** Logo versi warna — navigasi berlatar terang. */
   readonly logoSrc: string;
   /** Route for every page in every locale, so the language switch is a plain link. */
   readonly routes: Readonly<Record<Locale, Readonly<Record<PageKey, string>>>>;
@@ -18,13 +16,19 @@ export interface NavbarProps {
   readonly labels: Readonly<Record<PageKey, string>>;
   /** Short code shown on each language button, e.g. { id: "IDN", en: "ENG" }. */
   readonly localeNames: Readonly<Record<Locale, string>>;
-  /** Pages whose hero is light, so the navbar starts solid rather than transparent. */
-  readonly solidByDefault?: boolean;
 }
 
+/** Halaman kontak keluar dari daftar menu — ia jadi tombol di ujung kanan. */
+const MENU_PAGES = PAGE_ORDER.filter((page) => page !== "contact");
+
 /**
- * Client component: it owns scroll and menu state, so everything it renders arrives as
- * props from the server. That keeps the database read on the server side of the boundary.
+ * Navigasi berlatar terang, sama di setiap halaman.
+ *
+ * Tidak ada lagi keadaan transparan-lalu-gelap saat digulir: halaman dibuka dengan kanvas
+ * terang, jadi bilah ini cukup satu wujud — logo warna, tautan gelap, dan satu tombol emas.
+ *
+ * Tetap client component karena memegang state menu; semua isinya datang sebagai props,
+ * sehingga pembacaan database tetap di sisi server.
  */
 export function Navbar({
   locale,
@@ -34,17 +38,8 @@ export function Navbar({
   routes,
   labels,
   localeNames,
-  solidByDefault = false,
 }: NavbarProps) {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > SOLID_AFTER);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Close the mobile menu once the viewport passes the collapse breakpoint, so the overlay
   // cannot be left stranded open over a desktop layout.
@@ -55,14 +50,9 @@ export function Navbar({
     return () => query.removeEventListener("change", onChange);
   }, []);
 
-  const solid = scrolled || solidByDefault || menuOpen;
-
   return (
     <header className="site-header">
-      <nav
-        className="navbar navbar-expand-lg"
-        style={{ backgroundColor: solid ? "var(--brand-dark)" : "transparent" }}
-      >
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid d-flex align-items-center">
           <Link href={routes[locale].home} className="navbar-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -82,13 +72,11 @@ export function Navbar({
 
           <div
             id="site-menu"
-            className={`navbar-menu collapse navbar-collapse justify-content-between align-items-center${
-              menuOpen ? " show" : ""
-            }`}
+            className={`navbar-menu collapse navbar-collapse${menuOpen ? " show" : ""}`}
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
-              {PAGE_ORDER.map((page, index) => (
-                <li className={`nav-item${index === 0 ? " ms-lg-auto" : ""}`} key={page}>
+              {MENU_PAGES.map((page) => (
+                <li className="nav-item" key={page}>
                   <Link
                     href={routes[locale][page]}
                     className={`nav-link${page === current ? " active" : ""}`}
@@ -96,16 +84,30 @@ export function Navbar({
                     onClick={() => setMenuOpen(false)}
                   >
                     {labels[page]}
-                    {page === current && <span className="nav-marker" aria-hidden="true" />}
                   </Link>
                 </li>
               ))}
-              <li className="nav-item ms-lg-auto d-none d-lg-flex">
-                <LocaleSwitch {...{ locale, current, routes, localeNames }} />
+              {/* Kontak muncul sebagai tautan biasa hanya di menu layar sempit. */}
+              <li className="nav-item d-lg-none">
+                <Link
+                  href={routes[locale].contact}
+                  className={`nav-link${current === "contact" ? " active" : ""}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {labels.contact}
+                </Link>
               </li>
             </ul>
-            <div className="lang-mobile d-flex d-lg-none">
+
+            <div className="nav-tail">
               <LocaleSwitch {...{ locale, current, routes, localeNames }} />
+              <Link
+                href={routes[locale].contact}
+                className="btn-fill btn-sm d-none d-lg-inline-flex"
+                onClick={() => setMenuOpen(false)}
+              >
+                {labels.contact}
+              </Link>
             </div>
           </div>
         </div>
@@ -127,17 +129,19 @@ function LocaleSwitch({
   localeNames,
 }: Pick<NavbarProps, "locale" | "current" | "routes" | "localeNames">) {
   return (
-    <>
-      {LOCALES.map((code) => (
-        <Link
-          key={code}
-          href={routes[code][current]}
-          className={`lang-btn me-2${code === locale ? " active" : ""}`}
-          aria-current={code === locale ? "true" : undefined}
-        >
-          {localeNames[code]}
-        </Link>
+    <span className="lang-switch">
+      {LOCALES.map((code, index) => (
+        <span key={code}>
+          {index > 0 && <span className="lang-sep" aria-hidden="true">/</span>}
+          <Link
+            href={routes[code][current]}
+            className={`lang-btn${code === locale ? " active" : ""}`}
+            aria-current={code === locale ? "true" : undefined}
+          >
+            {localeNames[code]}
+          </Link>
+        </span>
       ))}
-    </>
+    </span>
   );
 }

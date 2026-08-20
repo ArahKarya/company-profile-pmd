@@ -12,7 +12,7 @@ export default async function Page() {
   const copy = await getContent("en");
 
   return (
-    <PageShell locale="en" page="services" solidNav>
+    <PageShell locale="en" page="services">
       <Showcase content={copy.services} />
     </PageShell>
   );
