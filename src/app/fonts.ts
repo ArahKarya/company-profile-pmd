@@ -1,18 +1,27 @@
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
 
 /**
- * Plus Jakarta Sans — tipografi sistem PMD.
+ * Plus Jakarta Sans — tipografi utama PMD.
  *
- * Bobot 200 dipakai untuk judul besar (cukup tipis untuk gaya lapang, masih terbaca di
- * layar kecil — bobot 100 terlalu tipis untuk huruf Latin), 700 untuk penekanan di dalam
- * judul, 400/600 untuk teks dan label.
- *
- * Diekspos sebagai CSS variable; `theme.css` menariknya lewat `--font-body`, dengan
- * fallback ke stack Bootstrap kalau kelasnya tidak terpasang.
+ * Bobot 700 untuk judul (tegas tapi tidak berteriak), 400/500/600 untuk teks dan label.
  */
 export const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["200", "400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-jakarta",
+});
+
+/**
+ * IBM Plex Mono — lapis teknis: nomor tahap, satuan, kode unit, keterangan foto, dan label
+ * kecil huruf kapital.
+ *
+ * Perusahaan pengolahan hidup dari angka yang tercatat; huruf monospace membuat angka dan
+ * kode terbaca sebagai data, bukan hiasan — dan itu yang memberi kesan pabrik, bukan brosur.
+ */
+export const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-mono",
 });

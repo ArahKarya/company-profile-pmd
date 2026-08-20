@@ -48,7 +48,7 @@ export const en: LocaleContent = {
       eyebrow: "PT PANGAN MASA DEPAN",
       headline: ["Modern, integrated rice milling —", "from paddy to packed rice."],
       body: "Two connected production units: drying and husking at PMD-1, polishing and packing at PMD-2. Every batch is recorded, from the farmer's paddy to the sack that leaves the gate.",
-      image: { src: "/images/hero-home-desktop.jpg", alt: "Paddy fields close to harvest", width: 2000, height: 1200 },
+      image: { src: "/images/hero-home-desktop.jpg", alt: "Grain elevator and silo installation at a milling plant", width: 2000, height: 1200 },
       actions: [
         { label: "See our products", href: site.routes.en.services, variant: "solid" },
         { label: "Farmer partnership", href: site.routes.en.contact, variant: "outline" },
@@ -62,7 +62,7 @@ export const en: LocaleContent = {
       ],
       media: [
         { src: "/images/intro-1.jpg", alt: "Paddy drying on the drying floor", width: 1200, height: 900 },
-        { src: "/images/intro-2.jpg", alt: "Operator checking a milling machine", width: 1200, height: 900 },
+        { src: "/images/intro-2.jpg", alt: "Paddy and machinery on the milling floor", width: 1200, height: 900 },
       ],
     },
 
@@ -91,14 +91,14 @@ export const en: LocaleContent = {
           id: "by-products",
           title: "By-products",
           body: "Bran, broken rice, fine grain, husk and rejects — batch numbered, carried in stock, available to buy.",
-          image: { src: "/images/gallery-4.jpg", alt: "Workers spreading paddy on the drying floor", width: 1000, height: 700 },
+          image: { src: "/images/feature-byproducts.jpg", alt: "Bulk warehouse: grain heaps and sacks", width: 1400, height: 900 },
           link: { href: site.routes.en.services, label: "Learn more" },
         },
         {
           id: "services",
           title: "Contract milling",
           body: "Drying, husking and packing under your own brand — reported with the milling yield in full.",
-          image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
+          image: { src: "/images/facility-elevator.jpg", alt: "Grain elevator and truck at intake", width: 1400, height: 900 },
           link: { href: site.routes.en.services, label: "Learn more" },
         },
       ],
@@ -123,7 +123,7 @@ export const en: LocaleContent = {
           title: "Paddy intake",
           body: "Weighed, moisture tested, batch numbered.",
           unit: "PMD-1",
-          image: { src: "/images/about-mission-1.jpg", alt: "Paddy being unloaded at intake", width: 1000, height: 800 },
+          image: { src: "/images/feature-milling.jpg", alt: "Paddy pouring into the intake pit", width: 1400, height: 900 },
           detail: {
             body: [
               "Freshly harvested and pre-dried paddy alike is weighed in front of whoever delivered it, then sampled for moisture and cleanliness. That test sets the price and the handling that follows — not an estimate made in the yard.",
@@ -155,7 +155,7 @@ export const en: LocaleContent = {
           title: "Husking",
           body: "The husk comes off; brown rice comes out.",
           unit: "PMD-1",
-          image: { src: "/images/feature-milling.jpg", alt: "Paddy and machinery at PMD-1", width: 1400, height: 900 },
+          image: { src: "/images/mill-floor.jpg", alt: "Paddy and machinery on the PMD-1 milling floor", width: 1400, height: 900 },
           detail: {
             body: [
               "The husk is removed, leaving brown rice. What comes off is not waste: husk enters stock as a product in its own right, like every other by-product.",
@@ -204,13 +204,14 @@ export const en: LocaleContent = {
     gallery: {
       caption: "Click to Enlarge",
       images: [
-        { src: "/images/gallery-1.jpg", alt: "Paddy plots seen from the air" },
-        { src: "/images/gallery-2.jpg", alt: "Storage silos at the production site" },
+        { src: "/images/gallery-1.jpg", alt: "Grain elevator and silo installation" },
+        { src: "/images/gallery-2.jpg", alt: "Silos and conveyor at the production site" },
         { src: "/images/gallery-3.jpg", alt: "Paddy grain before milling" },
-        { src: "/images/gallery-4.jpg", alt: "Workers spreading paddy on the drying floor" },
+        { src: "/images/gallery-4.jpg", alt: "Storage silos" },
         { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck" },
-        { src: "/images/gallery-6.jpg", alt: "Aerial view of the paddy drying floor" },
+        { src: "/images/gallery-6.jpg", alt: "Aerial view of a grain terminal" },
         { src: "/images/gallery-7.jpg", alt: "Polished rice grain" },
+        { src: "/images/gallery-8.jpg", alt: "Paddy plots seen from the air" },
       ],
     },
 

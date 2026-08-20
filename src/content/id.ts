@@ -48,7 +48,7 @@ export const id: LocaleContent = {
       eyebrow: "PT PANGAN MASA DEPAN",
       headline: ["Penggilingan beras modern, terintegrasi", "dari gabah sampai kemasan."],
       body: "Dua unit produksi yang saling terhubung: pengeringan dan penggilingan di PMD-1, penyosohan dan pengemasan di PMD-2. Setiap batch tercatat, dari gabah petani sampai karung siap kirim.",
-      image: { src: "/images/hero-home-desktop.jpg", alt: "Hamparan sawah menjelang panen", width: 2000, height: 1200 },
+      image: { src: "/images/hero-home-desktop.jpg", alt: "Instalasi elevator dan silo di pabrik penggilingan", width: 2000, height: 1200 },
       actions: [
         { label: "Lihat Produk", href: site.routes.id.services, variant: "solid" },
         { label: "Kemitraan Petani", href: site.routes.id.contact, variant: "outline" },
@@ -62,7 +62,7 @@ export const id: LocaleContent = {
       ],
       media: [
         { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
-        { src: "/images/intro-2.jpg", alt: "Operator mengoperasikan mesin penggilingan", width: 1200, height: 900 },
+        { src: "/images/intro-2.jpg", alt: "Gabah dan mesin di lantai giling", width: 1200, height: 900 },
       ],
     },
 
@@ -91,14 +91,14 @@ export const id: LocaleContent = {
           id: "samping",
           title: "Produk samping",
           body: "Bekatul, broken, menir, sekam, dan reject — bernomor batch, masuk stok, dan siap dibeli.",
-          image: { src: "/images/gallery-4.jpg", alt: "Pekerja menghamparkan gabah di lantai jemur", width: 1000, height: 700 },
+          image: { src: "/images/feature-byproducts.jpg", alt: "Gudang curah: gundukan gabah dan karung", width: 1400, height: 900 },
           link: { href: site.routes.id.services, label: "Selengkapnya" },
         },
         {
           id: "jasa",
           title: "Jasa penggilingan",
           body: "Pengeringan, penggilingan, sampai pengemasan bermerk sendiri — dilaporkan lengkap dengan rendemen.",
-          image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
+          image: { src: "/images/facility-elevator.jpg", alt: "Elevator gabah dan truk di unit penerimaan", width: 1400, height: 900 },
           link: { href: site.routes.id.services, label: "Selengkapnya" },
         },
       ],
@@ -123,7 +123,7 @@ export const id: LocaleContent = {
           title: "Penerimaan gabah",
           body: "Timbang, uji kadar air, catat nomor batch.",
           unit: "PMD-1",
-          image: { src: "/images/about-mission-1.jpg", alt: "Gabah dibongkar di unit penerimaan", width: 1000, height: 800 },
+          image: { src: "/images/feature-milling.jpg", alt: "Gabah dituang ke lubang penerimaan", width: 1400, height: 900 },
           detail: {
             body: [
               "Gabah kering panen maupun gabah kering giling ditimbang di hadapan pengirimnya, lalu diambil sampelnya untuk diuji kadar air dan kebersihannya. Hasil uji itu yang menentukan harga dan perlakuan berikutnya — bukan taksiran di lapangan.",
@@ -155,7 +155,7 @@ export const id: LocaleContent = {
           title: "Pemecah kulit",
           body: "Sekam dilepas, keluar beras pecah kulit.",
           unit: "PMD-1",
-          image: { src: "/images/feature-milling.jpg", alt: "Gabah dan mesin di unit PMD-1", width: 1400, height: 900 },
+          image: { src: "/images/mill-floor.jpg", alt: "Gabah dan mesin di lantai giling unit PMD-1", width: 1400, height: 900 },
           detail: {
             body: [
               "Kulit gabah dilepas sehingga tersisa beras pecah kulit. Sekam yang terpisah tidak dibuang: ia masuk stok sebagai produk tersendiri, sama seperti hasil samping lainnya.",
@@ -204,13 +204,14 @@ export const id: LocaleContent = {
     gallery: {
       caption: "Klik untuk Perbesar",
       images: [
-        { src: "/images/gallery-1.jpg", alt: "Petak sawah dilihat dari udara" },
-        { src: "/images/gallery-2.jpg", alt: "Silo penyimpanan di fasilitas produksi" },
+        { src: "/images/gallery-1.jpg", alt: "Instalasi elevator dan silo" },
+        { src: "/images/gallery-2.jpg", alt: "Silo dan konveyor di fasilitas produksi" },
         { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling" },
-        { src: "/images/gallery-4.jpg", alt: "Pekerja menghamparkan gabah di lantai jemur" },
+        { src: "/images/gallery-4.jpg", alt: "Silo penyimpanan" },
         { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk" },
-        { src: "/images/gallery-6.jpg", alt: "Lantai jemur gabah dilihat dari udara" },
+        { src: "/images/gallery-6.jpg", alt: "Terminal biji-bijian dilihat dari udara" },
         { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh" },
+        { src: "/images/gallery-8.jpg", alt: "Petak sawah dilihat dari udara" },
       ],
     },
 

@@ -38,6 +38,7 @@ export async function PageShell({ locale, page, children }: PageShellProps) {
         routes={site.routes}
         labels={copy.nav}
         localeNames={localeNames}
+        contact={{ phones: site.phones, email: site.email }}
       />
       <main>{children}</main>
       <Footer locale={locale} />

@@ -35,6 +35,8 @@
      --font-body / --font-display di-override dari sana. */
   --font-body: var(--font-jakarta, var(--bs-font-sans-serif));
   --font-display: var(--font-body);
+  /* Lapis teknis: angka, kode, satuan, dan label kecil huruf kapital. */
+  --font-technical: var(--font-mono, ui-monospace, "SFMono-Regular", monospace);
 
   /* Layout */
   --nav-height: 100px;
@@ -82,23 +84,23 @@ p {
 
 h1, .h1 {
   font-family: var(--font-display);
-  font-size: 3rem;
-  /* Judul tebal, bukan tipis: naskah dibaca di atas kanvas terang, jadi bobotnya boleh
-     berat — dan itu yang memisahkan tampilan ini dari versi sebelumnya. */
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
+  font-size: 2.85rem;
+  /* Bobot 700, bukan 800: cukup tegas untuk dibaca di atas kanvas terang, tanpa terdengar
+     seperti iklan. Kesan industrial datang dari ketepatan, bukan dari ketebalan. */
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
   position: relative;
 }
 
-h1 b, .h1 b { font-weight: 800; }
+h1 b, .h1 b { font-weight: 700; }
 
 h2, .h2 {
   font-family: var(--font-display);
-  font-size: 2.25rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 1.12;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 h3, .h3 {
@@ -112,12 +114,30 @@ h4.marker { position: relative; }
 
 .eyebrow {
   display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--brand-accent-deep);
   margin-bottom: 0.75rem;
+}
+
+/* Nomor urut seksi — penanda halaman bergaya lembar spesifikasi. */
+.section-index {
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--text-muted-light);
+}
+
+/* Garis rambut sepanjang lebar, di bawah kepala seksi. */
+.rule {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 0 0 28px;
+  opacity: 1;
 }
 
 .accent { color: var(--brand-accent); }
@@ -193,16 +213,44 @@ section {
 
 .site-header { position: relative; }
 
-/* Satu wujud saja: kanvas terang, logo warna, garis rambut di bawahnya. Tidak ada lagi
-   keadaan transparan-lalu-gelap, karena halaman tidak lagi dibuka dengan foto penuh. */
-.site-header .navbar {
+/* Kepala halaman punya dua baris: bilah utilitas gelap berisi kontak operasional, lalu
+   navigasi terang. Keduanya duduk di dalam satu cangkang setinggi --nav-height, sehingga
+   token itu tetap menjadi satu-satunya sumber tinggi yang dipakai seksi lain. */
+.navbar-shell {
   position: fixed;
   z-index: 1030;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: var(--nav-height);
-  padding: 0;
   background-color: #ffffff;
   border-bottom: 1px solid var(--hairline);
+}
+
+.utility-bar {
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  background-color: var(--brand-darker);
+  color: var(--text-muted);
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.utility-contact { display: inline-flex; align-items: center; }
+
+
+.utility-contact a { color: var(--text-muted); text-decoration: none; }
+.utility-contact a:hover { color: var(--brand-accent); }
+.utility-sep { margin: 0 10px; color: var(--brand-accent); }
+
+.site-header .navbar {
+  position: static;
+  flex: 1 1 auto;
+  width: 100%;
+  padding: 0;
+  background-color: #ffffff;
 }
 
 @media (min-width: 992px) {
@@ -263,6 +311,11 @@ section {
 
 .site-header .lang-btn.active { color: var(--brand-dark); }
 
+/* Pemilih bahasa yang duduk di bilah gelap: warnanya dibalik dari versi di navigasi. */
+.site-header .utility-bar .lang-btn { color: var(--text-muted); }
+.site-header .utility-bar .lang-btn.active { color: var(--text-on-dark); }
+.site-header .utility-bar .lang-sep { margin: 0 6px; color: rgba(255, 255, 255, 0.25); }
+
 .site-header .brand-logo { height: 40px; width: auto; }
 
 .site-header .navbar-toggler {
@@ -279,7 +332,7 @@ section {
 @media (max-width: 991.98px) {
   .site-header .navbar-menu.show {
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -329,8 +382,19 @@ section {
   color: var(--text-on-dark);
 }
 
-.site-footer p { font-size: 1rem; margin: 0; }
-.site-footer .footer-heading { font-size: 1.2em; font-weight: 600; }
+.site-footer p { font-size: 0.95rem; margin: 0; line-height: 1.7; }
+
+.site-footer .footer-heading {
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
 .site-footer .brand-logo { max-width: 190px; height: auto; }
 .site-footer .certification { width: 100px; }
 
@@ -759,9 +823,11 @@ section {
 .btn-line {
   display: inline-flex;
   align-items: center;
-  padding: 15px 28px;
-  font-size: 0.95rem;
+  padding: 14px 26px;
+  font-size: 0.8rem;
   font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   text-decoration: none;
   border: 1px solid var(--brand-dark);
   transition: background-color 0.15s ease, color 0.15s ease;
@@ -790,8 +856,8 @@ section {
 
 /* Tombol kontak di navigasi: emas, lebih pendek. */
 .site-header .btn-fill.btn-sm {
-  padding: 10px 20px;
-  font-size: 0.9rem;
+  padding: 11px 20px;
+  font-size: 0.72rem;
   background-color: var(--brand-accent);
   border-color: var(--brand-accent);
   color: var(--brand-dark);
@@ -804,8 +870,11 @@ section {
 }
 
 .text-link {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-family: var(--font-technical);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--brand-accent-deep);
   text-decoration: none;
   white-space: nowrap;
@@ -882,19 +951,27 @@ p.lede {
 .stat-cell:last-child { border-right: 0; }
 
 .stat-value {
-  font-size: 2.1rem;
-  font-weight: 800;
+  font-family: var(--font-technical);
+  font-size: 1.9rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
   color: var(--brand-dark);
 }
 
 .stat-unit {
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: var(--font-technical);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--brand-accent-deep);
 }
 
-.stat-label { font-size: 0.85rem; color: var(--text-muted-light); }
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted-light);
+}
 
 @media (max-width: 991.98px) {
   .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -912,7 +989,25 @@ p.lede {
   align-items: flex-end;
   justify-content: space-between;
   gap: 32px;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
+}
+
+/* Nomor seksi dan eyebrow berdiri sebaris, seperti kepala tabel. */
+.section-label {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.section-label .eyebrow { margin-bottom: 0.6rem; }
+
+/* Nomor urut kartu — dibaca sebagai daftar berurut, bukan tiga kotak serupa. */
+.card-index {
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
+  color: var(--brand-accent-deep);
 }
 
 .card-grid {
@@ -957,11 +1052,11 @@ p.lede {
   .cards-head { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
-/* --- Rel alur produksi (satu-satunya bagian gelap di beranda) ---
+/* --- Diagram alur produksi (satu-satunya bagian gelap di beranda) ---
 
-   Kartu tahap membalik saat disentuh kursor atau menerima fokus keyboard, lalu klik
-   membuka panel rincian di bawah rel. Membalik hanya dinyalakan pada perangkat yang
-   benar-benar punya kursor, supaya di layar sentuh kartunya tidak tersangkut terbalik. */
+   Satu rel mendatar dari gabah ke beras kemasan. Stasiun bukan kartu melainkan titik pada
+   rel itu: foto redup di atas garis, tik bernomor tepat pada garis, label di bawahnya.
+   Menyorot sebuah stasiun menyalakan fotonya; mengkliknya membuka panel rincian. */
 
 .process-band {
   background-color: var(--brand-dark);
@@ -974,154 +1069,186 @@ p.lede {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 34px;
 }
 
-.process-head h2 { font-size: 1.75rem; font-weight: 700; }
-.process-note { font-size: 0.9rem; color: var(--text-muted); }
+.process-head .section-index { color: var(--brand-accent); }
+.process-head h2 { font-size: 1.7rem; font-weight: 700; }
 
-.process-rail {
+.process-note {
+  font-family: var(--font-technical);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.rail {
   display: flex;
-  align-items: stretch;
-  gap: 18px;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 /* Ujung rel: bahan yang masuk dan produk yang keluar. */
-.process-endpoint {
-  flex: 0 0 116px;
-  align-self: center;
+.rail-end {
+  flex: 0 0 104px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  padding-top: 8px;
 }
 
-.process-endpoint img {
+.rail-end img {
   display: block;
   width: 100%;
-  height: 84px;
+  height: 76px;
   object-fit: cover;
+  filter: grayscale(0.35);
 }
 
-.process-endpoint span {
-  font-size: 0.72rem;
-  font-weight: 700;
+.rail-end-label {
+  font-family: var(--font-technical);
+  font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
 
-.process-grid {
+.rail-stations {
+  position: relative;
   flex: 1 1 auto;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 14px;
+  gap: 0;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.process-step {
-  display: block;
+/* Garis rel: satu hairline emas yang melintasi seluruh stasiun, sejajar dengan tiknya. */
+.rail-stations::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  border-top: 1px solid rgba(233, 189, 12, 0.45);
+}
+
+.station {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
   width: 100%;
-  padding: 0;
+  padding: 0 14px 0 0;
   border: 0;
   background: transparent;
   color: inherit;
   text-align: left;
   cursor: pointer;
-  perspective: 1200px;
 }
 
-.process-card {
-  position: relative;
+/* Foto stasiun: redup seperti lembar kontak, menyala saat disorot atau dibuka. */
+.station-well {
   display: block;
-  /* Tinggi tetap: kedua sisi kartu ditumpuk absolut, jadi tingginya tidak bisa mengikuti
-     isi. Cukup untuk judul dua baris ditambah ringkasan tiga baris. */
-  height: 252px;
-  transform-style: preserve-3d;
-  transition: transform 0.55s ease;
+  width: 100%;
+  height: 92px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-@media (hover: hover) {
-  .process-step:hover .process-card { transform: rotateY(180deg); }
+.station-well img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+  filter: grayscale(1);
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.process-step:focus-visible { outline: none; }
-.process-step:focus-visible .process-card { transform: rotateY(180deg); }
-.process-step:focus-visible .process-face { outline: 2px solid var(--brand-accent); }
+.station:hover .station-well img,
+.station:focus-visible .station-well img,
+.station.open .station-well img {
+  opacity: 1;
+  filter: grayscale(0);
+}
 
-.process-face {
-  position: absolute;
-  inset: 0;
+/* Tik pada rel. */
+.station-tick {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 20px;
-  backface-visibility: hidden;
+  align-items: center;
+  gap: 10px;
+  height: 17px;
+  margin-top: -8px;
 }
 
-.process-front { background-color: #2e2818; }
-
-.process-step.open .process-front {
-  background-color: #3b3320;
-  box-shadow: inset 0 0 0 1px var(--brand-accent);
+.station-tick::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background-color: var(--brand-dark);
+  border: 1px solid var(--brand-accent);
 }
 
-.process-number {
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+.station:hover .station-tick::before,
+.station:focus-visible .station-tick::before,
+.station.open .station-tick::before {
+  background-color: var(--brand-accent);
+}
+
+.station-no {
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1em;
   color: var(--brand-accent);
 }
 
-.process-unit {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+.station-label {
+  margin-top: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.station-unit {
+  margin-top: 4px;
+  font-family: var(--font-technical);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   color: var(--text-muted);
 }
 
-.process-title { font-size: 1.05rem; font-weight: 700; }
-.process-body { font-size: 0.85rem; line-height: 1.5; color: #c9c4b8; }
-
-.process-more {
-  margin-top: auto;
-  font-size: 0.8rem;
-  font-weight: 700;
+.station-more {
+  margin-top: 8px;
+  font-family: var(--font-technical);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--brand-accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-/* Sisi belakang kartu: foto tahap tersebut. */
-.process-back {
-  transform: rotateY(180deg);
-  justify-content: flex-end;
-  background-size: cover;
-  background-position: center;
-}
+.station:hover .station-more,
+.station:focus-visible .station-more,
+.station.open .station-more { opacity: 1; }
 
-.process-back::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(16, 14, 8, 0.1) 40%, rgba(16, 14, 8, 0.85) 100%);
-}
-
-.process-back-label {
-  position: relative;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
+.station:focus-visible { outline: none; }
+.station:focus-visible .station-well { outline: 2px solid var(--brand-accent); }
 
 /* Panel rincian di bawah rel. */
-.process-detail { margin-top: 22px; }
+.process-detail { margin-top: 30px; }
 
 .process-detail-inner {
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
   gap: 28px;
   padding: 24px;
-  background-color: #2e2818;
-  border-left: 3px solid var(--brand-accent);
+  background-color: #241f13;
+  border-left: 2px solid var(--brand-accent);
 }
 
 .process-detail-inner img {
@@ -1135,13 +1262,14 @@ p.lede {
 .process-detail-copy { display: flex; flex-direction: column; gap: 10px; }
 
 .process-detail-step {
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-family: var(--font-technical);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   color: var(--brand-accent);
 }
 
-.process-detail-copy h3 { font-size: 1.4rem; font-weight: 700; }
+.process-detail-copy h3 { font-size: 1.35rem; font-weight: 700; }
 
 .process-detail-copy p {
   font-size: 1rem;
@@ -1171,30 +1299,35 @@ p.lede {
   position: absolute;
   left: 0;
   top: 0.55em;
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   background-color: var(--brand-accent);
 }
 
+.process-unit {
+  font-family: var(--font-technical);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
 @media (max-width: 1199.98px) {
-  .process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .process-rail { flex-wrap: wrap; }
-  .process-endpoint { flex-basis: 100px; }
+  .rail-stations { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 34px; }
+  .rail-stations::before { display: none; }
+  .rail-end { flex-basis: 92px; }
 }
 
 @media (max-width: 767.98px) {
-  .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .process-endpoint { display: none; }
+  .rail-stations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rail-end { display: none; }
+  .station-more { opacity: 1; }
   .process-detail-inner { grid-template-columns: 1fr; }
 }
 
-/* Pengunjung yang meminta gerak minimal tidak mendapat animasi membalik sama sekali —
-   fotonya tetap terjangkau lewat panel rincian. */
+/* Tanpa animasi bagi pengunjung yang meminta gerak minimal; fotonya tetap menyala. */
 @media (prefers-reduced-motion: reduce) {
-  .process-card { transition: none; }
-  .process-step:hover .process-card,
-  .process-step:focus-visible .process-card { transform: none; }
-  .process-back { display: none; }
+  .station-well img,
+  .station-more { transition: none; }
 }
 
 /* --- Pita ajakan --- */
@@ -1221,6 +1354,13 @@ p.lede {
 
 .gallery { padding: 64px 0 72px; }
 
+.gallery-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1239,8 +1379,10 @@ p.lede {
 .gallery-caption {
   display: flex;
   align-items: center;
-  margin-top: 14px;
-  font-size: 0.9rem;
+  font-family: var(--font-technical);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text-muted-light);
 }
 

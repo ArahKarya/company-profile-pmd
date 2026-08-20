@@ -14,27 +14,34 @@ const OUT = 'public/images';
 
 /** [output name, pexels photo id, width, height] — cropped to the given box. */
 const PHOTOS = [
-  ['hero-home-desktop',  35386125, 2000, 1200],  // sawah berundak dari udara
-  ['hero-home-mobile',   35386125,  800, 1400],
+  ['hero-home-desktop',  18468425, 2000, 1200],  // instalasi elevator dan silo
+  ['hero-home-mobile',   18468425,  800, 1400],
   ['hero-about',         20217104, 2000, 1200],  // lantai jemur gabah dari udara
 
   ['intro-1',             5563370, 1200,  900],  // gabah dijemur
-  ['intro-2',            38247811, 1200,  900],  // operator di mesin
+  ['intro-2',            29118168, 1200,  900],  // gabah dan mesin di lantai giling
 
-  ['feature-milling',    29118168, 1400,  900],  // gabah dan mesin penggilingan
+  ['feature-milling',     2965707, 1400,  900],  // gabah dituang ke lubang penerimaan
   ['feature-polishing',   2496592, 1400,  900],  // mesin penggilingan, operator
-  ['feature-byproducts', 29948462, 1400,  900],  // karung di gudang
+  ['feature-byproducts', 32851822, 1400,  900],  // gudang curah: gundukan gabah dan karung
 
-  ['gallery-1',          35738185, 1000, 1200],  // hamparan sawah
-  ['gallery-2',          36514665, 1000, 1200],  // silo penyimpanan
-  ['gallery-3',          11789292, 1000,  700],  // butir gabah
-  ['gallery-4',          27896277, 1000,  700],  // pekerja di lantai jemur
-  ['gallery-5',          29948458, 1000,  700],  // karung dimuat ke truk
-  ['gallery-6',          19707897, 1000, 1000],  // lantai jemur dari udara
-  ['gallery-7',           4110251, 1000, 1000],  // butir beras
+  ['facility-plant',     18468425, 1400,  900],  // instalasi elevator dan silo
+  ['facility-elevator',  18468449, 1400,  900],  // elevator gabah dan truk
+  ['facility-silo',      34021878, 1400,  900],  // silo penyimpanan modern
+  ['facility-terminal',  10609017, 1400,  900],  // terminal biji-bijian dari udara
+  ['mill-floor',         29118168, 1400,  900],  // gabah dan mesin di lantai giling
+
+  ['gallery-1',          18468425, 1000,  750],  // instalasi elevator dan silo
+  ['gallery-2',          36514665, 1000,  750],  // silo dan konveyor
+  ['gallery-3',          11789292, 1000,  750],  // butir gabah
+  ['gallery-4',          34021878, 1000,  750],  // silo penyimpanan modern
+  ['gallery-5',          29948458, 1000,  750],  // karung dimuat ke truk
+  ['gallery-6',          10609017, 1000,  750],  // terminal biji-bijian dari udara
+  ['gallery-7',           4110251, 1000,  750],  // butir beras
+  ['gallery-8',          35738185, 1000,  750],  // hamparan sawah
 
   ['about-vision',       16767062, 1200,  900],  // petani menampi gabah
-  ['about-mission-1',     2965707, 1000,  800],  // gabah dibongkar
+  ['about-mission-1',    18468449, 1000,  800],  // elevator gabah dan truk
   ['about-mission-2',    26651061, 1000,  800],  // karung tersusun di gudang
   ['about-mission-3',     5262428, 1000,  800],  // tim di lantai produksi
 

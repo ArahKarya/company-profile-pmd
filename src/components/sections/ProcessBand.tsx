@@ -4,20 +4,28 @@ import { useState } from "react";
 import type { ProcessSection } from "@/content/types";
 
 /**
- * Rel alur produksi: gabah di ujung kiri, beras kemasan di ujung kanan, dan tahap-tahap
- * bernomor di antaranya.
+ * Diagram alur produksi: satu garis mendatar dari gabah ke beras kemasan, dengan stasiun
+ * bernomor duduk di sepanjang garis itu.
  *
- * Dua lapis interaksi:
- * - kartu tahap **membalik** saat disentuh kursor atau menerima fokus keyboard, menampilkan
- *   foto tahap tersebut di sisi belakangnya;
- * - **mengklik** kartu membuka panel rincian di bawah rel — foto besar, penjelasan, dan
- *   poin apa yang dicatat serta apa keluarannya.
+ * Bentuknya sengaja diagram, bukan deretan kartu. Semua stasiun berbagi satu rel yang sama,
+ * fotonya tampil redup seperti lembar kontak, lalu menyala begitu stasiunnya disorot — cara
+ * membaca yang sama dengan papan proses di lantai pabrik.
  *
- * Membalik ditangani CSS (`:hover`, `:focus-visible`) supaya tetap jalan tanpa JavaScript
- * dan otomatis mati saat pengunjung meminta gerak minimal; state di sini hanya menyimpan
- * tahap mana yang sedang terbuka. Satu-satunya pita gelap di beranda.
+ * - **kursor lewat atau fokus keyboard** → foto stasiun itu menyala;
+ * - **diklik** → panel rincian terbuka di bawah rel: foto besar, penjelasan, dan poin apa
+ *   yang dicatat serta apa keluarannya.
+ *
+ * Menyala ditangani CSS (`:hover`, `:focus-visible`) sehingga tetap jalan tanpa JavaScript;
+ * state di sini hanya menyimpan stasiun mana yang sedang terbuka.
  */
-export function ProcessBand({ content }: { readonly content: ProcessSection }) {
+export function ProcessBand({
+  content,
+  index,
+}: {
+  readonly content: ProcessSection;
+  /** Nomor seksi pada halaman, mis. "03". */
+  readonly index?: string;
+}) {
   const [openStep, setOpenStep] = useState<string | null>(null);
   const active = content.steps.find((step) => step.step === openStep) ?? null;
 
@@ -25,48 +33,43 @@ export function ProcessBand({ content }: { readonly content: ProcessSection }) {
     <section className="process-band section-auto">
       <div className="container-fluid">
         <div className="process-head">
+          {index && <span className="section-index">{index}</span>}
           <h2>{content.title}</h2>
           {content.note && <span className="process-note">{content.note}</span>}
         </div>
 
-        <div className="process-rail">
+        <div className="rail">
           {content.from && (
-            <div className="process-endpoint" aria-hidden="true">
+            <div className="rail-end" aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={content.from.image.src} alt="" />
-              <span>{content.from.label}</span>
+              <span className="rail-end-label">{content.from.label}</span>
             </div>
           )}
 
-          <ol className="process-grid">
+          <ol className="rail-stations">
             {content.steps.map((step) => {
               const open = step.step === openStep;
               return (
                 <li key={step.step}>
                   <button
                     type="button"
-                    className={`process-step${open ? " open" : ""}`}
+                    className={`station${open ? " open" : ""}`}
                     aria-expanded={open}
                     aria-controls="process-detail"
                     onClick={() => setOpenStep(open ? null : step.step)}
                   >
-                    <span className="process-card">
-                      <span className="process-face process-front">
-                        <span className="process-number">{step.step}</span>
-                        {step.unit && <span className="process-unit">{step.unit}</span>}
-                        <span className="process-title">{step.title}</span>
-                        <span className="process-body">{step.body}</span>
-                        <span className="process-more">
-                          {open ? content.closeLabel : content.moreLabel}{" "}
-                          <span aria-hidden="true">→</span>
-                        </span>
-                      </span>
-                      <span
-                        className="process-face process-back"
-                        style={{ backgroundImage: `url(${step.image.src})` }}
-                      >
-                        <span className="process-back-label">{step.title}</span>
-                      </span>
+                    <span className="station-well">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={step.image.src} alt="" />
+                    </span>
+                    <span className="station-tick">
+                      <span className="station-no">{step.step}</span>
+                    </span>
+                    <span className="station-label">{step.title}</span>
+                    {step.unit && <span className="station-unit">{step.unit}</span>}
+                    <span className="station-more">
+                      {open ? content.closeLabel : content.moreLabel}
                     </span>
                   </button>
                 </li>
@@ -75,10 +78,10 @@ export function ProcessBand({ content }: { readonly content: ProcessSection }) {
           </ol>
 
           {content.to && (
-            <div className="process-endpoint" aria-hidden="true">
+            <div className="rail-end" aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={content.to.image.src} alt="" />
-              <span>{content.to.label}</span>
+              <span className="rail-end-label">{content.to.label}</span>
             </div>
           )}
         </div>

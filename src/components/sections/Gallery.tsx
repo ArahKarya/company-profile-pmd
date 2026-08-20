@@ -12,35 +12,42 @@ import type { ImageAsset } from "@/content/types";
 export function Gallery({
   images,
   caption,
+  index,
 }: {
   readonly images: readonly ImageAsset[];
   readonly caption: string;
+  /** Nomor seksi pada halaman, mis. "04". */
+  readonly index?: string;
 }) {
   const { open, overlay } = useLightbox(images);
 
   return (
     <section className="gallery section-auto">
       <div className="container-fluid">
+        <div className="gallery-head">
+          {index && <span className="section-index">{index}</span>}
+          <span className="gallery-caption">
+            {caption}
+            <i className="bi bi-zoom-in ms-2" aria-hidden="true" />
+          </span>
+        </div>
+        <hr className="rule" />
+
         <div className="gallery-grid">
-          {images.map((image, index) => (
+          {images.map((image, position) => (
             <a
-              key={image.src + index}
+              key={image.src + position}
               href={image.src}
               className="gallery-tile"
               onClick={(event) => {
                 event.preventDefault();
-                open(index);
+                open(position);
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={image.src} alt={image.alt} />
             </a>
           ))}
-        </div>
-
-        <div className="gallery-caption">
-          {caption}
-          <i className="bi bi-zoom-in ms-2" aria-hidden="true" />
         </div>
       </div>
       {overlay}

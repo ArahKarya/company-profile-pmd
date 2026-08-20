@@ -8,13 +8,23 @@ import type { CardsSection } from "@/content/types";
  * Menggantikan penelusur klik di beranda lama — semua lini terbaca sekaligus, tanpa
  * mengharuskan pengunjung menemukan bahwa daftar di kiri bisa diklik.
  */
-export function Cards({ content }: { readonly content: CardsSection }) {
+export function Cards({
+  content,
+  index,
+}: {
+  readonly content: CardsSection;
+  /** Nomor seksi pada halaman, mis. "02" — penanda bergaya lembar spesifikasi. */
+  readonly index?: string;
+}) {
   return (
     <section className="cards section-auto">
       <div className="container-fluid">
         <div className="cards-head">
           <div>
-            {content.eyebrow && <span className="eyebrow">{content.eyebrow}</span>}
+            <span className="section-label">
+              {index && <span className="section-index">{index}</span>}
+              {content.eyebrow && <span className="eyebrow">{content.eyebrow}</span>}
+            </span>
             <Headline lines={content.headline} as="h2" className="marker-none" />
           </div>
           {content.link && (
@@ -24,8 +34,10 @@ export function Cards({ content }: { readonly content: CardsSection }) {
           )}
         </div>
 
+        <hr className="rule" />
+
         <div className="card-grid">
-          {content.items.map((item) => (
+          {content.items.map((item, position) => (
             <article className="product-card" key={item.id}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -35,6 +47,9 @@ export function Cards({ content }: { readonly content: CardsSection }) {
                 height={item.image.height}
               />
               <div className="product-card-body">
+                <span className="card-index">
+                  {String(position + 1).padStart(2, "0")}
+                </span>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
                 {item.link && (

@@ -22,9 +22,13 @@ export default async function Page() {
       <SplitHero content={copy.home.hero} />
       <Split content={copy.home.intro} />
       <Stats content={copy.home.stats} />
-      <Cards content={copy.home.products} />
-      <ProcessBand content={copy.home.process} />
-      <Gallery images={copy.home.gallery.images} caption={copy.home.gallery.caption} />
+      <Cards content={copy.home.products} index="02" />
+      <ProcessBand content={copy.home.process} index="03" />
+      <Gallery
+        images={copy.home.gallery.images}
+        caption={copy.home.gallery.caption}
+        index="04"
+      />
       <Cta content={copy.home.cta} />
     </PageShell>
   );

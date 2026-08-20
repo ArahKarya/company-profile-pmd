@@ -16,6 +16,8 @@ export interface NavbarProps {
   readonly labels: Readonly<Record<PageKey, string>>;
   /** Short code shown on each language button, e.g. { id: "IDN", en: "ENG" }. */
   readonly localeNames: Readonly<Record<Locale, string>>;
+  /** Kontak yang ditampilkan pada bilah utilitas di atas navigasi. */
+  readonly contact: { readonly phones: readonly string[]; readonly email: string };
 }
 
 /** Halaman kontak keluar dari daftar menu — ia jadi tombol di ujung kanan. */
@@ -38,6 +40,7 @@ export function Navbar({
   routes,
   labels,
   localeNames,
+  contact,
 }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -52,66 +55,90 @@ export function Navbar({
 
   return (
     <header className="site-header">
-      <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid d-flex align-items-center">
-          <Link href={routes[locale].home} className="navbar-brand">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logoSrc} alt={siteName} className="brand-logo" />
-          </Link>
+      <div className="navbar-shell">
+        {/* Bilah utilitas: kontak operasional dan pilihan bahasa, lepas dari navigasi
+            halaman. Hanya di layar lebar — di ponsel keduanya sudah ada di menu. */}
+        <div className="utility-bar d-none d-lg-block">
+          <div className="container-fluid d-flex align-items-center justify-content-between">
+            <span className="utility-contact">
+              {contact.phones.slice(0, 2).map((phone, index) => (
+                <span key={phone}>
+                  {index > 0 && <span className="utility-sep" aria-hidden="true">·</span>}
+                  {phone}
+                </span>
+              ))}
+            </span>
+            <span className="utility-contact">
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              <span className="utility-sep" aria-hidden="true">·</span>
+              <LocaleSwitch {...{ locale, current, routes, localeNames }} />
+            </span>
+          </div>
+        </div>
 
-          <button
-            className={`navbar-toggler d-lg-none ms-auto${menuOpen ? " open" : ""}`}
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="site-menu"
-            aria-label="Toggle navigation"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <i className={`bi fs-2 ${menuOpen ? "bi-x" : "bi-list"}`} />
-          </button>
+        <nav className="navbar navbar-expand-lg">
+          <div className="container-fluid d-flex align-items-center">
+            <Link href={routes[locale].home} className="navbar-brand">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logoSrc} alt={siteName} className="brand-logo" />
+            </Link>
 
-          <div
-            id="site-menu"
-            className={`navbar-menu collapse navbar-collapse${menuOpen ? " show" : ""}`}
-          >
-            <ul className="navbar-nav mb-2 mb-lg-0">
-              {MENU_PAGES.map((page) => (
-                <li className="nav-item" key={page}>
+            <button
+              className={`navbar-toggler d-lg-none ms-auto${menuOpen ? " open" : ""}`}
+              type="button"
+              aria-expanded={menuOpen}
+              aria-controls="site-menu"
+              aria-label="Toggle navigation"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              <i className={`bi fs-2 ${menuOpen ? "bi-x" : "bi-list"}`} />
+            </button>
+
+            <div
+              id="site-menu"
+              className={`navbar-menu collapse navbar-collapse${menuOpen ? " show" : ""}`}
+            >
+              <ul className="navbar-nav mb-2 mb-lg-0">
+                {MENU_PAGES.map((page) => (
+                  <li className="nav-item" key={page}>
+                    <Link
+                      href={routes[locale][page]}
+                      className={`nav-link${page === current ? " active" : ""}`}
+                      aria-current={page === current ? "page" : undefined}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {labels[page]}
+                    </Link>
+                  </li>
+                ))}
+                {/* Kontak muncul sebagai tautan biasa hanya di menu layar sempit. */}
+                <li className="nav-item d-lg-none">
                   <Link
-                    href={routes[locale][page]}
-                    className={`nav-link${page === current ? " active" : ""}`}
-                    aria-current={page === current ? "page" : undefined}
+                    href={routes[locale].contact}
+                    className={`nav-link${current === "contact" ? " active" : ""}`}
                     onClick={() => setMenuOpen(false)}
                   >
-                    {labels[page]}
+                    {labels.contact}
                   </Link>
                 </li>
-              ))}
-              {/* Kontak muncul sebagai tautan biasa hanya di menu layar sempit. */}
-              <li className="nav-item d-lg-none">
+              </ul>
+
+              <div className="nav-tail">
+                <span className="d-lg-none">
+                  <LocaleSwitch {...{ locale, current, routes, localeNames }} />
+                </span>
                 <Link
                   href={routes[locale].contact}
-                  className={`nav-link${current === "contact" ? " active" : ""}`}
+                  className="btn-fill btn-sm d-none d-lg-inline-flex"
                   onClick={() => setMenuOpen(false)}
                 >
                   {labels.contact}
                 </Link>
-              </li>
-            </ul>
-
-            <div className="nav-tail">
-              <LocaleSwitch {...{ locale, current, routes, localeNames }} />
-              <Link
-                href={routes[locale].contact}
-                className="btn-fill btn-sm d-none d-lg-inline-flex"
-                onClick={() => setMenuOpen(false)}
-              >
-                {labels.contact}
-              </Link>
+              </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 }
