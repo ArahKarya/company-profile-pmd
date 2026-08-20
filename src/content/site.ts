@@ -3,14 +3,11 @@ import type { SiteConfig } from "./types";
 /**
  * Locale-independent facts about the company.
  *
- * This is the first file to edit when rebranding. Colours live in
- * `src/styles/theme.css` under `:root`.
+ * Angka dan kontak di sini diambil dari company profile PMD 2025; alamatnya memakai versi
+ * footer compro, yang dipakai di seluruh halamannya.
  *
  * Logo resmi ada di public/brand/: logo-light.png (versi putih, untuk latar gelap),
  * logo-dark.png (versi warna, untuk latar terang), favicon.png (mark tanpa tagline).
- *
- * TODO(PMD): the contact block below is still placeholder — ganti dengan alamat,
- * telepon dan email PT Pangan Masa Depan yang sebenarnya (atau ubah lewat /admin).
  */
 export const site: SiteConfig = {
   name: "Pangan Masa Depan",
@@ -47,17 +44,22 @@ export const site: SiteConfig = {
     },
   },
 
-  email: "info@panganmasadepan.co.id",
-  careersEmail: "karier@panganmasadepan.co.id",
-  phones: ["+62 21 000 0000", "+62 811 0000 000 (Penjualan)", "+62 812 0000 0000 (Pembelian Gabah)"],
-  addressLines: ["Jl. Contoh Raya No. 1", "Kabupaten Contoh — Jawa Tengah 00000"],
+  email: "info@panganmasadepan.com",
+  careersEmail: "info@panganmasadepan.com",
+  phones: ["+62 811-3880-0034"],
+  addressLines: [
+    "Jalan Rancahan, Blok Sukamelang RT 08/04",
+    "Karangmulya, Kec. Kandanghaur",
+    "Kabupaten Indramayu, Jawa Barat 45254",
+  ],
 
   /**
    * Map embed. This keyless `output=embed` form takes a plain place query, so it works
    * without a Google Maps API key — swap the `q=` value for your own address, or paste a
    * full "Embed a map" URL from Google Maps in its place.
    */
-  mapEmbedUrl: "https://maps.google.com/maps?q=Jawa%20Tengah&z=10&output=embed",
+  mapEmbedUrl:
+    "https://maps.google.com/maps?q=Kandanghaur%2C%20Indramayu%2C%20Jawa%20Barat&z=13&output=embed",
 
   copyright: "©2026 PT Pangan Masa Depan",
 };

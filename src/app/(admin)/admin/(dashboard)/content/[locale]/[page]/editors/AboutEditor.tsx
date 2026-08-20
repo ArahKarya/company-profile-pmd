@@ -1,7 +1,7 @@
 "use client";
 
-import type { AboutContent } from "@/content/types";
-import { ImageInput, TextArea } from "../../../../_ui/fields";
+import type { AboutContent, ValueItem } from "@/content/types";
+import { ImageInput, Repeater, StringList, TextArea, TextInput } from "../../../../_ui/fields";
 import { HeroFields, SplitFields, type Options } from "./shared";
 
 export function AboutEditor({
@@ -64,6 +64,60 @@ export function AboutEditor({
           withAlt={false}
         />
       </div>
+      <div className="admin-card">
+        <h2>Nilai perusahaan</h2>
+        <p className="hint">
+          Akronim TERDEPAN. Hurufnya berdiri di kolom kiri, jadi urutan barisnya menentukan
+          bacaan akronimnya.
+        </p>
+        <div className="admin-grid">
+          <TextInput
+            label="Eyebrow"
+            value={value.values.eyebrow}
+            onChange={(eyebrow) => patch({ values: { ...value.values, eyebrow } })}
+          />
+          <TextInput
+            label="Catatan"
+            value={value.values.note ?? ""}
+            onChange={(note) => patch({ values: { ...value.values, note } })}
+          />
+        </div>
+        <StringList
+          label="Judul"
+          value={value.values.headline}
+          onChange={(headline) => patch({ values: { ...value.values, headline } })}
+        />
+        <Repeater<ValueItem>
+          label="Nilai"
+          items={value.values.items}
+          onChange={(items) => patch({ values: { ...value.values, items } })}
+          title={(item) => `${item.letter} — ${item.title}` }
+          addLabel="Tambah nilai"
+          newItem={() => ({ letter: "", title: "", body: "" })}
+          renderItem={(item, update) => (
+            <>
+              <div className="admin-grid">
+                <TextInput
+                  label="Huruf"
+                  value={item.letter}
+                  onChange={(letter) => update({ ...item, letter })}
+                />
+                <TextInput
+                  label="Nama nilai"
+                  value={item.title}
+                  onChange={(title) => update({ ...item, title })}
+                />
+              </div>
+              <TextArea
+                label="Penjelasan"
+                value={item.body}
+                onChange={(body) => update({ ...item, body })}
+              />
+            </>
+          )}
+        />
+      </div>
+
     </>
   );
 }

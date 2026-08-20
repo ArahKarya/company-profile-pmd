@@ -149,6 +149,30 @@ export interface ProcessSection {
   readonly steps: readonly ProcessStep[];
 }
 
+/** Daftar klien dan mitra dagang — bukti sosial, ditulis sebagai teks, bukan logo. */
+export interface ClientsSection {
+  readonly eyebrow: string;
+  readonly headline: readonly string[];
+  readonly note?: string;
+  readonly items: readonly string[];
+  /** Baris penutup, mis. "dan lebih dari 100 agen lainnya". */
+  readonly footnote?: string;
+}
+
+/** Satu huruf pada akronim nilai perusahaan (TERDEPAN). */
+export interface ValueItem {
+  readonly letter: string;
+  readonly title: string;
+  readonly body: string;
+}
+
+export interface ValuesSection {
+  readonly eyebrow: string;
+  readonly headline: readonly string[];
+  readonly note?: string;
+  readonly items: readonly ValueItem[];
+}
+
 /** Pita ajakan sebelum footer. */
 export interface CtaSection {
   readonly headline: readonly string[];
@@ -160,6 +184,7 @@ export interface HomeContent {
   readonly intro: SplitSection;
   readonly stats: StatsSection;
   readonly products: CardsSection;
+  readonly clients: ClientsSection;
   readonly process: ProcessSection;
   readonly gallery: {
     readonly caption: string;
@@ -173,6 +198,7 @@ export interface AboutContent {
   readonly statement: string;
   readonly vision: SplitSection;
   readonly mission: SplitSection & { readonly art: string };
+  readonly values: ValuesSection;
 }
 
 /** A clickable region over a diagram, expressed in percentages of the image box. */

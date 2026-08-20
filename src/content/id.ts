@@ -69,10 +69,10 @@ export const id: LocaleContent = {
 
     stats: {
       items: [
-        { value: "[ANGKA]", unit: "ton/hari", label: "Kapasitas giling" },
-        { value: "[ANGKA]", unit: "petani", label: "Mitra pemasok gabah" },
-        { value: "4", unit: "tingkat", label: "Medium sampai Premium Super" },
-        { value: "5", unit: "produk samping", label: "Semua bernomor batch" },
+        { value: "300", unit: "ton/hari", label: "Kapasitas giling gabah" },
+        { value: "100+", unit: "agen", label: "Jaringan agen dan mitra dagang" },
+        { value: "7", unit: "tahap", label: "Intake sampai packing, satu lini" },
+        { value: "2021", unit: "", label: "Melayani mitra sejak" },
       ],
     },
 
@@ -105,45 +105,78 @@ export const id: LocaleContent = {
       ],
     },
 
+    clients: {
+      eyebrow: "KLIEN & MITRA",
+      headline: ["Beras kami masuk ke dapur industri, gudang pemerintah, dan pasar induk"],
+      note: "Bekerja sama sejak 2021",
+      items: [
+        "Mayora",
+        "Food Station",
+        "Bulog",
+        "Charoen Pokphand",
+        "Badan Gizi Nasional",
+        "Pasar Induk Cipinang",
+        "RM Taman Selera",
+        "PT East Bogor",
+      ],
+      footnote: "Bersama CV Kawan Karya, Grosir Berkah Mandiri, JBM, RAI, dan lebih dari 100 agen lainnya.",
+    },
+
     process: {
       title: "Alur produksi",
       note: "Arahkan kursor ke sebuah tahap, klik untuk membuka rinciannya.",
-      from: {
-        label: "Gabah",
-        image: { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling", width: 1000, height: 700 },
-      },
       moreLabel: "Rincian",
       closeLabel: "Tutup",
+      from: {
+        label: "Gabah",
+        image: { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling", width: 1000, height: 750 },
+      },
       to: {
         label: "Beras kemasan",
-        image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 1000 },
+        image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 750 },
       },
       steps: [
         {
           step: "01",
-          title: "Penerimaan gabah",
-          body: "Timbang, uji kadar air, catat nomor batch.",
+          title: "Intake",
+          body: "Gabah ditimbang, diuji, dan dicatat nomor batchnya.",
           unit: "PMD-1",
           image: { src: "/images/feature-milling.jpg", alt: "Gabah dituang ke lubang penerimaan", width: 1400, height: 900 },
           detail: {
             body: [
-              "Gabah kering panen maupun gabah kering giling ditimbang di hadapan pengirimnya, lalu diambil sampelnya untuk diuji kadar air dan kebersihannya. Hasil uji itu yang menentukan harga dan perlakuan berikutnya — bukan taksiran di lapangan.",
+              "Gabah ditimbang di hadapan pengirimnya, lalu diambil sampelnya untuk diuji kadar air dan kebersihannya. Hasil uji itu yang menentukan harga dan perlakuan berikutnya — bukan taksiran di lapangan.",
             ],
             points: [
               "Dicatat: berat, kadar air, varietas, asal, dan nomor batch",
-              "Masuk: GKP atau GKG dari petani dan kelompok tani",
+              "Masuk: gabah dari petani, kelompok tani, dan pemasok",
             ],
           },
         },
         {
           step: "02",
-          title: "Pengeringan",
-          body: "Turun sampai kadar air aman simpan.",
+          title: "Pre-cleaning",
+          body: "Kotoran, jerami, dan benda asing dipisahkan lebih dulu.",
+          unit: "PMD-1",
+          image: { src: "/images/facility-plant.jpg", alt: "Instalasi elevator dan silo", width: 1400, height: 900 },
+          detail: {
+            body: [
+              "Sebelum masuk pengering, gabah dibersihkan dari jerami, debu, batu, dan benda asing lain. Tahap ini menentukan umur mesin di hilir sekaligus menjaga agar kotoran tidak ikut terhitung sebagai bobot yang dikeringkan.",
+            ],
+            points: [
+              "Keluar: gabah bersih siap dikeringkan",
+              "Menjaga: mesin di tahap berikutnya dan ketepatan susut",
+            ],
+          },
+        },
+        {
+          step: "03",
+          title: "Drying",
+          body: "Kadar air diturunkan sampai batas aman simpan.",
           unit: "PMD-1",
           image: { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
           detail: {
             body: [
-              "Gabah diturunkan kadar airnya secara bertahap sampai batas aman simpan. Pengeringan yang terlalu cepat membuat butir retak dan meningkatkan beras patah saat digiling, jadi lajunya dijaga, bukan dikejar.",
+              "Kadar air diturunkan bertahap sampai batas aman simpan. Pengeringan yang terlalu cepat membuat butir retak dan menaikkan beras patah saat digiling, jadi lajunya dijaga, bukan dikejar.",
             ],
             points: [
               "Dicatat: kadar air awal dan akhir, lama pengeringan",
@@ -152,50 +185,66 @@ export const id: LocaleContent = {
           },
         },
         {
-          step: "03",
-          title: "Pemecah kulit",
+          step: "04",
+          title: "Husking",
           body: "Sekam dilepas, keluar beras pecah kulit.",
           unit: "PMD-1",
-          image: { src: "/images/mill-floor.jpg", alt: "Gabah dan mesin di lantai giling unit PMD-1", width: 1400, height: 900 },
+          image: { src: "/images/mill-floor.jpg", alt: "Gabah dan mesin di lantai giling", width: 1400, height: 900 },
           detail: {
             body: [
-              "Kulit gabah dilepas sehingga tersisa beras pecah kulit. Sekam yang terpisah tidak dibuang: ia masuk stok sebagai produk tersendiri, sama seperti hasil samping lainnya.",
+              "Kulit gabah dilepas sehingga tersisa beras pecah kulit. Sekam yang terpisah tidak dibuang: ia masuk stok dan diolah lebih lanjut menjadi pelet sekam padi.",
             ],
             points: [
-              "Keluar: beras pecah kulit — bahan baku unit PMD-2",
-              "Hasil samping: sekam, bernomor batch",
-            ],
-          },
-        },
-        {
-          step: "04",
-          title: "Penyosohan & grading",
-          body: "Derajat sosoh diatur, butir dipisah menurut mutu.",
-          unit: "PMD-2",
-          image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
-          detail: {
-            body: [
-              "Lapisan luar beras disosoh sampai derajat yang dituju, lalu butirnya dipisahkan menurut keutuhan. Tingkat mutu — Medium sampai Premium Super — ditetapkan setelah grading, jadi yang tertulis pada kemasan adalah hasil yang benar-benar terukur.",
-            ],
-            points: [
-              "Dicatat: derajat sosoh, proporsi butir utuh, rendemen",
-              "Hasil samping: bekatul, broken, menir, dan reject",
+              "Keluar: beras pecah kulit — bahan baku tahap penyosohan",
+              "Hasil samping: sekam, bahan baku pelet energi terbarukan",
             ],
           },
         },
         {
           step: "05",
-          title: "Pengemasan",
-          body: "Dikemas per merk, siap distribusi.",
+          title: "Whitening",
+          body: "Lapisan luar disosoh sampai derajat yang dituju.",
           unit: "PMD-2",
-          image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk", width: 1000, height: 700 },
+          image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
           detail: {
             body: [
-              "Beras dikemas menurut kombinasi tingkat mutu, klasifikasi varietas, dan merk — termasuk merk milik pelanggan. Nomor batch ikut sampai ke karung, sehingga satu kemasan selalu bisa ditelusuri kembali ke gabah asalnya.",
+              "Lapisan luar beras disosoh bertahap sampai derajat sosoh yang dituju. Di tahap inilah bekatul terpisah — lapisan kulit ari yang kaya serat, vitamin B kompleks, dan mineral.",
             ],
             points: [
-              "Keluar: beras kemasan per merk dan ukuran",
-              "Ditelusuri: nomor batch dari penerimaan sampai pengiriman",
+              "Dicatat: derajat sosoh dan rendemen",
+              "Hasil samping: bekatul",
+            ],
+          },
+        },
+        {
+          step: "06",
+          title: "Grading",
+          body: "Butir dipisahkan menurut keutuhan dan mutu.",
+          unit: "PMD-2",
+          image: { src: "/images/service-detail-1.jpg", alt: "Butir beras hasil sortir", width: 1200, height: 800 },
+          detail: {
+            body: [
+              "Butir dipisahkan menurut keutuhannya. Tingkat mutu ditetapkan setelah tahap ini, bukan sebelum digiling — jadi yang tertulis pada kemasan adalah hasil yang benar-benar terukur.",
+            ],
+            points: [
+              "Dicatat: proporsi butir utuh dan tingkat mutu",
+              "Hasil samping: broken dan menir",
+            ],
+          },
+        },
+        {
+          step: "07",
+          title: "Packing",
+          body: "Dikemas per merk dan ukuran, siap distribusi.",
+          unit: "PMD-2",
+          image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk", width: 1000, height: 750 },
+          detail: {
+            body: [
+              "Beras dikemas menurut tingkat mutu, klasifikasi, dan merk — termasuk merk milik pelanggan. Nomor batch ikut sampai ke karung, sehingga satu kemasan selalu bisa ditelusuri kembali ke gabah asalnya.",
+            ],
+            points: [
+              "Keluar: beras kemasan 5, 10, 25, dan 50 kg",
+              "Ditelusuri: nomor batch dari intake sampai pengiriman",
             ],
           },
         },
@@ -224,37 +273,86 @@ export const id: LocaleContent = {
 
   about: {
     hero: {
-      headline: ["PT Pangan Masa Depan Mengolah **Padi**", "Menjadi **Pangan yang Terpercaya**"],
+      headline: ["Teknologi Modern untuk **Ketahanan Pangan**", "**Indonesia**"],
       background: { desktop: "/images/hero-about.jpg", mobile: "/images/hero-about.jpg" },
     },
     statement:
-      "PT Pangan Masa Depan adalah perusahaan agribisnis pengolahan padi dan beras. Dari penerimaan gabah petani hingga beras kemasan bermerk, seluruh tahap berjalan di fasilitas kami sendiri dengan catatan mutu yang tersimpan pada setiap batch.",
+      "PT Pangan Masa Depan adalah perusahaan agribisnis pengolahan padi dan beras di Kandanghaur, Indramayu. Dari penerimaan gabah hingga beras kemasan bermerk, seluruh tahap berjalan di fasilitas kami sendiri dengan kapasitas giling 300 ton gabah per hari.",
 
     vision: {
-      eyebrow: "Visi Kami",
-      headline: ["Menjadi pengolah padi yang **paling dapat**", "**diandalkan** bagi petani dan pelanggan."],
+      eyebrow: "VISI KAMI",
+      headline: ["Menjadi pelopor transformasi industri beras", "melalui **inovasi, teknologi, dan kolaborasi**."],
       body: [
-        "Kami ingin gabah petani dihargai secara adil dan diolah dengan benar, sehingga beras yang sampai ke konsumen konsisten dari satu pengiriman ke pengiriman berikutnya.",
-        "Keandalan itu dibangun dari hal-hal sederhana yang dijalankan terus-menerus: penimbangan yang jujur, pengeringan yang cukup, dan pencatatan yang rapi.",
+        "Kami mengarahkan ketiganya untuk mewujudkan pertanian yang efisien, berkelanjutan, dan menyejahterakan.",
+        "Teknologi bagi kami bukan sekadar alat produksi, melainkan fondasi untuk menciptakan efisiensi, konsistensi mutu, dan keberlanjutan — sistem penggilingan yang modern, ramah lingkungan, dan berbasis data.",
       ],
-      media: [{ src: "/images/about-vision.jpg", alt: "Petani menampi gabah hasil panen", width: 1200, height: 900 }],
+      media: [{ src: "/images/facility-plant.jpg", alt: "Instalasi elevator dan silo", width: 1400, height: 900 }],
     },
 
     mission: {
-      eyebrow: "Misi Kami",
-      headline: ["**Mengolah** hasil panen", "dengan cara yang", "**bertanggung jawab**"],
+      eyebrow: "MISI KAMI",
+      headline: ["Lima hal yang kami kerjakan", "untuk sampai ke sana"],
       body: [
-        "Membeli gabah petani dengan penimbangan dan penetapan mutu yang transparan.",
-        "Menjaga mutu di setiap tahap, dari penerimaan gabah hingga beras dikemas.",
-        "Memanfaatkan seluruh hasil samping — bekatul, broken, menir, sekam, dan reject — agar tidak ada yang terbuang.",
-        "Mengembangkan kemampuan tim melalui pelatihan dan standar kerja yang terukur.",
+        "Meningkatkan nilai hasil panen melalui pengolahan modern yang efisien dan berstandar tinggi.",
+        "Mengintegrasikan teknologi dan data dalam setiap lini bisnis, dari pasca panen hingga distribusi.",
+        "Membangun ekosistem pertanian kolaboratif yang menghubungkan petani, mitra, dan pelanggan dalam rantai pasok beras yang transparan.",
+        "Menciptakan budaya kerja inovatif dan adaptif, di mana setiap tim merasa memiliki dampak nyata bagi ketahanan pangan nasional.",
+        "Menjadi benchmark industri beras Indonesia dalam efisiensi, keberlanjutan, dan tanggung jawab sosial.",
       ],
       media: [
-        { src: "/images/about-mission-1.jpg", alt: "Gabah dibongkar di unit penerimaan", width: 1000, height: 800 },
+        { src: "/images/about-mission-1.jpg", alt: "Elevator gabah dan truk di unit penerimaan", width: 1000, height: 800 },
         { src: "/images/about-mission-2.jpg", alt: "Karung tersusun di gudang penyimpanan", width: 1000, height: 800 },
         { src: "/images/about-mission-3.jpg", alt: "Tim mengangkut karung di lantai produksi", width: 1000, height: 800 },
       ],
       art: "/brand/closing-art.svg",
+    },
+
+    values: {
+      eyebrow: "NILAI KAMI",
+      headline: ["TERDEPAN"],
+      note: "Delapan nilai yang menjadi ukuran cara kami bekerja.",
+      items: [
+        {
+          letter: "T",
+          title: "Tanggung Jawab",
+          body: "Kami menjunjung tinggi integritas dan tanggung jawab dalam setiap proses — dari pengadaan bahan baku hingga distribusi beras kepada pelanggan.",
+        },
+        {
+          letter: "E",
+          title: "Efisiensi",
+          body: "Kami berkomitmen menciptakan sistem kerja yang hemat energi, waktu, dan biaya dengan menerapkan teknologi modern dalam setiap lini produksi.",
+        },
+        {
+          letter: "R",
+          title: "Reliabilitas",
+          body: "Kami menjadi mitra terpercaya dengan menjaga konsistensi mutu, ketepatan waktu, dan pelayanan terbaik kepada pelanggan.",
+        },
+        {
+          letter: "D",
+          title: "Dedikasi",
+          body: "Kami bekerja dengan sepenuh hati untuk memberikan hasil terbaik bagi perusahaan, petani, dan masyarakat.",
+        },
+        {
+          letter: "E",
+          title: "Ekselensi",
+          body: "Kami terus mendorong perbaikan berkelanjutan dan inovasi untuk mencapai standar tertinggi dalam industri pangan.",
+        },
+        {
+          letter: "P",
+          title: "Profesionalisme",
+          body: "Kami mengutamakan etika kerja, kompetensi, dan tanggung jawab dalam setiap tindakan dan keputusan.",
+        },
+        {
+          letter: "A",
+          title: "Adaptif",
+          body: "Kami cepat beradaptasi terhadap perubahan teknologi, pasar, dan kebutuhan pelanggan agar selalu relevan dan kompetitif.",
+        },
+        {
+          letter: "N",
+          title: "Nasionalisme",
+          body: "Kami bangga berkontribusi dalam memperkuat ketahanan pangan nasional dan meningkatkan kesejahteraan petani Indonesia.",
+        },
+      ],
     },
   },
 

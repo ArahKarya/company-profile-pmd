@@ -1129,7 +1129,9 @@ p.lede {
   position: relative;
   flex: 1 1 auto;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  /* Tujuh stasiun dalam satu baris — relnya baru terbaca sebagai satu garis kalau tidak
+     terpotong ke baris berikutnya. */
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0;
   list-style: none;
   margin: 0;
@@ -1142,7 +1144,7 @@ p.lede {
   position: absolute;
   left: 0;
   right: 0;
-  top: 100px;
+  top: 86px;
   border-top: 1px solid rgba(233, 189, 12, 0.45);
 }
 
@@ -1165,7 +1167,7 @@ p.lede {
 .station-well {
   display: block;
   width: 100%;
-  height: 92px;
+  height: 78px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -1220,7 +1222,7 @@ p.lede {
 
 .station-label {
   margin-top: 14px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -1323,6 +1325,11 @@ p.lede {
   color: var(--text-muted);
 }
 
+@media (max-width: 1399.98px) {
+  .rail-stations { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 34px; }
+  .rail-stations::before { display: none; }
+}
+
 @media (max-width: 1199.98px) {
   .rail-stations { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 34px; }
   .rail-stations::before { display: none; }
@@ -1403,4 +1410,134 @@ p.lede {
 @media (max-width: 991.98px) {
   .gallery { padding: 40px 0 48px; }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* --- Klien dan mitra dagang --- */
+
+.clients { padding: 64px 0 72px; }
+
+.clients-note {
+  font-family: var(--font-technical);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted-light);
+  white-space: nowrap;
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+}
+
+.client-grid li {
+  padding: 20px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.clients-footnote {
+  margin: 16px 0 0;
+  font-family: var(--font-technical);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted-light);
+}
+
+@media (max-width: 991.98px) {
+  .client-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .clients-note { white-space: normal; }
+}
+
+/* --- Nilai perusahaan (akronim) --- */
+
+.values { padding: 8px 0 72px; }
+
+.value-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.value-row {
+  display: grid;
+  grid-template-columns: 56px 220px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.value-letter {
+  font-family: var(--font-technical);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--brand-accent);
+}
+
+.value-row dt {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.value-row dd {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+@media (max-width: 767.98px) {
+  .value-row {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 6px 16px;
+  }
+  .value-row dd { grid-column: 2; }
+}
+
+/* --- Daftar misi --- */
+
+.mission-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--hairline);
+}
+
+.mission-list li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.mission-number {
+  font-family: var(--font-technical);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1em;
+  color: var(--brand-accent-deep);
+}
+
+@media (max-width: 767.98px) {
+  .mission-list { grid-template-columns: 1fr; }
 }

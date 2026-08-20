@@ -25,19 +25,33 @@ export function Vision({ content }: { readonly content: AboutContent["vision"] }
   );
 }
 
-/** Mission block: headline and bullets over a staggered image trio and the art strip. */
+/**
+ * Misi: daftar bernomor, lalu tiga foto sebagai jeda visual.
+ *
+ * Poin misi dirender sebagai daftar penuh — jumlahnya tidak lagi terikat pada jumlah foto,
+ * seperti pada versi sebelumnya yang diam-diam memotong poin ke berapa pun foto yang ada.
+ */
 export function Mission({ content }: { readonly content: AboutContent["mission"] }) {
   return (
     <section className="section-auto position-relative pt-5">
       <div className="container-fluid">
-        <div className="row mb-5">
+        <div className="row mb-4">
           <div className="col-12 col-md-8 d-flex flex-column">
             {content.eyebrow && <span className="eyebrow">{content.eyebrow}</span>}
-            {content.headline && <Headline lines={content.headline} />}
+            {content.headline && <Headline lines={content.headline} as="h2" className="marker-none" />}
           </div>
         </div>
 
-        <div className="row gy-4 align-items-start mb-5">
+        <ol className="mission-list">
+          {content.body.map((point, index) => (
+            <li key={point}>
+              <span className="mission-number">{String(index + 1).padStart(2, "0")}</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ol>
+
+        <div className="row gy-4 align-items-start mb-5 mt-5">
           {content.media.map((image, index) => (
             <div className="col-12 col-md-4" key={image.src}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -48,7 +62,6 @@ export function Mission({ content }: { readonly content: AboutContent["mission"]
                 height={image.height}
                 className={`w-100 h-auto${index === 1 ? " mt-md-5" : ""}`}
               />
-              <p className="mt-3">{content.body[index]}</p>
             </div>
           ))}
         </div>

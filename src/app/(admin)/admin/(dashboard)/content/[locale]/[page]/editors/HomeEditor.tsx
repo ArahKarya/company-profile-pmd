@@ -226,6 +226,40 @@ export function HomeEditor({
       </div>
 
       <div className="admin-card">
+        <h2>Klien &amp; mitra</h2>
+        <p className="hint">
+          Daftar nama, bukan logo. Satu baris satu nama; baris penutup untuk sisanya.
+        </p>
+        <div className="admin-grid">
+          <TextInput
+            label="Eyebrow"
+            value={value.clients.eyebrow}
+            onChange={(eyebrow) => patch({ clients: { ...value.clients, eyebrow } })}
+          />
+          <TextInput
+            label="Catatan di kanan judul"
+            value={value.clients.note ?? ""}
+            onChange={(note) => patch({ clients: { ...value.clients, note } })}
+          />
+        </div>
+        <StringList
+          label="Judul"
+          value={value.clients.headline}
+          onChange={(headline) => patch({ clients: { ...value.clients, headline } })}
+        />
+        <StringList
+          label="Nama klien"
+          value={value.clients.items}
+          onChange={(items) => patch({ clients: { ...value.clients, items } })}
+        />
+        <TextArea
+          label="Baris penutup"
+          value={value.clients.footnote ?? ""}
+          onChange={(footnote) => patch({ clients: { ...value.clients, footnote } })}
+        />
+      </div>
+
+      <div className="admin-card">
         <h2>Alur produksi</h2>
         <p className="hint">
           Rel bernomor di pita gelap. Kartu membalik saat disentuh kursor dan membuka

@@ -4,6 +4,7 @@ import { SplitHero } from "@/components/sections/SplitHero";
 import { Split } from "@/components/sections/Split";
 import { Stats } from "@/components/sections/Stats";
 import { Cards } from "@/components/sections/Cards";
+import { Clients } from "@/components/sections/Clients";
 import { ProcessBand } from "@/components/sections/ProcessBand";
 import { Gallery } from "@/components/sections/Gallery";
 import { Cta } from "@/components/sections/Cta";
@@ -23,11 +24,12 @@ export default async function Page() {
       <Split content={copy.home.intro} />
       <Stats content={copy.home.stats} />
       <Cards content={copy.home.products} index="02" />
-      <ProcessBand content={copy.home.process} index="03" />
+      <Clients content={copy.home.clients} index="03" />
+      <ProcessBand content={copy.home.process} index="04" />
       <Gallery
         images={copy.home.gallery.images}
         caption={copy.home.gallery.caption}
-        index="04"
+        index="05"
       />
       <Cta content={copy.home.cta} />
     </PageShell>

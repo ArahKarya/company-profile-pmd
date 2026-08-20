@@ -69,10 +69,10 @@ export const en: LocaleContent = {
 
     stats: {
       items: [
-        { value: "[FIGURE]", unit: "tonnes/day", label: "Milling capacity" },
-        { value: "[FIGURE]", unit: "farmers", label: "Paddy supply partners" },
-        { value: "4", unit: "tiers", label: "Medium through Premium Super" },
-        { value: "5", unit: "by-products", label: "All batch numbered" },
+        { value: "300", unit: "tonnes/day", label: "Paddy milling capacity" },
+        { value: "100+", unit: "agents", label: "Agent and trade network" },
+        { value: "7", unit: "stages", label: "Intake to packing, one line" },
+        { value: "2021", unit: "", label: "Serving partners since" },
       ],
     },
 
@@ -105,40 +105,73 @@ export const en: LocaleContent = {
       ],
     },
 
+    clients: {
+      eyebrow: "CLIENTS & PARTNERS",
+      headline: ["Our rice reaches industrial kitchens, government warehouses and wholesale markets"],
+      note: "Working together since 2021",
+      items: [
+        "Mayora",
+        "Food Station",
+        "Bulog",
+        "Charoen Pokphand",
+        "Badan Gizi Nasional",
+        "Pasar Induk Cipinang",
+        "RM Taman Selera",
+        "PT East Bogor",
+      ],
+      footnote: "Alongside CV Kawan Karya, Grosir Berkah Mandiri, JBM, RAI and more than 100 other agents.",
+    },
+
     process: {
       title: "How it runs",
       note: "Hover a stage; click to open its detail.",
-      from: {
-        label: "Paddy",
-        image: { src: "/images/gallery-3.jpg", alt: "Paddy grain before milling", width: 1000, height: 700 },
-      },
       moreLabel: "Detail",
       closeLabel: "Close",
+      from: {
+        label: "Paddy",
+        image: { src: "/images/gallery-3.jpg", alt: "Paddy grain before milling", width: 1000, height: 750 },
+      },
       to: {
         label: "Packed rice",
-        image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 1000 },
+        image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 750 },
       },
       steps: [
         {
           step: "01",
-          title: "Paddy intake",
-          body: "Weighed, moisture tested, batch numbered.",
+          title: "Intake",
+          body: "Paddy is weighed, tested and batch numbered.",
           unit: "PMD-1",
           image: { src: "/images/feature-milling.jpg", alt: "Paddy pouring into the intake pit", width: 1400, height: 900 },
           detail: {
             body: [
-              "Freshly harvested and pre-dried paddy alike is weighed in front of whoever delivered it, then sampled for moisture and cleanliness. That test sets the price and the handling that follows — not an estimate made in the yard.",
+              "Paddy is weighed in front of whoever delivered it, then sampled for moisture and cleanliness. That test sets the price and the handling that follows — not an estimate made in the yard.",
             ],
             points: [
               "Recorded: weight, moisture, variety, origin and batch number",
-              "In: paddy from farmers and farmer groups",
+              "In: paddy from farmers, farmer groups and suppliers",
             ],
           },
         },
         {
           step: "02",
+          title: "Pre-cleaning",
+          body: "Straw, dust and foreign matter are taken out first.",
+          unit: "PMD-1",
+          image: { src: "/images/facility-plant.jpg", alt: "Grain elevator and silo installation", width: 1400, height: 900 },
+          detail: {
+            body: [
+              "Before drying, the paddy is cleared of straw, dust, stones and other foreign matter. This stage decides how long the downstream machines last, and keeps dirt from being counted as weight to be dried.",
+            ],
+            points: [
+              "Out: clean paddy ready for drying",
+              "Protects: the machines downstream and the accuracy of weight loss",
+            ],
+          },
+        },
+        {
+          step: "03",
           title: "Drying",
-          body: "Down to a safe storage moisture level.",
+          body: "Moisture is brought down to a safe storage level.",
           unit: "PMD-1",
           image: { src: "/images/intro-1.jpg", alt: "Paddy drying on the drying floor", width: 1200, height: 900 },
           detail: {
@@ -152,49 +185,65 @@ export const en: LocaleContent = {
           },
         },
         {
-          step: "03",
+          step: "04",
           title: "Husking",
           body: "The husk comes off; brown rice comes out.",
           unit: "PMD-1",
-          image: { src: "/images/mill-floor.jpg", alt: "Paddy and machinery on the PMD-1 milling floor", width: 1400, height: 900 },
+          image: { src: "/images/mill-floor.jpg", alt: "Paddy and machinery on the milling floor", width: 1400, height: 900 },
           detail: {
             body: [
-              "The husk is removed, leaving brown rice. What comes off is not waste: husk enters stock as a product in its own right, like every other by-product.",
+              "The husk is removed, leaving brown rice. What comes off is not waste: husk enters stock and is processed further into rice husk pellets.",
             ],
             points: [
-              "Out: brown rice — the feedstock for PMD-2",
-              "By-product: husk, batch numbered",
-            ],
-          },
-        },
-        {
-          step: "04",
-          title: "Polishing & grading",
-          body: "Degree of milling set, grain sorted by quality.",
-          unit: "PMD-2",
-          image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
-          detail: {
-            body: [
-              "The outer layer is polished to the intended degree, then the grain is separated by how much of it is whole. The quality tier — Medium through Premium Super — is assigned after grading, so what the pack says is what was actually measured.",
-            ],
-            points: [
-              "Recorded: degree of milling, whole-grain share, milling yield",
-              "By-products: bran, broken rice, fine grain and rejects",
+              "Out: brown rice — the feedstock for polishing",
+              "By-product: husk, the raw material for renewable-fuel pellets",
             ],
           },
         },
         {
           step: "05",
-          title: "Packing",
-          body: "Packed per brand, ready to ship.",
+          title: "Whitening",
+          body: "The outer layer is polished to the intended degree.",
           unit: "PMD-2",
-          image: { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck", width: 1000, height: 700 },
+          image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
           detail: {
             body: [
-              "Rice is packed by tier, varietal classification and brand — a customer's own brand included. The batch number travels with the sack, so a pack can always be traced back to the paddy it came from.",
+              "The outer layer is polished away in stages to the intended degree of milling. This is where bran separates — the layer rich in fibre, B vitamins and minerals.",
             ],
             points: [
-              "Out: packed rice per brand and size",
+              "Recorded: degree of milling and yield",
+              "By-product: rice bran",
+            ],
+          },
+        },
+        {
+          step: "06",
+          title: "Grading",
+          body: "Grain is separated by wholeness and quality.",
+          unit: "PMD-2",
+          image: { src: "/images/service-detail-1.jpg", alt: "Sorted rice grains", width: 1200, height: 800 },
+          detail: {
+            body: [
+              "Grain is separated by how much of it is whole. The quality tier is assigned after this stage rather than before milling — so what the pack says is what was actually measured.",
+            ],
+            points: [
+              "Recorded: whole-grain share and quality tier",
+              "By-products: broken rice and fine broken grain",
+            ],
+          },
+        },
+        {
+          step: "07",
+          title: "Packing",
+          body: "Packed per brand and size, ready to ship.",
+          unit: "PMD-2",
+          image: { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck", width: 1000, height: 750 },
+          detail: {
+            body: [
+              "Rice is packed by tier, classification and brand — a customer's own brand included. The batch number travels with the sack, so a pack can always be traced back to the paddy it came from.",
+            ],
+            points: [
+              "Out: packed rice in 5, 10, 25 and 50 kg",
               "Traceable: batch number from intake to delivery",
             ],
           },
@@ -224,37 +273,86 @@ export const en: LocaleContent = {
 
   about: {
     hero: {
-      headline: ["PT Pangan Masa Depan Turns **Paddy**", "Into **Food You Can Trust**"],
+      headline: ["Modern Technology for **Indonesia's**", "**Food Security**"],
       background: { desktop: "/images/hero-about.jpg", mobile: "/images/hero-about.jpg" },
     },
     statement:
-      "PT Pangan Masa Depan is an agribusiness company processing paddy into rice. From receiving farmers' paddy to branded packed rice, every stage runs in our own facilities, with quality records kept against each batch.",
+      "PT Pangan Masa Depan is an agribusiness company processing paddy into rice in Kandanghaur, Indramayu. From paddy intake to branded packed rice, every stage runs in our own facilities, with a milling capacity of 300 tonnes of paddy per day.",
 
     vision: {
-      eyebrow: "Our Vision",
-      headline: ["To be the **most dependable** rice", "processor for farmers and customers alike."],
+      eyebrow: "OUR VISION",
+      headline: ["To pioneer the transformation of the rice industry", "through **innovation, technology and collaboration**."],
       body: [
-        "We want farmers' paddy to be priced fairly and processed properly, so that the rice reaching consumers stays consistent from one delivery to the next.",
-        "That dependability is built from simple things done repeatedly: honest weighing, sufficient drying, and careful record keeping.",
+        "We point all three at farming that is efficient, sustainable and prosperous.",
+        "Technology here is not merely production equipment but the foundation for efficiency, consistent quality and sustainability — a milling system that is modern, environmentally sound and driven by data.",
       ],
-      media: [{ src: "/images/about-vision.jpg", alt: "Farmers winnowing harvested paddy", width: 1200, height: 900 }],
+      media: [{ src: "/images/facility-plant.jpg", alt: "Grain elevator and silo installation", width: 1400, height: 900 }],
     },
 
     mission: {
-      eyebrow: "Our Mission",
-      headline: ["**Processing** the harvest", "in a way that is", "**accountable**"],
+      eyebrow: "OUR MISSION",
+      headline: ["Five things we do", "to get there"],
       body: [
-        "Buy farmers' paddy with transparent weighing and quality assessment.",
-        "Hold quality at every stage, from paddy intake through to packing.",
-        "Put every by-product to use — bran, broken rice, fine grain, husk and rejects — so nothing is wasted.",
-        "Grow our team through training and measurable working standards.",
+        "Raise the value of the harvest through modern processing that is efficient and held to a high standard.",
+        "Integrate technology and data across every line of business, from post-harvest to distribution.",
+        "Build a collaborative farming ecosystem that connects farmers, partners and customers in a transparent rice supply chain.",
+        "Foster an innovative, adaptive working culture in which every team feels its real effect on national food security.",
+        "Become the benchmark of Indonesia's rice industry in efficiency, sustainability and social responsibility.",
       ],
       media: [
-        { src: "/images/about-mission-1.jpg", alt: "Paddy being unloaded at intake", width: 1000, height: 800 },
+        { src: "/images/about-mission-1.jpg", alt: "Grain elevator and truck at intake", width: 1000, height: 800 },
         { src: "/images/about-mission-2.jpg", alt: "Sacks stacked in the storage warehouse", width: 1000, height: 800 },
         { src: "/images/about-mission-3.jpg", alt: "The team moving sacks on the plant floor", width: 1000, height: 800 },
       ],
       art: "/brand/closing-art.svg",
+    },
+
+    values: {
+      eyebrow: "OUR VALUES",
+      headline: ["TERDEPAN"],
+      note: "Eight values, spelling the Indonesian word for foremost, that measure how we work.",
+      items: [
+        {
+          letter: "T",
+          title: "Tanggung Jawab — Responsibility",
+          body: "We hold to integrity and accountability in every process, from sourcing raw material to delivering rice to the customer.",
+        },
+        {
+          letter: "E",
+          title: "Efisiensi — Efficiency",
+          body: "We commit to working systems that save energy, time and cost by applying modern technology across every production line.",
+        },
+        {
+          letter: "R",
+          title: "Reliabilitas — Reliability",
+          body: "We stay a trusted partner by holding quality steady, delivering on time, and serving customers well.",
+        },
+        {
+          letter: "D",
+          title: "Dedikasi — Dedication",
+          body: "We work wholeheartedly to give our best to the company, to farmers and to the wider community.",
+        },
+        {
+          letter: "E",
+          title: "Ekselensi — Excellence",
+          body: "We keep pushing continuous improvement and innovation towards the highest standard in the food industry.",
+        },
+        {
+          letter: "P",
+          title: "Profesionalisme — Professionalism",
+          body: "We put work ethics, competence and accountability first in every action and decision.",
+        },
+        {
+          letter: "A",
+          title: "Adaptif — Adaptability",
+          body: "We adapt quickly to shifts in technology, markets and customer needs so we stay relevant and competitive.",
+        },
+        {
+          letter: "N",
+          title: "Nasionalisme — Nationalism",
+          body: "We are proud to strengthen national food security and to improve the livelihoods of Indonesian farmers.",
+        },
+      ],
     },
   },
 
