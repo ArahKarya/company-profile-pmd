@@ -172,7 +172,7 @@ export const en: LocaleContent = {
           title: "Drying",
           body: "Moisture is brought down in stages to a safe storage level.",
           unit: "PMD-1",
-          image: { src: "/images/intro-1.jpg", alt: "Paddy drying on the drying floor", width: 1200, height: 900 },
+          image: { src: "/images/facility-drying.jpg", alt: "The dryer line at the PMD facility", width: 1050, height: 1400 },
           detail: {
             body: [
               "Moisture is brought down in stages to a level safe for storage. Drying too fast cracks the grain and raises breakage during milling, so the rate is held steady rather than rushed.",

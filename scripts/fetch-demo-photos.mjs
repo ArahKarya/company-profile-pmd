@@ -6,6 +6,9 @@
  * attribution. They stand in until PT Pangan Masa Depan's own facility photography is
  * available — replace them before treating the site as final. Re-runnable: existing
  * files are skipped, so delete a file to refresh just that one.
+ *
+ * Foto milik PMD sendiri TIDAK terdaftar di sini — ia disalin langsung ke public/images/
+ * dan namanya diawali `facility-`. Sejauh ini: facility-drying.jpg (lini pengering).
  */
 import { mkdir, writeFile, access } from 'node:fs/promises';
 import { dirname, join } from 'node:path';

@@ -172,7 +172,7 @@ export const id: LocaleContent = {
           title: "Drying",
           body: "Kadar air diturunkan bertahap sampai batas aman simpan.",
           unit: "PMD-1",
-          image: { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
+          image: { src: "/images/facility-drying.jpg", alt: "Lini pengering di fasilitas PMD", width: 1050, height: 1400 },
           detail: {
             body: [
               "Kadar air diturunkan bertahap sampai batas aman simpan. Pengeringan yang terlalu cepat membuat butir retak dan menaikkan beras patah saat digiling, jadi lajunya dijaga, bukan dikejar.",
