@@ -71,7 +71,7 @@ export const en: LocaleContent = {
       items: [
         { value: "300", unit: "tonnes/day", label: "Paddy milling capacity" },
         { value: "100+", unit: "agents", label: "Agent and trade network" },
-        { value: "7", unit: "stages", label: "Intake to packing, one line" },
+        { value: "7", unit: "stages", label: "Intake to sorting, one line" },
         { value: "2021", unit: "", label: "Serving partners since" },
       ],
     },
@@ -123,7 +123,7 @@ export const en: LocaleContent = {
     },
 
     process: {
-      title: "How it runs",
+      title: "Productions Landscape",
       note: "Hover a stage; click to open its detail.",
       moreLabel: "Detail",
       closeLabel: "Close",
@@ -132,14 +132,14 @@ export const en: LocaleContent = {
         image: { src: "/images/gallery-3.jpg", alt: "Paddy grain before milling", width: 1000, height: 750 },
       },
       to: {
-        label: "Packed rice",
+        label: "Rice",
         image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 750 },
       },
       steps: [
         {
           step: "01",
-          title: "Intake",
-          body: "Paddy is weighed, tested and batch numbered.",
+          title: "Intake / Reception",
+          body: "Paddy is received, weighed, tested and batch numbered.",
           unit: "PMD-1",
           image: { src: "/images/feature-milling.jpg", alt: "Paddy pouring into the intake pit", width: 1400, height: 900 },
           detail: {
@@ -154,13 +154,13 @@ export const en: LocaleContent = {
         },
         {
           step: "02",
-          title: "Pre-cleaning",
-          body: "Straw, dust and foreign matter are taken out first.",
+          title: "Cleaning & Aspiration",
+          body: "Straw, dust and foreign matter are screened and drawn off by air.",
           unit: "PMD-1",
           image: { src: "/images/facility-plant.jpg", alt: "Grain elevator and silo installation", width: 1400, height: 900 },
           detail: {
             body: [
-              "Before drying, the paddy is cleared of straw, dust, stones and other foreign matter. This stage decides how long the downstream machines last, and keeps dirt from being counted as weight to be dried.",
+              "Straw, dust, stones and other foreign matter are removed through graded screens and air aspiration. This stage decides how long the downstream machines last, and keeps dirt from being counted as weight to be dried.",
             ],
             points: [
               "Out: clean paddy ready for drying",
@@ -171,7 +171,7 @@ export const en: LocaleContent = {
         {
           step: "03",
           title: "Drying",
-          body: "Moisture is brought down to a safe storage level.",
+          body: "Moisture is brought down in stages to a safe storage level.",
           unit: "PMD-1",
           image: { src: "/images/intro-1.jpg", alt: "Paddy drying on the drying floor", width: 1200, height: 900 },
           detail: {
@@ -186,7 +186,7 @@ export const en: LocaleContent = {
         },
         {
           step: "04",
-          title: "Husking",
+          title: "Hulling",
           body: "The husk comes off; brown rice comes out.",
           unit: "PMD-1",
           image: { src: "/images/mill-floor.jpg", alt: "Paddy and machinery on the milling floor", width: 1400, height: 900 },
@@ -195,20 +195,20 @@ export const en: LocaleContent = {
               "The husk is removed, leaving brown rice. What comes off is not waste: husk enters stock and is processed further into rice husk pellets.",
             ],
             points: [
-              "Out: brown rice — the feedstock for polishing",
+              "Out: brown rice — the feedstock for whitening",
               "By-product: husk, the raw material for renewable-fuel pellets",
             ],
           },
         },
         {
           step: "05",
-          title: "Whitening",
-          body: "The outer layer is polished to the intended degree.",
+          title: "Whitening & Polishing",
+          body: "The bran layer is milled away, then the grain surface is polished.",
           unit: "PMD-2",
           image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
           detail: {
             body: [
-              "The outer layer is polished away in stages to the intended degree of milling. This is where bran separates — the layer rich in fibre, B vitamins and minerals.",
+              "The bran layer is milled away in stages to the intended degree, then the grain surface is polished clear. This is where bran separates — the layer rich in fibre, B vitamins and minerals.",
             ],
             points: [
               "Recorded: degree of milling and yield",
@@ -219,12 +219,12 @@ export const en: LocaleContent = {
         {
           step: "06",
           title: "Grading",
-          body: "Grain is separated by wholeness and quality.",
+          body: "Grain is separated by size and wholeness.",
           unit: "PMD-2",
           image: { src: "/images/service-detail-1.jpg", alt: "Sorted rice grains", width: 1200, height: 800 },
           detail: {
             body: [
-              "Grain is separated by how much of it is whole. The quality tier is assigned after this stage rather than before milling — so what the pack says is what was actually measured.",
+              "Grain is separated by size and by how much of it is whole. The quality tier is assigned after this stage rather than before milling — so what the pack says is what was actually measured.",
             ],
             points: [
               "Recorded: whole-grain share and quality tier",
@@ -234,17 +234,17 @@ export const en: LocaleContent = {
         },
         {
           step: "07",
-          title: "Packing",
-          body: "Packed per brand and size, ready to ship.",
+          title: "Sorting",
+          body: "Off-colour grain and any remaining foreign matter are taken out.",
           unit: "PMD-2",
-          image: { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck", width: 1000, height: 750 },
+          image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 750 },
           detail: {
             body: [
-              "Rice is packed by tier, classification and brand — a customer's own brand included. The batch number travels with the sack, so a pack can always be traced back to the paddy it came from.",
+              "The last stage before packing: grains that are off-colour, and any foreign matter that slipped past the earlier stages, are removed one by one. This is what separates premium rice from rice that is merely clean.",
             ],
             points: [
-              "Out: packed rice in 5, 10, 25 and 50 kg",
-              "Traceable: batch number from intake to delivery",
+              "Out: rice ready to be packed by brand and size",
+              "By-product: rejected rice",
             ],
           },
         },

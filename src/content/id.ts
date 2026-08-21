@@ -71,7 +71,7 @@ export const id: LocaleContent = {
       items: [
         { value: "300", unit: "ton/hari", label: "Kapasitas giling gabah" },
         { value: "100+", unit: "agen", label: "Jaringan agen dan mitra dagang" },
-        { value: "7", unit: "tahap", label: "Intake sampai packing, satu lini" },
+        { value: "7", unit: "tahap", label: "Intake sampai sorting, satu lini" },
         { value: "2021", unit: "", label: "Melayani mitra sejak" },
       ],
     },
@@ -123,7 +123,7 @@ export const id: LocaleContent = {
     },
 
     process: {
-      title: "Alur produksi",
+      title: "Productions Landscape",
       note: "Arahkan kursor ke sebuah tahap, klik untuk membuka rinciannya.",
       moreLabel: "Rincian",
       closeLabel: "Tutup",
@@ -132,14 +132,14 @@ export const id: LocaleContent = {
         image: { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling", width: 1000, height: 750 },
       },
       to: {
-        label: "Beras kemasan",
+        label: "Beras",
         image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 750 },
       },
       steps: [
         {
           step: "01",
-          title: "Intake",
-          body: "Gabah ditimbang, diuji, dan dicatat nomor batchnya.",
+          title: "Intake / Reception",
+          body: "Gabah diterima, ditimbang, diuji, dan dicatat nomor batchnya.",
           unit: "PMD-1",
           image: { src: "/images/feature-milling.jpg", alt: "Gabah dituang ke lubang penerimaan", width: 1400, height: 900 },
           detail: {
@@ -154,13 +154,13 @@ export const id: LocaleContent = {
         },
         {
           step: "02",
-          title: "Pre-cleaning",
-          body: "Kotoran, jerami, dan benda asing dipisahkan lebih dulu.",
+          title: "Cleaning & Aspiration",
+          body: "Jerami, debu, dan benda asing dipisahkan dengan ayakan dan hisapan udara.",
           unit: "PMD-1",
           image: { src: "/images/facility-plant.jpg", alt: "Instalasi elevator dan silo", width: 1400, height: 900 },
           detail: {
             body: [
-              "Sebelum masuk pengering, gabah dibersihkan dari jerami, debu, batu, dan benda asing lain. Tahap ini menentukan umur mesin di hilir sekaligus menjaga agar kotoran tidak ikut terhitung sebagai bobot yang dikeringkan.",
+              "Gabah dibersihkan dari jerami, debu, batu, dan benda asing lain melalui ayakan bertingkat dan hisapan udara. Tahap ini menentukan umur mesin di hilir sekaligus menjaga agar kotoran tidak ikut terhitung sebagai bobot yang dikeringkan.",
             ],
             points: [
               "Keluar: gabah bersih siap dikeringkan",
@@ -171,7 +171,7 @@ export const id: LocaleContent = {
         {
           step: "03",
           title: "Drying",
-          body: "Kadar air diturunkan sampai batas aman simpan.",
+          body: "Kadar air diturunkan bertahap sampai batas aman simpan.",
           unit: "PMD-1",
           image: { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
           detail: {
@@ -186,7 +186,7 @@ export const id: LocaleContent = {
         },
         {
           step: "04",
-          title: "Husking",
+          title: "Hulling",
           body: "Sekam dilepas, keluar beras pecah kulit.",
           unit: "PMD-1",
           image: { src: "/images/mill-floor.jpg", alt: "Gabah dan mesin di lantai giling", width: 1400, height: 900 },
@@ -202,13 +202,13 @@ export const id: LocaleContent = {
         },
         {
           step: "05",
-          title: "Whitening",
-          body: "Lapisan luar disosoh sampai derajat yang dituju.",
+          title: "Whitening & Polishing",
+          body: "Lapisan kulit ari disosoh, lalu permukaan butir dihaluskan.",
           unit: "PMD-2",
           image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
           detail: {
             body: [
-              "Lapisan luar beras disosoh bertahap sampai derajat sosoh yang dituju. Di tahap inilah bekatul terpisah — lapisan kulit ari yang kaya serat, vitamin B kompleks, dan mineral.",
+              "Lapisan kulit ari disosoh bertahap sampai derajat sosoh yang dituju, lalu permukaan butir dihaluskan agar tampil bening. Di tahap inilah bekatul terpisah — lapisan yang kaya serat, vitamin B kompleks, dan mineral.",
             ],
             points: [
               "Dicatat: derajat sosoh dan rendemen",
@@ -219,12 +219,12 @@ export const id: LocaleContent = {
         {
           step: "06",
           title: "Grading",
-          body: "Butir dipisahkan menurut keutuhan dan mutu.",
+          body: "Butir dipisahkan menurut ukuran dan keutuhan.",
           unit: "PMD-2",
           image: { src: "/images/service-detail-1.jpg", alt: "Butir beras hasil sortir", width: 1200, height: 800 },
           detail: {
             body: [
-              "Butir dipisahkan menurut keutuhannya. Tingkat mutu ditetapkan setelah tahap ini, bukan sebelum digiling — jadi yang tertulis pada kemasan adalah hasil yang benar-benar terukur.",
+              "Butir dipisahkan menurut ukuran dan keutuhannya. Tingkat mutu ditetapkan setelah tahap ini, bukan sebelum digiling — jadi yang tertulis pada kemasan adalah hasil yang benar-benar terukur.",
             ],
             points: [
               "Dicatat: proporsi butir utuh dan tingkat mutu",
@@ -234,17 +234,17 @@ export const id: LocaleContent = {
         },
         {
           step: "07",
-          title: "Packing",
-          body: "Dikemas per merk dan ukuran, siap distribusi.",
+          title: "Sorting",
+          body: "Butir yang menyimpang warna dan benda asing dikeluarkan.",
           unit: "PMD-2",
-          image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk", width: 1000, height: 750 },
+          image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 750 },
           detail: {
             body: [
-              "Beras dikemas menurut tingkat mutu, klasifikasi, dan merk — termasuk merk milik pelanggan. Nomor batch ikut sampai ke karung, sehingga satu kemasan selalu bisa ditelusuri kembali ke gabah asalnya.",
+              "Tahap terakhir sebelum dikemas: butir yang menyimpang warnanya dan benda asing yang lolos dari tahap sebelumnya dikeluarkan satu per satu. Inilah yang memisahkan beras premium dari beras yang sekadar bersih.",
             ],
             points: [
-              "Keluar: beras kemasan 5, 10, 25, dan 50 kg",
-              "Ditelusuri: nomor batch dari intake sampai pengiriman",
+              "Keluar: beras siap dikemas menurut merk dan ukuran",
+              "Hasil samping: beras reject",
             ],
           },
         },
