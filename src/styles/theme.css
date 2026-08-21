@@ -1333,6 +1333,13 @@ p.lede {
 
 .process-detail-copy h3 { font-size: 1.35rem; font-weight: 700; }
 
+.process-detail-copy .process-detail-lead {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-on-dark);
+}
+
 .process-detail-copy p {
   font-size: 1rem;
   line-height: 1.65;

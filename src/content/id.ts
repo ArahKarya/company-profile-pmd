@@ -138,12 +138,12 @@ export const id: LocaleContent = {
         {
           step: "01",
           title: "Intake / Reception",
-          body: "Gabah diterima, ditimbang, diuji, dan dicatat nomor batchnya.",
+          body: "Harga sudah ditentukan sebelum satu butir pun digiling.",
           unit: "PMD-1",
           image: { src: "/images/feature-milling.jpg", alt: "Gabah dituang ke lubang penerimaan", width: 1400, height: 900 },
           detail: {
             body: [
-              "Gabah ditimbang di hadapan pengirimnya, lalu diambil sampelnya untuk diuji kadar air dan kebersihannya. Hasil uji itu yang menentukan harga dan perlakuan berikutnya — bukan taksiran di lapangan.",
+              "Timbangan dan alat uji kadar air adalah dua mesin paling menentukan di pabrik ini — keduanya bekerja sebelum mesin lain menyala. Petani menyaksikan sendiri angkanya keluar, dan angka itulah yang dibayar. Tidak ada penaksiran, tidak ada potongan yang muncul belakangan.",
             ],
             points: [
               "Dicatat: berat, kadar air, varietas, asal, dan nomor batch",
@@ -154,12 +154,12 @@ export const id: LocaleContent = {
         {
           step: "02",
           title: "Cleaning & Aspiration",
-          body: "Jerami, debu, dan benda asing dipisahkan dengan ayakan dan hisapan udara.",
+          body: "Satu batu sebesar butir gabah cukup untuk melukai rol pemecah kulit.",
           unit: "PMD-1",
           image: { src: "/images/facility-plant.jpg", alt: "Instalasi elevator dan silo", width: 1400, height: 900 },
           detail: {
             body: [
-              "Gabah dibersihkan dari jerami, debu, batu, dan benda asing lain melalui ayakan bertingkat dan hisapan udara. Tahap ini menentukan umur mesin di hilir sekaligus menjaga agar kotoran tidak ikut terhitung sebagai bobot yang dikeringkan.",
+              "Ayakan bertingkat dan hisapan udara memisahkan jerami, debu, dan batu — bukan demi penampilan, melainkan demi mesin di hilir dan demi bahan bakar. Setiap kilogram kotoran yang lolos ke pengering adalah panas yang dibakar untuk sesuatu yang toh akan dibuang.",
             ],
             points: [
               "Keluar: gabah bersih siap dikeringkan",
@@ -170,12 +170,12 @@ export const id: LocaleContent = {
         {
           step: "03",
           title: "Drying",
-          body: "Kadar air diturunkan bertahap sampai batas aman simpan.",
+          body: "Kesalahan di tahap ini tidak terlihat hari itu juga.",
           unit: "PMD-1",
           image: { src: "/images/facility-drying.jpg", alt: "Lini pengering di fasilitas PMD", width: 1050, height: 1400 },
           detail: {
             body: [
-              "Kadar air diturunkan bertahap sampai batas aman simpan. Pengeringan yang terlalu cepat membuat butir retak dan menaikkan beras patah saat digiling, jadi lajunya dijaga, bukan dikejar.",
+              "Gabah yang dikeringkan terburu-buru akan retak di dalam butirnya — retakan halus yang tidak tampak oleh mata. Ia baru menampakkan diri tiga tahap kemudian, sebagai beras patah di ujung penggilingan. Karena itu suhu dan lajunya kami tahan, meski itu berarti pengering berjalan lebih lama.",
             ],
             points: [
               "Dicatat: kadar air awal dan akhir, lama pengeringan",
@@ -186,12 +186,12 @@ export const id: LocaleContent = {
         {
           step: "04",
           title: "Hulling",
-          body: "Sekam dilepas, keluar beras pecah kulit.",
+          body: "Yang dilepas di sini kembali ke pabrik sebagai bahan bakar.",
           unit: "PMD-1",
           image: { src: "/images/mill-floor.jpg", alt: "Gabah dan mesin di lantai giling", width: 1400, height: 900 },
           detail: {
             body: [
-              "Kulit gabah dilepas sehingga tersisa beras pecah kulit. Sekam yang terpisah tidak dibuang: ia masuk stok dan diolah lebih lanjut menjadi pelet sekam padi.",
+              "Sekam adalah sekitar seperlima bobot gabah — bagian terbesar yang bukan beras. Alih-alih menumpuk sebagai limbah, ia menjadi produk tersendiri dan bahan baku pelet energi terbarukan. Sisa proses yang dulu dianggap masalah kini punya pembelinya sendiri.",
             ],
             points: [
               "Keluar: beras pecah kulit — bahan baku tahap penyosohan",
@@ -202,28 +202,28 @@ export const id: LocaleContent = {
         {
           step: "05",
           title: "Whitening & Polishing",
-          body: "Lapisan kulit ari disosoh, lalu permukaan butir dihaluskan.",
+          body: "Putih ada harganya, dan harganya dibayar dengan bobot.",
           unit: "PMD-2",
           image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
           detail: {
             body: [
-              "Lapisan kulit ari disosoh bertahap sampai derajat sosoh yang dituju, lalu permukaan butir dihaluskan agar tampil bening. Di tahap inilah bekatul terpisah — lapisan yang kaya serat, vitamin B kompleks, dan mineral.",
+              "Setiap lapis yang disosoh membuat beras lebih putih sekaligus lebih ringan — dan yang terlepas justru lapisan paling bergizi. Karena itu derajat sosoh bukan soal semakin putih semakin baik, melainkan soal berhenti di titik yang tepat untuk mutu yang dituju.",
             ],
             points: [
               "Dicatat: derajat sosoh dan rendemen",
-              "Hasil samping: bekatul",
+              "Hasil samping: bekatul, kaya serat dan vitamin B kompleks",
             ],
           },
         },
         {
           step: "06",
           title: "Grading",
-          body: "Butir dipisahkan menurut ukuran dan keutuhan.",
+          body: "Di sini mutu berhenti menjadi klaim dan berubah menjadi angka.",
           unit: "PMD-2",
           image: { src: "/images/service-detail-1.jpg", alt: "Butir beras hasil sortir", width: 1200, height: 800 },
           detail: {
             body: [
-              "Butir dipisahkan menurut ukuran dan keutuhannya. Tingkat mutu ditetapkan setelah tahap ini, bukan sebelum digiling — jadi yang tertulis pada kemasan adalah hasil yang benar-benar terukur.",
+              "Butir dipisahkan menurut ukuran dan keutuhannya, lalu tingkat mutu ditetapkan dari hasil pengukuran itu — bukan dari niat sebelum digiling. Yang patah tidak dianggap gagal: broken dan menir punya pasarnya sendiri, dan dijual sebagai produk, bukan disembunyikan ke dalam karung beras utuh.",
             ],
             points: [
               "Dicatat: proporsi butir utuh dan tingkat mutu",
@@ -234,12 +234,12 @@ export const id: LocaleContent = {
         {
           step: "07",
           title: "Sorting",
-          body: "Butir yang menyimpang warna dan benda asing dikeluarkan.",
+          body: "Pembeli mengingat satu butir yang menghitam, bukan seribu yang bening.",
           unit: "PMD-2",
           image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 750 },
           detail: {
             body: [
-              "Butir yang menyimpang warnanya dan benda asing yang lolos dari tahap sebelumnya dikeluarkan satu per satu. Inilah yang memisahkan beras premium dari beras yang sekadar bersih.",
+              "Tahap ini memeriksa beras butir demi butir dan menyingkirkan yang menyimpang warnanya beserta benda asing yang lolos sejauh ini. Pekerjaan yang mustahil dilakukan tangan pada volume sebesar ini — dan justru di sinilah beras premium terpisah dari beras yang sekadar bersih.",
             ],
             points: [
               "Keluar: beras siap dikemas menurut merk dan ukuran",
@@ -250,12 +250,12 @@ export const id: LocaleContent = {
         {
           step: "08",
           title: "Packing",
-          body: "Dikemas per merk dan ukuran, siap distribusi.",
+          body: "Nomor batch itulah yang membuat pertanyaan enam bulan kemudian masih bisa dijawab.",
           unit: "PMD-2",
           image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk", width: 1000, height: 750 },
           detail: {
             body: [
-              "Beras dikemas menurut tingkat mutu, klasifikasi, dan merk — termasuk merk milik pelanggan. Nomor batch ikut sampai ke karung, sehingga satu kemasan selalu bisa ditelusuri kembali ke gabah asalnya.",
+              "Beras dikemas menurut tingkat mutu, klasifikasi, dan merk — termasuk merk milik pelanggan. Nomor batch ikut tercetak sampai ke karung, sehingga satu kemasan di gudang pembeli selalu dapat dirunut kembali ke gabah, petani, dan tanggal penerimaannya.",
             ],
             points: [
               "Keluar: beras kemasan 5, 10, 25, dan 50 kg",

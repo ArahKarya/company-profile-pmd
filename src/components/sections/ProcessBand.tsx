@@ -103,6 +103,9 @@ export function ProcessBand({
                   {active.unit && <span className="process-unit"> · {active.unit}</span>}
                 </span>
                 <h3>{active.title}</h3>
+                {/* Kalimat pendek tiap tahap berdiri sebagai pembuka panel — sejak stasiun
+                    berbentuk kolom tegak, di sanalah satu-satunya tempat ia terbaca. */}
+                <p className="process-detail-lead">{active.body}</p>
                 {active.detail.body.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}

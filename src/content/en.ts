@@ -138,12 +138,12 @@ export const en: LocaleContent = {
         {
           step: "01",
           title: "Intake / Reception",
-          body: "Paddy is received, weighed, tested and batch numbered.",
+          body: "The price is settled before a single grain is milled.",
           unit: "PMD-1",
           image: { src: "/images/feature-milling.jpg", alt: "Paddy pouring into the intake pit", width: 1400, height: 900 },
           detail: {
             body: [
-              "Paddy is weighed in front of whoever delivered it, then sampled for moisture and cleanliness. That test sets the price and the handling that follows — not an estimate made in the yard.",
+              "The weighbridge and the moisture meter are the two most consequential machines here — and both do their work before anything else starts up. The farmer watches the reading appear, and that reading is what gets paid. No estimates, and no deductions that surface later.",
             ],
             points: [
               "Recorded: weight, moisture, variety, origin and batch number",
@@ -154,12 +154,12 @@ export const en: LocaleContent = {
         {
           step: "02",
           title: "Cleaning & Aspiration",
-          body: "Straw, dust and foreign matter are screened and drawn off by air.",
+          body: "One stone the size of a grain is enough to score a husking roll.",
           unit: "PMD-1",
           image: { src: "/images/facility-plant.jpg", alt: "Grain elevator and silo installation", width: 1400, height: 900 },
           detail: {
             body: [
-              "Straw, dust, stones and other foreign matter are removed through graded screens and air aspiration. This stage decides how long the downstream machines last, and keeps dirt from being counted as weight to be dried.",
+              "Graded screens and air aspiration take out straw, dust and stones — not for the look of it, but for the machines downstream and for the fuel bill. Every kilo of dirt that reaches the dryer is heat spent on something that will be thrown away regardless.",
             ],
             points: [
               "Out: clean paddy ready for drying",
@@ -170,12 +170,12 @@ export const en: LocaleContent = {
         {
           step: "03",
           title: "Drying",
-          body: "Moisture is brought down in stages to a safe storage level.",
+          body: "A mistake made here does not show itself the same day.",
           unit: "PMD-1",
           image: { src: "/images/facility-drying.jpg", alt: "The dryer line at the PMD facility", width: 1050, height: 1400 },
           detail: {
             body: [
-              "Moisture is brought down in stages to a level safe for storage. Drying too fast cracks the grain and raises breakage during milling, so the rate is held steady rather than rushed.",
+              "Paddy dried in a hurry fissures inside the grain — hairline cracks no eye can catch. They surface three stages later, as broken rice at the end of the mill. So we hold the temperature and the rate back, even when that means the dryers run longer.",
             ],
             points: [
               "Recorded: moisture in and out, drying time",
@@ -186,12 +186,12 @@ export const en: LocaleContent = {
         {
           step: "04",
           title: "Hulling",
-          body: "The husk comes off; brown rice comes out.",
+          body: "What comes off here returns to the plant as fuel.",
           unit: "PMD-1",
           image: { src: "/images/mill-floor.jpg", alt: "Paddy and machinery on the milling floor", width: 1400, height: 900 },
           detail: {
             body: [
-              "The husk is removed, leaving brown rice. What comes off is not waste: husk enters stock and is processed further into rice husk pellets.",
+              "Husk is roughly a fifth of the weight of paddy — the largest part that is not rice. Rather than piling up as waste, it becomes a product in its own right and the raw material for renewable-fuel pellets. The remainder once treated as a problem now has buyers of its own.",
             ],
             points: [
               "Out: brown rice — the feedstock for whitening",
@@ -202,28 +202,28 @@ export const en: LocaleContent = {
         {
           step: "05",
           title: "Whitening & Polishing",
-          body: "The bran layer is milled away, then the grain surface is polished.",
+          body: "White has a price, and the price is paid in weight.",
           unit: "PMD-2",
           image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
           detail: {
             body: [
-              "The bran layer is milled away in stages to the intended degree, then the grain surface is polished clear. This is where bran separates — the layer rich in fibre, B vitamins and minerals.",
+              "Every layer milled away leaves the rice whiter and lighter — and what comes off is the most nutritious part of the grain. So the degree of milling is not a matter of whiter being better, but of stopping at the right point for the tier being made.",
             ],
             points: [
               "Recorded: degree of milling and yield",
-              "By-product: rice bran",
+              "By-product: rice bran, rich in fibre and B vitamins",
             ],
           },
         },
         {
           step: "06",
           title: "Grading",
-          body: "Grain is separated by size and wholeness.",
+          body: "Here quality stops being a claim and becomes a number.",
           unit: "PMD-2",
           image: { src: "/images/service-detail-1.jpg", alt: "Sorted rice grains", width: 1200, height: 800 },
           detail: {
             body: [
-              "Grain is separated by size and by how much of it is whole. The quality tier is assigned after this stage rather than before milling — so what the pack says is what was actually measured.",
+              "Grain is separated by size and wholeness, and the quality tier follows from that measurement — not from an intention formed before milling. Breakage is not treated as failure: broken rice and fine grain have their own markets, and are sold as products rather than buried in sacks of whole rice.",
             ],
             points: [
               "Recorded: whole-grain share and quality tier",
@@ -234,12 +234,12 @@ export const en: LocaleContent = {
         {
           step: "07",
           title: "Sorting",
-          body: "Off-colour grain and any remaining foreign matter are taken out.",
+          body: "A buyer remembers the one discoloured grain, not the thousand clear ones.",
           unit: "PMD-2",
           image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 750 },
           detail: {
             body: [
-              "Grains that are off-colour, and any foreign matter that slipped past the earlier stages, are removed one by one. This is what separates premium rice from rice that is merely clean.",
+              "This stage inspects the rice grain by grain and removes anything off-colour, along with foreign matter that has survived this far. It is work no pair of hands could do at this volume — and it is exactly where premium rice parts company with rice that is merely clean.",
             ],
             points: [
               "Out: rice ready to be packed by brand and size",
@@ -250,12 +250,12 @@ export const en: LocaleContent = {
         {
           step: "08",
           title: "Packing",
-          body: "Packed per brand and size, ready to ship.",
+          body: "The batch number is what keeps a question answerable six months later.",
           unit: "PMD-2",
           image: { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck", width: 1000, height: 750 },
           detail: {
             body: [
-              "Rice is packed by tier, classification and brand — a customer's own brand included. The batch number travels with the sack, so a pack can always be traced back to the paddy it came from.",
+              "Rice is packed by tier, classification and brand — a customer's own brand included. The batch number is printed through to the sack, so a pack sitting in a buyer's warehouse can still be traced back to the paddy, the farmer and the date it arrived.",
             ],
             points: [
               "Out: packed rice in 5, 10, 25 and 50 kg",
