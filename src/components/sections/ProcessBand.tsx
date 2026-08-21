@@ -4,12 +4,11 @@ import { useState } from "react";
 import type { ProcessSection } from "@/content/types";
 
 /**
- * Diagram alur produksi: satu garis mendatar dari gabah ke beras kemasan, dengan stasiun
- * bernomor duduk di sepanjang garis itu.
+ * Diagram alur produksi bergaya papan proses: deretan kolom tegak, satu kolom per stasiun,
+ * dipisahkan garis rambut dan dipotong satu rel mendatar bernomor.
  *
- * Bentuknya sengaja diagram, bukan deretan kartu. Semua stasiun berbagi satu rel yang sama,
- * fotonya tampil redup seperti lembar kontak, lalu menyala begitu stasiunnya disorot — cara
- * membaca yang sama dengan papan proses di lantai pabrik.
+ * Nama tahap ditulis tegak di dalam kolomnya sendiri — bentuk yang sama dipakai pada diagram
+ * proses pabrik, dan yang membuat delapan tahap muat berdampingan tanpa terpotong.
  *
  * - **kursor lewat atau fokus keyboard** → foto stasiun itu menyala;
  * - **diklik** → panel rincian terbuka di bawah rel: foto besar, penjelasan, dan poin apa
@@ -59,17 +58,19 @@ export function ProcessBand({
                     aria-controls="process-detail"
                     onClick={() => setOpenStep(open ? null : step.step)}
                   >
-                    <span className="station-well">
+                    <span className="station-well" aria-hidden="true">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={step.image.src} alt="" />
                     </span>
-                    <span className="station-tick">
-                      <span className="station-no">{step.step}</span>
-                    </span>
-                    <span className="station-label">{step.title}</span>
-                    {step.unit && <span className="station-unit">{step.unit}</span>}
-                    <span className="station-more">
-                      {open ? content.closeLabel : content.moreLabel}
+                    <span className="station-body">
+                      <span className="station-label">{step.title}</span>
+                      <span className="station-tick">
+                        <span className="station-no">{step.step}</span>
+                      </span>
+                      {step.unit && <span className="station-unit">{step.unit}</span>}
+                      <span className="station-more">
+                        {open ? content.closeLabel : content.moreLabel}
+                      </span>
                     </span>
                   </button>
                 </li>

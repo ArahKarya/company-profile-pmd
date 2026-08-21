@@ -124,7 +124,6 @@ export const id: LocaleContent = {
 
     process: {
       title: "Productions Landscape",
-      note: "Arahkan kursor ke sebuah tahap, klik untuk membuka rinciannya.",
       moreLabel: "Rincian",
       closeLabel: "Tutup",
       from: {

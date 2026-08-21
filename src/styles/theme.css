@@ -1066,9 +1066,10 @@ p.lede {
 
 /* --- Diagram alur produksi (satu-satunya bagian gelap di beranda) ---
 
-   Satu rel mendatar dari gabah ke beras kemasan. Stasiun bukan kartu melainkan titik pada
-   rel itu: foto redup di atas garis, tik bernomor tepat pada garis, label di bawahnya.
-   Menyorot sebuah stasiun menyalakan fotonya; mengkliknya membuka panel rincian. */
+   Papan proses: kolom tegak berjajar, satu kolom per stasiun, dipisahkan garis rambut dan
+   dipotong satu rel mendatar bernomor. Nama tahap ditulis tegak di dalam kolomnya sendiri —
+   bentuk itu yang membuat delapan tahap muat berdampingan. Foto stasiun tampil redup di
+   latar kolom, lalu menyala saat kolomnya disorot atau dibuka. */
 
 .process-band {
   background-color: var(--brand-dark);
@@ -1081,7 +1082,7 @@ p.lede {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 
 .process-head .section-index { color: var(--brand-accent); }
@@ -1096,8 +1097,8 @@ p.lede {
 
 .rail {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: stretch;
+  gap: 0;
 }
 
 /* Ujung rel: bahan yang masuk dan produk yang keluar. */
@@ -1105,14 +1106,17 @@ p.lede {
   flex: 0 0 104px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
-  padding-top: 8px;
+  padding: 0 18px 0 0;
 }
+
+.rail-end:last-child { padding: 0 0 0 18px; }
 
 .rail-end img {
   display: block;
   width: 100%;
-  height: 76px;
+  height: 78px;
   object-fit: cover;
   filter: grayscale(0.35);
 }
@@ -1129,47 +1133,46 @@ p.lede {
   position: relative;
   flex: 1 1 auto;
   display: grid;
-  /* Delapan stasiun dalam satu baris — relnya baru terbaca sebagai satu garis kalau tidak
-     terpotong ke baris berikutnya. */
+  /* Delapan kolom tegak berdampingan. */
   grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 0;
   list-style: none;
   margin: 0;
   padding: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-/* Garis rel: satu hairline emas yang melintasi seluruh stasiun, sejajar dengan tiknya. */
+.rail-stations > li { display: flex; }
+
+/* Rel mendatar: satu hairline emas yang melintasi seluruh kolom, sejajar dengan tiknya. */
 .rail-stations::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 86px;
-  border-top: 1px solid rgba(233, 189, 12, 0.45);
+  top: 50%;
+  border-top: 1px solid rgba(233, 189, 12, 0.4);
 }
 
 .station {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
+  display: block;
   width: 100%;
-  padding: 0 10px 0 0;
+  min-height: 340px;
+  padding: 0;
   border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
   background: transparent;
   color: inherit;
   text-align: left;
   cursor: pointer;
+  overflow: hidden;
 }
 
-/* Foto stasiun: redup seperti lembar kontak, menyala saat disorot atau dibuka. */
+/* Foto stasiun: mengisi kolom, redup seperti lembar kontak, menyala saat disorot. */
 .station-well {
-  display: block;
-  width: 100%;
-  height: 78px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: absolute;
+  inset: 0;
 }
 
 .station-well img {
@@ -1177,38 +1180,75 @@ p.lede {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.28;
+  opacity: 0.24;
   filter: grayscale(1);
   transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.station-well::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 17, 10, 0.5), rgba(20, 17, 10, 0.8));
 }
 
 .station:hover .station-well img,
 .station:focus-visible .station-well img,
 .station.open .station-well img {
-  opacity: 1;
+  opacity: 0.62;
   filter: grayscale(0);
 }
 
-/* Tik pada rel. */
-.station-tick {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  height: 17px;
-  margin-top: -8px;
+.station.open { background-color: rgba(233, 189, 12, 0.06); }
+
+/* Isi kolom: nama tegak di atas garis, tik bernomor tepat di garis, unit dan tautan di
+   bawahnya. Semuanya diposisikan terhadap garis rel (50% tinggi kolom), bukan ditumpuk
+   berurutan — kalau ditumpuk, nama tahap yang panjangnya berbeda akan menggeser tiknya
+   sehingga nomor-nomor itu tidak lagi berdiri pada satu garis. */
+.station-body {
+  position: relative;
+  display: block;
+  height: 100%;
+  min-height: 340px;
 }
 
-.station-tick::before {
-  content: "";
-  width: 9px;
-  height: 9px;
+/* Nama tahap ditulis tegak, dibaca dari bawah ke atas, berhenti tepat di atas garis. */
+.station-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 26px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  text-align: left;
+}
+
+/* Tik bernomor: lingkaran yang duduk tepat di garis rel. */
+.station-tick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   background-color: var(--brand-dark);
   border: 1px solid var(--brand-accent);
 }
 
-.station:hover .station-tick::before,
-.station:focus-visible .station-tick::before,
-.station.open .station-tick::before {
+.station:hover .station-tick,
+.station:focus-visible .station-tick,
+.station.open .station-tick {
   background-color: var(--brand-accent);
 }
 
@@ -1216,29 +1256,37 @@ p.lede {
   font-family: var(--font-technical);
   font-size: 0.72rem;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.1em;
   color: var(--brand-accent);
 }
 
-.station-label {
-  margin-top: 14px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.3;
+.station:hover .station-no,
+.station:focus-visible .station-no,
+.station.open .station-no {
+  color: var(--brand-dark);
 }
 
 .station-unit {
-  margin-top: 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: 26px;
+  text-align: center;
   font-family: var(--font-technical);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   letter-spacing: 0.12em;
   color: var(--text-muted);
 }
 
 .station-more {
-  margin-top: 8px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: 48px;
+  text-align: center;
   font-family: var(--font-technical);
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--brand-accent);
@@ -1251,7 +1299,7 @@ p.lede {
 .station.open .station-more { opacity: 1; }
 
 .station:focus-visible { outline: none; }
-.station:focus-visible .station-well { outline: 2px solid var(--brand-accent); }
+.station:focus-visible .station-body { outline: 2px solid var(--brand-accent); }
 
 /* Panel rincian di bawah rel. */
 .process-detail { margin-top: 30px; }
@@ -1325,19 +1373,15 @@ p.lede {
   color: var(--text-muted);
 }
 
-@media (max-width: 1399.98px) {
-  .rail-stations { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 34px; }
-  .station-label { font-size: 0.95rem; }
+@media (max-width: 991.98px) {
+  .rail { flex-wrap: wrap; }
+  .rail-stations { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .rail-stations::before { display: none; }
+  .station, .station-body { min-height: 260px; }
+  .rail-end { flex-basis: 88px; }
 }
 
-@media (max-width: 1199.98px) {
-  .rail-stations { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 34px; }
-  .rail-stations::before { display: none; }
-  .rail-end { flex-basis: 92px; }
-}
-
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   .rail-stations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rail-end { display: none; }
   .station-more { opacity: 1; }

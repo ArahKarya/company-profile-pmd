@@ -124,7 +124,6 @@ export const en: LocaleContent = {
 
     process: {
       title: "Productions Landscape",
-      note: "Hover a stage; click to open its detail.",
       moreLabel: "Detail",
       closeLabel: "Close",
       from: {
