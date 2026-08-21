@@ -1129,9 +1129,9 @@ p.lede {
   position: relative;
   flex: 1 1 auto;
   display: grid;
-  /* Tujuh stasiun dalam satu baris — relnya baru terbaca sebagai satu garis kalau tidak
+  /* Delapan stasiun dalam satu baris — relnya baru terbaca sebagai satu garis kalau tidak
      terpotong ke baris berikutnya. */
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 0;
   list-style: none;
   margin: 0;
@@ -1155,7 +1155,7 @@ p.lede {
   align-items: flex-start;
   gap: 0;
   width: 100%;
-  padding: 0 14px 0 0;
+  padding: 0 10px 0 0;
   border: 0;
   background: transparent;
   color: inherit;
@@ -1222,7 +1222,7 @@ p.lede {
 
 .station-label {
   margin-top: 14px;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -1327,6 +1327,7 @@ p.lede {
 
 @media (max-width: 1399.98px) {
   .rail-stations { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 34px; }
+  .station-label { font-size: 0.95rem; }
   .rail-stations::before { display: none; }
 }
 

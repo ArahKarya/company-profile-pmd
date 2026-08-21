@@ -71,7 +71,7 @@ export const en: LocaleContent = {
       items: [
         { value: "300", unit: "tonnes/day", label: "Paddy milling capacity" },
         { value: "100+", unit: "agents", label: "Agent and trade network" },
-        { value: "7", unit: "stages", label: "Intake to sorting, one line" },
+        { value: "8", unit: "stages", label: "Intake to packing, one line" },
         { value: "2021", unit: "", label: "Serving partners since" },
       ],
     },
@@ -132,7 +132,7 @@ export const en: LocaleContent = {
         image: { src: "/images/gallery-3.jpg", alt: "Paddy grain before milling", width: 1000, height: 750 },
       },
       to: {
-        label: "Rice",
+        label: "Packed rice",
         image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 750 },
       },
       steps: [
@@ -240,11 +240,27 @@ export const en: LocaleContent = {
           image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 750 },
           detail: {
             body: [
-              "The last stage before packing: grains that are off-colour, and any foreign matter that slipped past the earlier stages, are removed one by one. This is what separates premium rice from rice that is merely clean.",
+              "Grains that are off-colour, and any foreign matter that slipped past the earlier stages, are removed one by one. This is what separates premium rice from rice that is merely clean.",
             ],
             points: [
               "Out: rice ready to be packed by brand and size",
               "By-product: rejected rice",
+            ],
+          },
+        },
+        {
+          step: "08",
+          title: "Packing",
+          body: "Packed per brand and size, ready to ship.",
+          unit: "PMD-2",
+          image: { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck", width: 1000, height: 750 },
+          detail: {
+            body: [
+              "Rice is packed by tier, classification and brand — a customer's own brand included. The batch number travels with the sack, so a pack can always be traced back to the paddy it came from.",
+            ],
+            points: [
+              "Out: packed rice in 5, 10, 25 and 50 kg",
+              "Traceable: batch number from intake to delivery",
             ],
           },
         },

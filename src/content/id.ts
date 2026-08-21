@@ -71,7 +71,7 @@ export const id: LocaleContent = {
       items: [
         { value: "300", unit: "ton/hari", label: "Kapasitas giling gabah" },
         { value: "100+", unit: "agen", label: "Jaringan agen dan mitra dagang" },
-        { value: "7", unit: "tahap", label: "Intake sampai sorting, satu lini" },
+        { value: "8", unit: "tahap", label: "Intake sampai packing, satu lini" },
         { value: "2021", unit: "", label: "Melayani mitra sejak" },
       ],
     },
@@ -132,7 +132,7 @@ export const id: LocaleContent = {
         image: { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling", width: 1000, height: 750 },
       },
       to: {
-        label: "Beras",
+        label: "Beras kemasan",
         image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 750 },
       },
       steps: [
@@ -240,11 +240,27 @@ export const id: LocaleContent = {
           image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 750 },
           detail: {
             body: [
-              "Tahap terakhir sebelum dikemas: butir yang menyimpang warnanya dan benda asing yang lolos dari tahap sebelumnya dikeluarkan satu per satu. Inilah yang memisahkan beras premium dari beras yang sekadar bersih.",
+              "Butir yang menyimpang warnanya dan benda asing yang lolos dari tahap sebelumnya dikeluarkan satu per satu. Inilah yang memisahkan beras premium dari beras yang sekadar bersih.",
             ],
             points: [
               "Keluar: beras siap dikemas menurut merk dan ukuran",
               "Hasil samping: beras reject",
+            ],
+          },
+        },
+        {
+          step: "08",
+          title: "Packing",
+          body: "Dikemas per merk dan ukuran, siap distribusi.",
+          unit: "PMD-2",
+          image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk", width: 1000, height: 750 },
+          detail: {
+            body: [
+              "Beras dikemas menurut tingkat mutu, klasifikasi, dan merk — termasuk merk milik pelanggan. Nomor batch ikut sampai ke karung, sehingga satu kemasan selalu bisa ditelusuri kembali ke gabah asalnya.",
+            ],
+            points: [
+              "Keluar: beras kemasan 5, 10, 25, dan 50 kg",
+              "Ditelusuri: nomor batch dari intake sampai pengiriman",
             ],
           },
         },
