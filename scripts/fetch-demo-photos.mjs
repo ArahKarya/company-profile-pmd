@@ -8,7 +8,9 @@
  * files are skipped, so delete a file to refresh just that one.
  *
  * Foto milik PMD sendiri TIDAK terdaftar di sini — ia disalin langsung ke public/images/
- * dan namanya diawali `facility-`. Sejauh ini: facility-drying.jpg (lini pengering).
+ * dan namanya diawali `facility-`. Sejauh ini: mill, hall, tower, cleaning, drying, hulling,
+ * whitening, grading, packing. Sebagian besar diekstrak dari company profile PMD 2025
+ * (`pdfimages -j -f 7 …`), jadi resolusinya terbatas — ganti begitu ada foto langsung.
  */
 import { mkdir, writeFile, access } from 'node:fs/promises';
 import { dirname, join } from 'node:path';

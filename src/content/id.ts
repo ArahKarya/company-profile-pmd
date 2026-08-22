@@ -48,7 +48,7 @@ export const id: LocaleContent = {
       eyebrow: "PT PANGAN MASA DEPAN",
       headline: ["Penggilingan beras modern, terintegrasi", "dari gabah sampai kemasan."],
       body: "Dua unit produksi yang saling terhubung: pengeringan dan penggilingan di PMD-1, penyosohan dan pengemasan di PMD-2. Setiap batch tercatat, dari gabah petani sampai karung siap kirim.",
-      image: { src: "/images/hero-home-desktop.jpg", alt: "Instalasi elevator dan silo di pabrik penggilingan", width: 2000, height: 1200 },
+      image: { src: "/images/facility-mill.jpg", alt: "Lantai giling di fasilitas PT Pangan Masa Depan", width: 1800, height: 1014 },
       actions: [
         { label: "Lihat Produk", href: site.routes.id.services, variant: "solid" },
         { label: "Kemitraan Petani", href: site.routes.id.contact, variant: "outline" },
@@ -99,7 +99,7 @@ export const id: LocaleContent = {
           id: "jasa",
           title: "Jasa penggilingan",
           body: "Pengeringan, penggilingan, sampai pengemasan bermerk sendiri — dilaporkan lengkap dengan rendemen.",
-          image: { src: "/images/facility-elevator.jpg", alt: "Elevator gabah dan truk di unit penerimaan", width: 1400, height: 900 },
+          image: { src: "/images/facility-hall.jpg", alt: "Lini mesin di fasilitas PMD", width: 788, height: 444 },
           link: { href: site.routes.id.services, label: "Selengkapnya" },
         },
       ],
@@ -156,7 +156,7 @@ export const id: LocaleContent = {
           title: "Cleaning & Aspiration",
           body: "Ayakan bertingkat dan hisapan udara sebelum pengeringan.",
           unit: "PMD-1",
-          image: { src: "/images/facility-plant.jpg", alt: "Instalasi elevator dan silo", width: 1400, height: 900 },
+          image: { src: "/images/facility-cleaning.jpg", alt: "Operator di panel kendali lini pembersihan PMD", width: 665, height: 1181 },
           detail: {
             body: [
               "Gabah dibersihkan sebelum mencapai pengering. Ayakan bertingkat dan hisapan udara memisahkan jerami, debu, batu, dan partikel logam, sehingga yang dikeringkan hanya gabah — sekaligus menjaga presisi mesin pada tahap-tahap berikutnya.",
@@ -188,7 +188,7 @@ export const id: LocaleContent = {
           title: "Hulling",
           body: "Pelepasan sekam pada tekanan rol yang diatur.",
           unit: "PMD-1",
-          image: { src: "/images/mill-floor.jpg", alt: "Gabah dan mesin di lantai giling", width: 1400, height: 900 },
+          image: { src: "/images/facility-hulling.jpg", alt: "Lini pemecah kulit di fasilitas PMD", width: 788, height: 444 },
           detail: {
             body: [
               "Sekam dilepas dari butir beras pada tekanan rol yang diatur agar butir tidak ikut pecah. Sekam yang terpisah tidak berakhir sebagai limbah: ia dikumpulkan sebagai bahan baku pelet energi terbarukan.",
@@ -204,7 +204,7 @@ export const id: LocaleContent = {
           title: "Whitening & Polishing",
           body: "Pelepasan kulit ari melalui beberapa lintasan.",
           unit: "PMD-2",
-          image: { src: "/images/feature-polishing.jpg", alt: "Mesin penggilingan di unit PMD-2", width: 1400, height: 900 },
+          image: { src: "/images/facility-whitening.jpg", alt: "Mesin penyosoh lintasan pertama di fasilitas PMD", width: 788, height: 444 },
           detail: {
             body: [
               "Lapisan kulit ari dilepas melalui beberapa lintasan, bukan sekaligus, sehingga derajat sosoh dapat disetel sesuai tingkat mutu yang dituju. Bekatul yang terpisah dikumpulkan sebagai produk tersendiri, bukan sebagai sisa.",
@@ -220,7 +220,7 @@ export const id: LocaleContent = {
           title: "Grading",
           body: "Pemisahan menurut ukuran dan keutuhan butir.",
           unit: "PMD-2",
-          image: { src: "/images/service-detail-1.jpg", alt: "Butir beras hasil sortir", width: 1200, height: 800 },
+          image: { src: "/images/facility-grading.jpg", alt: "Pemeriksaan beras di lini grading PMD", width: 788, height: 444 },
           detail: {
             body: [
               "Butir dipisahkan menurut ukuran dan keutuhannya. Hasil pengukuran inilah yang menentukan tingkat mutu — dari Medium sampai Premium Super — sehingga mutu yang tercetak pada kemasan berasal dari angka, bukan dari perkiraan.",
@@ -252,7 +252,7 @@ export const id: LocaleContent = {
           title: "Packing",
           body: "Pengemasan menurut tingkat mutu, klasifikasi, dan merk.",
           unit: "PMD-2",
-          image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk", width: 1000, height: 750 },
+          image: { src: "/images/facility-packing.jpg", alt: "Lini pengemasan di fasilitas PMD", width: 788, height: 444 },
           detail: {
             body: [
               "Beras dikemas menurut tingkat mutu, klasifikasi, dan merk dalam ukuran 5 sampai 50 kilogram. Nomor batch dari tahap penerimaan ikut sampai ke karung, sehingga setiap kemasan tetap dapat ditelusuri setelah meninggalkan pabrik.",
@@ -301,7 +301,7 @@ export const id: LocaleContent = {
         "Kami mengarahkan ketiganya untuk mewujudkan pertanian yang efisien, berkelanjutan, dan menyejahterakan.",
         "Teknologi bagi kami bukan sekadar alat produksi, melainkan fondasi untuk menciptakan efisiensi, konsistensi mutu, dan keberlanjutan — sistem penggilingan yang modern, ramah lingkungan, dan berbasis data.",
       ],
-      media: [{ src: "/images/facility-plant.jpg", alt: "Instalasi elevator dan silo", width: 1400, height: 900 }],
+      media: [{ src: "/images/facility-tower.jpg", alt: "Menara pengering di fasilitas PMD", width: 760, height: 1351 }],
     },
 
     mission: {

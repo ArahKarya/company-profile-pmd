@@ -48,7 +48,7 @@ export const en: LocaleContent = {
       eyebrow: "PT PANGAN MASA DEPAN",
       headline: ["Modern, integrated rice milling —", "from paddy to packed rice."],
       body: "Two connected production units: drying and husking at PMD-1, polishing and packing at PMD-2. Every batch is recorded, from the farmer's paddy to the sack that leaves the gate.",
-      image: { src: "/images/hero-home-desktop.jpg", alt: "Grain elevator and silo installation at a milling plant", width: 2000, height: 1200 },
+      image: { src: "/images/facility-mill.jpg", alt: "The milling floor at PT Pangan Masa Depan", width: 1800, height: 1014 },
       actions: [
         { label: "See our products", href: site.routes.en.services, variant: "solid" },
         { label: "Farmer partnership", href: site.routes.en.contact, variant: "outline" },
@@ -99,7 +99,7 @@ export const en: LocaleContent = {
           id: "services",
           title: "Contract milling",
           body: "Drying, husking and packing under your own brand — reported with the milling yield in full.",
-          image: { src: "/images/facility-elevator.jpg", alt: "Grain elevator and truck at intake", width: 1400, height: 900 },
+          image: { src: "/images/facility-hall.jpg", alt: "The machine line at the PMD facility", width: 788, height: 444 },
           link: { href: site.routes.en.services, label: "Learn more" },
         },
       ],
@@ -156,7 +156,7 @@ export const en: LocaleContent = {
           title: "Cleaning & Aspiration",
           body: "Graded screens and air aspiration before drying.",
           unit: "PMD-1",
-          image: { src: "/images/facility-plant.jpg", alt: "Grain elevator and silo installation", width: 1400, height: 900 },
+          image: { src: "/images/facility-cleaning.jpg", alt: "Operator at the cleaning line control panel", width: 665, height: 1181 },
           detail: {
             body: [
               "Paddy is cleaned before it reaches the dryers. Graded screens and air aspiration take out straw, dust, stones and metal particles, so that only grain is dried — and so that the precision of the machines downstream is preserved.",
@@ -188,7 +188,7 @@ export const en: LocaleContent = {
           title: "Hulling",
           body: "Husk removal at a regulated roll pressure.",
           unit: "PMD-1",
-          image: { src: "/images/mill-floor.jpg", alt: "Paddy and machinery on the milling floor", width: 1400, height: 900 },
+          image: { src: "/images/facility-hulling.jpg", alt: "The husking line at the PMD facility", width: 788, height: 444 },
           detail: {
             body: [
               "The husk is separated from the kernel at a roll pressure set to avoid breaking the grain. What comes off does not end as waste: the husk is collected as the raw material for renewable-fuel pellets.",
@@ -204,7 +204,7 @@ export const en: LocaleContent = {
           title: "Whitening & Polishing",
           body: "Bran removed across successive passes.",
           unit: "PMD-2",
-          image: { src: "/images/feature-polishing.jpg", alt: "Milling machinery at PMD-2", width: 1400, height: 900 },
+          image: { src: "/images/facility-whitening.jpg", alt: "First-pass whitener at the PMD facility", width: 788, height: 444 },
           detail: {
             body: [
               "The bran layer is removed across successive passes rather than in one, so the degree of milling can be set to the quality tier being produced. The bran that separates is collected as a product in its own right.",
@@ -220,7 +220,7 @@ export const en: LocaleContent = {
           title: "Grading",
           body: "Separation by grain size and wholeness.",
           unit: "PMD-2",
-          image: { src: "/images/service-detail-1.jpg", alt: "Sorted rice grains", width: 1200, height: 800 },
+          image: { src: "/images/facility-grading.jpg", alt: "Rice inspected on the PMD grading line", width: 788, height: 444 },
           detail: {
             body: [
               "Grain is separated by size and by wholeness. That measurement is what sets the quality tier — from Medium to Premium Super — so the tier printed on the pack comes from a number rather than an estimate.",
@@ -252,7 +252,7 @@ export const en: LocaleContent = {
           title: "Packing",
           body: "Packing by tier, classification and brand.",
           unit: "PMD-2",
-          image: { src: "/images/gallery-5.jpg", alt: "Sacks of rice being loaded onto a truck", width: 1000, height: 750 },
+          image: { src: "/images/facility-packing.jpg", alt: "The packing line at the PMD facility", width: 788, height: 444 },
           detail: {
             body: [
               "Rice is packed by quality tier, classification and brand, in sizes from 5 to 50 kilograms. The batch number from intake is carried through to the sack, so every pack stays traceable after it leaves the plant.",
@@ -301,7 +301,7 @@ export const en: LocaleContent = {
         "We point all three at farming that is efficient, sustainable and prosperous.",
         "Technology here is not merely production equipment but the foundation for efficiency, consistent quality and sustainability — a milling system that is modern, environmentally sound and driven by data.",
       ],
-      media: [{ src: "/images/facility-plant.jpg", alt: "Grain elevator and silo installation", width: 1400, height: 900 }],
+      media: [{ src: "/images/facility-tower.jpg", alt: "The dryer tower at the PMD facility", width: 760, height: 1351 }],
     },
 
     mission: {
