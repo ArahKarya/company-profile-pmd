@@ -70,9 +70,9 @@ export const en: LocaleContent = {
 
     stats: {
       items: [
-        { value: "300", unit: "tonnes/day", label: "Paddy milling capacity" },
+        { value: "300", unit: "tonnes/day", label: "Processing capacity" },
         { value: "100+", unit: "agents", label: "Agent and trade network" },
-        { value: "8", unit: "stages", label: "Intake to packing, one line" },
+        { value: "8", unit: "stages", label: "Intake to packaging, fully integrated" },
         { value: "2021", unit: "", label: "Serving partners since" },
       ],
     },

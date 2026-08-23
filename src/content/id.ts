@@ -70,9 +70,9 @@ export const id: LocaleContent = {
 
     stats: {
       items: [
-        { value: "300", unit: "ton/hari", label: "Kapasitas giling gabah" },
+        { value: "300", unit: "ton/hari", label: "Kapasitas proses" },
         { value: "100+", unit: "agen", label: "Jaringan agen dan mitra dagang" },
-        { value: "8", unit: "tahap", label: "Intake sampai packing, satu lini" },
+        { value: "8", unit: "tahap", label: "Intake sampai packaging terintegrasi" },
         { value: "2021", unit: "", label: "Melayani mitra sejak" },
       ],
     },
