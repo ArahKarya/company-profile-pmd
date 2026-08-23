@@ -435,6 +435,26 @@ export const en: LocaleContent = {
                 market: "Premium market and tightly specified customers",
               },
             ],
+            tierSpecs: [
+              {
+                label: "Degree of milling (min)",
+                values: ["95%", "[FIGURE]", "95%", "[FIGURE]"],
+              },
+              {
+                label: "Moisture (max)",
+                values: ["14%", "[FIGURE]", "14%", "[FIGURE]"],
+              },
+              {
+                label: "Broken grain (max)",
+                values: ["25%", "[FIGURE]", "15%", "[FIGURE]"],
+              },
+              {
+                label: "Head rice (min)",
+                values: ["75%", "[FIGURE]", "85%", "[FIGURE]"],
+              },
+            ],
+            tierNote:
+              "The Medium and Premium figures follow SNI 6128, Indonesia's national rice standard. Medium Super and Premium Super are PMD's own grades above that standard, held to limits we set tighter ourselves.",
           },
           {
             id: "rice-brands",

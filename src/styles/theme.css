@@ -1710,6 +1710,28 @@ p.lede {
   color: var(--text-body);
 }
 
+/* Baris spesifikasi terukur: angka pendek, jadi selnya lebih rapat dan angkanya memakai
+   huruf teknis dengan lebar seragam supaya kolomnya sejajar. */
+.tier-cell-spec {
+  padding: 12px 18px;
+  font-family: var(--font-technical);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-dark);
+  background-color: #ffffff;
+}
+
+.tier-label-spec { color: var(--text-body); }
+
+.tier-note {
+  max-width: 84ch;
+  margin: 18px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted-light);
+}
+
 /* Nama tingkat diulang di dalam sel, hanya tampil saat kisi melipat di layar sempit. */
 .tier-cell-label { display: none; }
 

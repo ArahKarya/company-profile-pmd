@@ -435,6 +435,26 @@ export const id: LocaleContent = {
                 market: "Pasar premium dan pelanggan berspesifikasi ketat",
               },
             ],
+            tierSpecs: [
+              {
+                label: "Derajat sosoh (min)",
+                values: ["95%", "[ANGKA]", "95%", "[ANGKA]"],
+              },
+              {
+                label: "Kadar air (maks)",
+                values: ["14%", "[ANGKA]", "14%", "[ANGKA]"],
+              },
+              {
+                label: "Butir patah (maks)",
+                values: ["25%", "[ANGKA]", "15%", "[ANGKA]"],
+              },
+              {
+                label: "Beras kepala (min)",
+                values: ["75%", "[ANGKA]", "85%", "[ANGKA]"],
+              },
+            ],
+            tierNote:
+              "Angka Medium dan Premium mengacu pada SNI 6128 tentang beras. Medium Super dan Premium Super adalah tingkatan internal PMD di atas standar tersebut, dengan batas yang kami tetapkan sendiri lebih ketat.",
           },
           {
             id: "beras-merk",

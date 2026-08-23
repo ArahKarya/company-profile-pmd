@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { HotspotFigure } from "@/components/ui/HotspotFigure";
 import { Headline } from "@/components/ui/RichText";
 import type { ServicePanel, ServicesContent } from "@/content/types";
@@ -167,7 +167,23 @@ function PanelBody({ panel }: { readonly panel: ServicePanel }) {
               {tier.market}
             </div>
           ))}
+
+          {panel.tierSpecs?.map((row) => (
+            <Fragment key={row.label}>
+              <span className="tier-label tier-label-spec">{row.label}</span>
+              {panel.tiers?.map((tier, index) => (
+                <div className="tier-cell tier-cell-spec" key={`${row.label}-${tier.code}`}>
+                  <span className="tier-cell-label" aria-hidden="true">
+                    {tier.name} · {row.label}
+                  </span>
+                  {row.values[index] ?? "—"}
+                </div>
+              ))}
+            </Fragment>
+          ))}
         </div>
+
+        {panel.tierNote && <p className="tier-note">{panel.tierNote}</p>}
       </div>
     );
   }

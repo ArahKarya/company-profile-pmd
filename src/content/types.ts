@@ -227,6 +227,18 @@ export interface QualityTier {
   readonly market: string;
 }
 
+/**
+ * Satu baris spesifikasi pada tabel tingkat mutu.
+ *
+ * `values` sejajar urutannya dengan `ServicePanel.tiers`, sehingga tiap nilai jatuh di
+ * kolom tingkat yang benar. Menyimpannya sebagai baris — bukan sebagai bidang di dalam
+ * tiap tingkat — membuat kesejajaran itu terjamin oleh strukturnya.
+ */
+export interface TierSpecRow {
+  readonly label: string;
+  readonly values: readonly string[];
+}
+
 /** A leaf panel in the services page. */
 export interface ServicePanel {
   readonly id: string;
@@ -238,6 +250,10 @@ export interface ServicePanel {
   readonly diagram?: HotspotDiagram;
   /** Tabel tingkat mutu. Panel yang memuatnya dirender selebar halaman. */
   readonly tiers?: readonly QualityTier[];
+  /** Baris spesifikasi terukur di bawah baris deskriptif. */
+  readonly tierSpecs?: readonly TierSpecRow[];
+  /** Catatan kaki tabel, mis. acuan standar yang dipakai. */
+  readonly tierNote?: string;
 }
 
 /** A sidebar heading with its child panels. */
