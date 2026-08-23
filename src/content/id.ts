@@ -59,8 +59,8 @@ export const id: LocaleContent = {
     intro: {
       eyebrow: "VISI KAMI",
       body: [
-        "Menjadi pelopor transformasi industri beras melalui inovasi, teknologi, dan kolaborasi.",
-        "Kami mengarahkan ketiganya pada satu tujuan: pertanian yang efisien, berkelanjutan, dan menyejahterakan. Prinsip itu berlaku sampai ke sisa prosesnya — hasil samping pengolahan kami olah menjadi biomassa, energi terbarukan yang mengembalikan sisa produksi ke dalam siklusnya.",
+        "Menjadi pelopor transformasi industri beras yang didorong oleh inovasi, teknologi mutakhir, dan kolaborasi.",
+        "Kami mengarahkan ketiganya pada satu tujuan: pengembangan sistem terbarukan, proses yang efisien, dan kebermanfaatan yang menyeluruh. Melalui ekosistem sirkular yang terintegrasi, setiap fase pengolahan saling menghidupkan untuk menghadirkan standar mutu terbaik yang berkelanjutan.",
       ],
       media: [
         { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },

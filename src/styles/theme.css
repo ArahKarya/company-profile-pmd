@@ -461,17 +461,32 @@ section {
 
 /* --- Split (image + copy) --- */
 
-/* Kalimat pembuka: lebih besar dan lebih rapat, berdiri sebagai pernyataan. */
-.split-copy .split-lead {
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  color: var(--brand-dark);
+/* Blok visi. Ukurannya sengaja lebih besar daripada seksi lain: ini pernyataan pembuka
+   perusahaan, bukan keterangan yang mengapit dua foto. */
+.split-copy .eyebrow {
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
   margin-bottom: 1rem;
 }
 
-.split-copy p { color: var(--text-body); }
+.split-copy .split-lead {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--brand-dark);
+  margin-bottom: 1.1rem;
+}
+
+.split-copy p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+@media (max-width: 767.98px) {
+  .split-copy .split-lead { font-size: 1.6rem; }
+}
 
 .split-media img {
   width: 100%;

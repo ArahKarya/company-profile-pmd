@@ -59,8 +59,8 @@ export const en: LocaleContent = {
     intro: {
       eyebrow: "OUR VISION",
       body: [
-        "To pioneer the transformation of the rice industry through innovation, technology and collaboration.",
-        "All three point at a single aim: farming that is efficient, sustainable and prosperous. That principle carries through to what the process leaves behind — our by-products are turned into biomass, renewable fuel that returns the remainder to the cycle it came from.",
+        "To pioneer the transformation of the rice industry, driven by innovation, advanced technology and collaboration.",
+        "All three point at a single aim: renewable systems, efficient processes, and benefit that reaches everyone involved. Through an integrated circular ecosystem, each stage of processing sustains the next — delivering a standard of quality that holds, and keeps holding.",
       ],
       media: [
         { src: "/images/intro-1.jpg", alt: "Paddy drying on the drying floor", width: 1200, height: 900 },
