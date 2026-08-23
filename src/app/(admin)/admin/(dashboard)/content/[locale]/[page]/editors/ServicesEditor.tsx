@@ -1,18 +1,7 @@
 "use client";
 
-import type {
-  Hotspot,
-  ServiceCategory,
-  ServicePanel,
-  ServicesContent,
-} from "@/content/types";
-import {
-  ImageInput,
-  NumberInput,
-  Repeater,
-  StringList,
-  TextInput,
-} from "../../../../_ui/fields";
+import type { Hotspot, QualityTier, ServiceCategory, ServicePanel, ServicesContent } from "@/content/types";
+import { ImageInput, NumberInput, Repeater, StringList, TextArea, TextInput } from "../../../../_ui/fields";
 import { emptyImage, type Options } from "./shared";
 
 const newPanel = (label: string): ServicePanel => ({
@@ -129,6 +118,47 @@ function PanelFields({
         multiline
         addLabel="Add paragraph"
       />
+
+      <div className="admin-nested">
+        <p className="help mb-2">
+          Tabel tingkat mutu. Panel yang memuat baris di sini dirender selebar halaman dan
+          tidak menampilkan gambar. Kosongkan seluruh barisnya untuk kembali ke panel biasa.
+        </p>
+        <Repeater<QualityTier>
+          label="Tingkat mutu"
+          items={panel.tiers ?? []}
+          onChange={(tiers) => patch({ tiers: tiers.length > 0 ? tiers : undefined })}
+          title={(tier) => `${tier.code} — ${tier.name}`}
+          addLabel="Tambah tingkat"
+          newItem={() => ({ code: "", name: "", character: "", market: "" })}
+          renderItem={(tier, update) => (
+            <>
+              <div className="admin-grid">
+                <TextInput
+                  label="Kode"
+                  value={tier.code}
+                  onChange={(code) => update({ ...tier, code })}
+                />
+                <TextInput
+                  label="Nama tingkat"
+                  value={tier.name}
+                  onChange={(name) => update({ ...tier, name })}
+                />
+              </div>
+              <TextArea
+                label="Karakter butir"
+                value={tier.character}
+                onChange={(character) => update({ ...tier, character })}
+              />
+              <TextArea
+                label="Pasar"
+                value={tier.market}
+                onChange={(market) => update({ ...tier, market })}
+              />
+            </>
+          )}
+        />
+      </div>
 
       <div className="admin-field">
         <label>Illustration</label>

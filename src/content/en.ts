@@ -403,20 +403,37 @@ export const en: LocaleContent = {
           {
             id: "rice-grades",
             label: "Quality Tiers",
-            headline: ["Quality Tiers"],
+            headline: ["Four Quality Tiers"],
             body: [
-              "Our four tiers are set by degree of milling and the proportion of whole grain: Medium, Medium Super, Premium and Premium Super.",
-              "The tier is assigned after grading rather than before milling — so what the pack says is what was actually measured.",
+              "The tier is assigned after grading and sorting, not before milling. What decides it is measurement: degree of milling, the share of whole grain, and how clean the grain colour is.",
+              "Because it is measured rather than estimated, a tier means the same thing on every delivery — which is what makes the tenth shipment match the first.",
             ],
-            diagram: {
-              base: { src: "/brand/process-pmd2-en.svg", alt: "The PMD-2 process", width: 1460, height: 460 },
-              hotspots: [
-                { id: "polishing", label: "Polishing", rect: [4.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-en-1.svg" },
-                { id: "grading", label: "Grading", rect: [28.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-en-2.svg" },
-                { id: "packing", label: "Packing", rect: [52.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-en-3.svg" },
-                { id: "distribution", label: "Distribution", rect: [76.0, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-en-4.svg" },
-              ],
-            },
+            tiers: [
+              {
+                code: "MD",
+                name: "Medium",
+                character: "Moderate degree of milling; some broken grain still carried",
+                market: "Household consumption and wholesale",
+              },
+              {
+                code: "MDS",
+                name: "Medium Super",
+                character: "Cleaner milling, a higher share of whole grain than medium",
+                market: "Households, food service and catering",
+              },
+              {
+                code: "PR",
+                name: "Premium",
+                character: "Clear, even grain with off-colour kernels removed",
+                market: "Branded retail, hotels and restaurants",
+              },
+              {
+                code: "PRS",
+                name: "Premium Super",
+                character: "The wholest and cleanest grain of the whole line",
+                market: "Premium market and tightly specified customers",
+              },
+            ],
           },
           {
             id: "rice-brands",

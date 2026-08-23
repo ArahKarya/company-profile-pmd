@@ -1629,3 +1629,81 @@ p.lede {
 @media (max-width: 767.98px) {
   .mission-list { grid-template-columns: 1fr; }
 }
+
+/* --- Tabel tingkat mutu (halaman Produk) ---
+
+   Panel yang memuatnya dirender selebar halaman lewat .panel-wide; tabel lima kolom tidak
+   terbaca kalau dijejalkan ke separuh lebar di sebelah foto. */
+
+.panel-wide { width: 100%; }
+
+.tier-table {
+  margin-top: 40px;
+  border-top: 2px solid var(--brand-dark);
+}
+
+.tier-head,
+.tier-row {
+  display: grid;
+  grid-template-columns: 90px 190px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.tier-head {
+  padding: 12px 0;
+  font-family: var(--font-technical);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted-light);
+}
+
+.tier-code {
+  font-family: var(--font-technical);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--brand-accent-deep);
+}
+
+.tier-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.tier-character,
+.tier-market {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+/* Baris terakhir adalah tingkat tertinggi — diberi latar emas tipis sebagai penanda. */
+.tier-row:last-child {
+  background-color: var(--gold-tint);
+  border-bottom-color: var(--brand-accent);
+}
+
+.tier-row:last-child .tier-name { color: var(--brand-dark); }
+
+@media (max-width: 991.98px) {
+  .tier-head { display: none; }
+
+  .tier-row {
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 6px 16px;
+    padding: 18px 0;
+  }
+
+  /* Tanpa baris kepala, tiap sel diberi labelnya sendiri. */
+  .tier-character::before { content: "Karakter: "; color: var(--text-muted-light); }
+  .tier-market::before { content: "Pasar: "; color: var(--text-muted-light); }
+  .tier-character,
+  .tier-market { grid-column: 2; font-size: 0.92rem; }
+  .tier-row:last-child { padding-left: 12px; padding-right: 12px; }
+}

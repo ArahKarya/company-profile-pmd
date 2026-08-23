@@ -216,6 +216,17 @@ export interface HotspotDiagram {
   readonly hotspots: readonly Hotspot[];
 }
 
+/** Satu baris pada tabel tingkat mutu beras. */
+export interface QualityTier {
+  /** Kode ringkas, mis. "PRS". */
+  readonly code: string;
+  readonly name: string;
+  /** Ciri butirnya. */
+  readonly character: string;
+  /** Pasar yang dituju. */
+  readonly market: string;
+}
+
 /** A leaf panel in the services page. */
 export interface ServicePanel {
   readonly id: string;
@@ -225,6 +236,8 @@ export interface ServicePanel {
   readonly body: readonly string[];
   readonly image?: ImageAsset;
   readonly diagram?: HotspotDiagram;
+  /** Tabel tingkat mutu. Panel yang memuatnya dirender selebar halaman. */
+  readonly tiers?: readonly QualityTier[];
 }
 
 /** A sidebar heading with its child panels. */

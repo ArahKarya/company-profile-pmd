@@ -403,20 +403,37 @@ export const id: LocaleContent = {
           {
             id: "beras-mutu",
             label: "Tingkat Mutu",
-            headline: ["Tingkat Mutu"],
+            headline: ["Empat Tingkat Mutu"],
             body: [
-              "Empat tingkat mutu kami tetapkan berdasarkan derajat sosoh dan proporsi butir utuh: Medium, Medium Super, Premium, dan Premium Super.",
-              "Penentuan tingkat mutu dilakukan setelah grading, bukan sebelum penggilingan — sehingga yang tertulis pada kemasan adalah hasil yang benar-benar terukur.",
+              "Tingkat mutu ditetapkan setelah grading dan sorting, bukan sebelum penggilingan. Yang menentukan adalah hasil pengukuran: derajat sosoh, proporsi butir utuh, dan kebersihan warna butir.",
+              "Karena diukur dan bukan diperkirakan, satu tingkat mutu berarti hal yang sama pada setiap pengiriman — itulah yang membuat kiriman kesepuluh sama dengan yang pertama.",
             ],
-            diagram: {
-              base: { src: "/brand/process-pmd2.svg", alt: "Alur unit PMD-2", width: 1460, height: 460 },
-              hotspots: [
-                { id: "penyosohan", label: "Penyosohan", rect: [4.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-1.svg" },
-                { id: "grading", label: "Grading", rect: [28.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-2.svg" },
-                { id: "pengemasan", label: "Pengemasan", rect: [52.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-3.svg" },
-                { id: "distribusi", label: "Distribusi", rect: [76.0, 39.1, 18.5, 41.3], preview: "/brand/process-pmd2-4.svg" },
-              ],
-            },
+            tiers: [
+              {
+                code: "MD",
+                name: "Medium",
+                character: "Derajat sosoh sedang, proporsi butir patah masih terbawa",
+                market: "Konsumsi rumah tangga dan grosir",
+              },
+              {
+                code: "MDS",
+                name: "Medium Super",
+                character: "Sosoh lebih bersih, butir utuh lebih banyak daripada medium",
+                market: "Rumah tangga, kuliner, dan katering",
+              },
+              {
+                code: "PR",
+                name: "Premium",
+                character: "Butir bening dan seragam, warna menyimpang sudah dikeluarkan",
+                market: "Ritel bermerk, hotel, dan restoran",
+              },
+              {
+                code: "PRS",
+                name: "Premium Super",
+                character: "Butir paling utuh dan paling bersih dari seluruh lini",
+                market: "Pasar premium dan pelanggan berspesifikasi ketat",
+              },
+            ],
           },
           {
             id: "beras-merk",

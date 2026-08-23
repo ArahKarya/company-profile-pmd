@@ -108,6 +108,41 @@ function SidebarButton({
 }
 
 function PanelBody({ panel }: { readonly panel: ServicePanel }) {
+  /* Panel bertabel dirender selebar halaman: tabel lima kolom tidak terbaca kalau
+     dijejalkan ke separuh lebar di sebelah foto. */
+  if (panel.tiers && panel.tiers.length > 0) {
+    return (
+      <div className="panel-wide">
+        <div className="row">
+          <div className="col-12 col-lg-8">
+            {panel.eyebrow && <span className="eyebrow">{panel.eyebrow}</span>}
+            <Headline lines={panel.headline} />
+            {panel.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="tier-table">
+          <div className="tier-head">
+            <span>Kode</span>
+            <span>Tingkat</span>
+            <span>Karakter butir</span>
+            <span>Pasar</span>
+          </div>
+          {panel.tiers.map((tier) => (
+            <div className="tier-row" key={tier.code}>
+              <span className="tier-code">{tier.code}</span>
+              <span className="tier-name">{tier.name}</span>
+              <span className="tier-character">{tier.character}</span>
+              <span className="tier-market">{tier.market}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="row align-items-center gy-4">
       <div className="col-12 col-lg-6">
