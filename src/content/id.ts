@@ -52,6 +52,7 @@ export const id: LocaleContent = {
       actions: [
         { label: "Lihat Produk", href: site.routes.id.services, variant: "solid" },
         { label: "Kemitraan Petani", href: site.routes.id.contact, variant: "outline" },
+        { label: "Kemitraan Strategis", href: site.routes.id.contact, variant: "outline" },
       ],
     },
 

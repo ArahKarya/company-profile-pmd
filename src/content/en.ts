@@ -52,6 +52,7 @@ export const en: LocaleContent = {
       actions: [
         { label: "See our products", href: site.routes.en.services, variant: "solid" },
         { label: "Farmer partnership", href: site.routes.en.contact, variant: "outline" },
+        { label: "Strategic partnership", href: site.routes.en.contact, variant: "outline" },
       ],
     },
 
