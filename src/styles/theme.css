@@ -86,7 +86,7 @@ p {
 
 h1, .h1 {
   font-family: var(--font-display);
-  font-size: 2.85rem;
+  font-size: 3.4rem;
   /* Bobot 700, bukan 800: cukup tegas untuk dibaca di atas kanvas terang, tanpa terdengar
      seperti iklan. Kesan industrial datang dari ketepatan, bukan dari ketebalan. */
   font-weight: 700;
@@ -99,7 +99,7 @@ h1 b, .h1 b { font-weight: 700; }
 
 h2, .h2 {
   font-family: var(--font-display);
-  font-size: 2.1rem;
+  font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -139,7 +139,7 @@ h4.marker { position: relative; }
 .rule {
   border: 0;
   border-top: 1px solid var(--hairline);
-  margin: 0 0 28px;
+  margin: 0 0 40px;
   opacity: 1;
 }
 
@@ -934,8 +934,8 @@ p.lede {
 
 .hero-split {
   background-color: var(--paper);
-  padding-top: calc(var(--nav-height) + 56px);
-  padding-bottom: 64px;
+  padding-top: calc(var(--nav-height) + 96px);
+  padding-bottom: 112px;
 }
 
 .hero-split-copy h1 { margin-bottom: 1.25rem; }
@@ -1023,14 +1023,14 @@ p.lede {
 
 /* --- Kartu produk --- */
 
-.cards { padding: 72px 0; }
+.cards { padding: 128px 0; }
 
 .cards-head {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 /* Nomor seksi dan eyebrow berdiri sebaris, seperti kepala tabel. */
@@ -1055,7 +1055,7 @@ p.lede {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 32px;
 }
 
 .product-card {
@@ -1089,7 +1089,7 @@ p.lede {
 .product-card-body .text-link { margin-top: 4px; }
 
 @media (max-width: 991.98px) {
-  .cards { padding: 48px 0; }
+  .cards { padding: 64px 0; }
   .card-grid { grid-template-columns: 1fr; }
   .cards-head { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
@@ -1104,7 +1104,7 @@ p.lede {
 .process-band {
   background-color: var(--brand-dark);
   color: var(--text-on-dark);
-  padding: 56px 0 64px;
+  padding: 104px 0 120px;
 }
 
 .process-head {
@@ -1112,7 +1112,7 @@ p.lede {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 44px;
 }
 
 .process-head .section-index { color: var(--brand-accent); }
@@ -1440,7 +1440,7 @@ p.lede {
 
 .cta-band {
   background-color: var(--gold-tint);
-  padding: 48px 0;
+  padding: 88px 0;
 }
 
 .cta-inner {
@@ -1458,7 +1458,7 @@ p.lede {
 
 /* --- Galeri --- */
 
-.gallery { padding: 64px 0 72px; }
+.gallery { padding: 112px 0 128px; }
 
 .gallery-head {
   display: flex;
@@ -1496,13 +1496,13 @@ p.lede {
 .gallery-caption .bi { color: var(--brand-accent-deep); }
 
 @media (max-width: 991.98px) {
-  .gallery { padding: 40px 0 48px; }
+  .gallery { padding: 56px 0 64px; }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* --- Klien dan mitra dagang --- */
 
-.clients { padding: 64px 0 72px; }
+.clients { padding: 112px 0 128px; }
 
 .clients-note {
   font-family: var(--font-technical);
@@ -1547,7 +1547,7 @@ p.lede {
 
 /* --- Nilai perusahaan (akronim) --- */
 
-.values { padding: 8px 0 72px; }
+.values { padding: 16px 0 128px; }
 
 .value-list {
   display: flex;
