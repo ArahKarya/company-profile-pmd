@@ -113,14 +113,26 @@ function PanelBody({ panel }: { readonly panel: ServicePanel }) {
   if (panel.tiers && panel.tiers.length > 0) {
     return (
       <div className="panel-wide">
-        <div className="row">
-          <div className="col-12 col-lg-8">
+        <div className="row align-items-center gy-4">
+          <div className="col-12 col-lg-7">
             {panel.eyebrow && <span className="eyebrow">{panel.eyebrow}</span>}
             <Headline lines={panel.headline} />
             {panel.body.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+          {panel.image && (
+            <div className="col-12 col-lg-5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={panel.image.src}
+                alt={panel.image.alt}
+                width={panel.image.width}
+                height={panel.image.height}
+                className="panel-figure w-100 h-auto m-0"
+              />
+            </div>
+          )}
         </div>
 
         <div className="tier-table">

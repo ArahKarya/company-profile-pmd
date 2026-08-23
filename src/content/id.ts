@@ -404,6 +404,7 @@ export const id: LocaleContent = {
             id: "beras-mutu",
             label: "Tingkat Mutu",
             headline: ["Empat Tingkat Mutu"],
+            image: { src: "/images/gallery-7.jpg", alt: "Butir beras hasil sosoh", width: 1000, height: 750 },
             body: [
               "Tingkat mutu ditetapkan setelah grading dan sorting, bukan sebelum penggilingan. Yang menentukan adalah hasil pengukuran: derajat sosoh, proporsi butir utuh, dan kebersihan warna butir.",
               "Karena diukur dan bukan diperkirakan, satu tingkat mutu berarti hal yang sama pada setiap pengiriman — itulah yang membuat kiriman kesepuluh sama dengan yang pertama.",

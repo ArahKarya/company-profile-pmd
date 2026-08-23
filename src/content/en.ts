@@ -404,6 +404,7 @@ export const en: LocaleContent = {
             id: "rice-grades",
             label: "Quality Tiers",
             headline: ["Four Quality Tiers"],
+            image: { src: "/images/gallery-7.jpg", alt: "Polished rice grain", width: 1000, height: 750 },
             body: [
               "The tier is assigned after grading and sorting, not before milling. What decides it is measurement: degree of milling, the share of whole grain, and how clean the grain colour is.",
               "Because it is measured rather than estimated, a tier means the same thing on every delivery — which is what makes the tenth shipment match the first.",
