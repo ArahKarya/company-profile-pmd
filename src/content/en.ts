@@ -47,7 +47,7 @@ export const en: LocaleContent = {
     hero: {
       eyebrow: "PT PANGAN MASA DEPAN",
       headline: ["Modern, integrated rice milling —", "from paddy to packed rice."],
-      body: "Two connected production units: drying and husking at PMD-1, polishing and packing at PMD-2. Every batch is recorded, from the farmer's paddy to the sack that leaves the gate.",
+      body: "Integrating advanced processing technology with full traceability, dedicated to uncompromising quality from the harvest of the Indonesian archipelago.",
       image: { src: "/images/facility-mill.jpg", alt: "The milling floor at PT Pangan Masa Depan", width: 1800, height: 1014 },
       actions: [
         { label: "See our products", href: site.routes.en.services, variant: "solid" },

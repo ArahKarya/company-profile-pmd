@@ -47,7 +47,7 @@ export const id: LocaleContent = {
     hero: {
       eyebrow: "PT PANGAN MASA DEPAN",
       headline: ["Penggilingan beras modern, terintegrasi", "dari gabah sampai kemasan."],
-      body: "Dua unit produksi yang saling terhubung: pengeringan dan penggilingan di PMD-1, penyosohan dan pengemasan di PMD-2. Setiap batch tercatat, dari gabah petani sampai karung siap kirim.",
+      body: "Mengintegrasikan teknologi pemrosesan mutakhir dengan ketertelusuran penuh, mendedikasikan kualitas tanpa kompromi dari hasil bumi nusantara.",
       image: { src: "/images/facility-mill.jpg", alt: "Lantai giling di fasilitas PT Pangan Masa Depan", width: 1800, height: 1014 },
       actions: [
         { label: "Lihat Produk", href: site.routes.id.services, variant: "solid" },
