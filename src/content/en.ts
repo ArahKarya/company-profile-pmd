@@ -438,23 +438,23 @@ export const en: LocaleContent = {
             tierSpecs: [
               {
                 label: "Degree of milling (min)",
-                values: ["95%", "[FIGURE]", "95%", "[FIGURE]"],
+                values: ["95%", "95%", "95%", "95%"],
               },
               {
                 label: "Moisture (max)",
-                values: ["14%", "[FIGURE]", "14%", "[FIGURE]"],
+                values: ["14%", "14%", "14%", "13%"],
               },
               {
                 label: "Broken grain (max)",
-                values: ["25%", "[FIGURE]", "15%", "[FIGURE]"],
+                values: ["25%", "20%", "15%", "10%"],
               },
               {
                 label: "Head rice (min)",
-                values: ["75%", "[FIGURE]", "85%", "[FIGURE]"],
+                values: ["75%", "80%", "85%", "90%"],
               },
             ],
             tierNote:
-              "The Medium and Premium figures follow SNI 6128, Indonesia's national rice standard. Medium Super and Premium Super are PMD's own grades above that standard, held to limits we set tighter ourselves.",
+              "Medium and Premium follow the limits set by SNI 6128, Indonesia's national rice standard. Medium Super sits between the two and Premium Super above Premium — both are PMD's own grades, held to limits we set tighter than the standard. Every tier meets the same minimum degree of milling.",
           },
           {
             id: "rice-brands",

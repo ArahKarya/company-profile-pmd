@@ -438,23 +438,23 @@ export const id: LocaleContent = {
             tierSpecs: [
               {
                 label: "Derajat sosoh (min)",
-                values: ["95%", "[ANGKA]", "95%", "[ANGKA]"],
+                values: ["95%", "95%", "95%", "95%"],
               },
               {
                 label: "Kadar air (maks)",
-                values: ["14%", "[ANGKA]", "14%", "[ANGKA]"],
+                values: ["14%", "14%", "14%", "13%"],
               },
               {
                 label: "Butir patah (maks)",
-                values: ["25%", "[ANGKA]", "15%", "[ANGKA]"],
+                values: ["25%", "20%", "15%", "10%"],
               },
               {
                 label: "Beras kepala (min)",
-                values: ["75%", "[ANGKA]", "85%", "[ANGKA]"],
+                values: ["75%", "80%", "85%", "90%"],
               },
             ],
             tierNote:
-              "Angka Medium dan Premium mengacu pada SNI 6128 tentang beras. Medium Super dan Premium Super adalah tingkatan internal PMD di atas standar tersebut, dengan batas yang kami tetapkan sendiri lebih ketat.",
+              "Medium dan Premium mengikuti batas SNI 6128 tentang beras. Medium Super berada di antara keduanya, dan Premium Super di atas Premium — keduanya tingkatan internal PMD, dengan batas yang kami tetapkan sendiri lebih ketat daripada standar. Seluruh tingkat memenuhi derajat sosoh minimum yang sama.",
           },
           {
             id: "beras-merk",
