@@ -377,10 +377,10 @@ export const en: LocaleContent = {
       id: "overview",
       label: "Our Products",
       eyebrow: "Products & Services",
-      headline: ["Our Products"],
+      headline: ["Uncompromising Quality,", "Service That Connects"],
       body: [
-        "Rice is our main product, packed according to quality tier, varietal classification and brand. Alongside it, every milling by-product is treated as a product in its own right — batch numbered and carried in stock.",
-        "Beyond selling products, we buy paddy directly from farmers, enter strategic partnerships for continuing supply, and take in contract milling work.",
+        "We offer selected rice held to defined quality tiers and varietal classifications. Every stage of processing — by-products included — is managed transparently and measurably, under strict batch traceability.",
+        "We also open wide room for collaboration: strategic partnerships for paddy procurement alongside farmers, and a modern, dependable contract milling facility.",
       ],
       image: { src: "/images/service-detail-1.jpg", alt: "Sorted rice grains", width: 1200, height: 800 },
     },

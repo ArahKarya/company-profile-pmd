@@ -20,7 +20,7 @@ export const id: LocaleContent = {
     home: {
       title: "PT Pangan Masa Depan",
       description:
-        "PT Pangan Masa Depan mengolah gabah petani menjadi beras bermutu — pengeringan, penggilingan, penyosohan, dan pengemasan dalam satu rantai produksi terintegrasi.",
+        "PT Pangan Masa Depan mengolah padi petani menjadi beras bermutu — pengeringan, penggilingan, penyosohan, dan pengemasan dalam satu rantai produksi terintegrasi.",
     },
     about: {
       title: "Tentang Kami | PT Pangan Masa Depan",
@@ -37,7 +37,7 @@ export const id: LocaleContent = {
     },
     contact: {
       title: "Kontak | PT Pangan Masa Depan",
-      description: "Hubungi PT Pangan Masa Depan untuk pembelian gabah, pemesanan beras, dan kemitraan.",
+      description: "Hubungi PT Pangan Masa Depan untuk pembelian padi, pemesanan beras, dan kemitraan.",
     },
   },
 
@@ -46,7 +46,7 @@ export const id: LocaleContent = {
   home: {
     hero: {
       eyebrow: "PT PANGAN MASA DEPAN",
-      headline: ["Penggilingan beras modern, terintegrasi", "dari gabah sampai kemasan."],
+      headline: ["Penggilingan beras modern, terintegrasi", "dari padi sampai kemasan."],
       body: "Mengintegrasikan teknologi pemrosesan mutakhir dengan ketertelusuran penuh, mendedikasikan kualitas tanpa kompromi dari hasil bumi nusantara.",
       image: { src: "/images/facility-mill.jpg", alt: "Lantai giling di fasilitas PT Pangan Masa Depan", width: 1800, height: 1014 },
       actions: [
@@ -63,8 +63,8 @@ export const id: LocaleContent = {
         "Kami mengarahkan ketiganya pada satu tujuan: pengembangan sistem terbarukan, proses yang efisien, dan kebermanfaatan yang menyeluruh. Melalui ekosistem sirkular yang terintegrasi, setiap fase pengolahan saling menghidupkan untuk menghadirkan standar mutu terbaik yang berkelanjutan.",
       ],
       media: [
-        { src: "/images/intro-1.jpg", alt: "Gabah dijemur di lantai pengeringan", width: 1200, height: 900 },
-        { src: "/images/intro-2.jpg", alt: "Gabah dan mesin di lantai giling", width: 1200, height: 900 },
+        { src: "/images/intro-1.jpg", alt: "Padi dijemur di lantai pengeringan", width: 1200, height: 900 },
+        { src: "/images/intro-2.jpg", alt: "Padi dan mesin di lantai giling", width: 1200, height: 900 },
       ],
     },
 
@@ -93,7 +93,7 @@ export const id: LocaleContent = {
           id: "samping",
           title: "Produk samping",
           body: "Bekatul, broken, menir, sekam, dan reject — bernomor batch, masuk stok, dan siap dibeli.",
-          image: { src: "/images/feature-byproducts.jpg", alt: "Gudang curah: gundukan gabah dan karung", width: 1400, height: 900 },
+          image: { src: "/images/feature-byproducts.jpg", alt: "Gudang curah: gundukan padi dan karung", width: 1400, height: 900 },
           link: { href: site.routes.id.services, label: "Selengkapnya" },
         },
         {
@@ -128,8 +128,8 @@ export const id: LocaleContent = {
       moreLabel: "Rincian",
       closeLabel: "Tutup",
       from: {
-        label: "Gabah",
-        image: { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling", width: 1000, height: 750 },
+        label: "Padi",
+        image: { src: "/images/gallery-3.jpg", alt: "Butir padi sebelum digiling", width: 1000, height: 750 },
       },
       to: {
         label: "Beras kemasan",
@@ -141,14 +141,14 @@ export const id: LocaleContent = {
           title: "Intake / Reception",
           body: "Timbang, uji mutu, dan penomoran batch.",
           unit: "PMD-1",
-          image: { src: "/images/feature-milling.jpg", alt: "Gabah dituang ke lubang penerimaan", width: 1400, height: 900 },
+          image: { src: "/images/feature-milling.jpg", alt: "Padi dituang ke lubang penerimaan", width: 1400, height: 900 },
           detail: {
             body: [
-              "Gabah melewati jembatan timbang dan titik uji mutu sebelum dibongkar. Kadar air, kebersihan, dan varietas diukur di tempat, lalu seluruh hasilnya terikat pada satu nomor batch yang mengikuti gabah itu sampai keluar sebagai beras kemasan.",
+              "Padi melewati jembatan timbang dan titik uji mutu sebelum dibongkar. Kadar air, kebersihan, dan varietas diukur di tempat, lalu seluruh hasilnya terikat pada satu nomor batch yang mengikuti padi itu sampai keluar sebagai beras kemasan.",
             ],
             points: [
               "Diukur: berat, kadar air, varietas, dan asal",
-              "Masuk: gabah dari petani, kelompok tani, dan pemasok",
+              "Masuk: padi dari petani, kelompok tani, dan pemasok",
             ],
           },
         },
@@ -160,11 +160,11 @@ export const id: LocaleContent = {
           image: { src: "/images/facility-cleaning.jpg", alt: "Operator di panel kendali lini pembersihan PMD", width: 665, height: 1181 },
           detail: {
             body: [
-              "Gabah dibersihkan sebelum mencapai pengering. Ayakan bertingkat dan hisapan udara memisahkan jerami, debu, batu, dan partikel logam, sehingga yang dikeringkan hanya gabah — sekaligus menjaga presisi mesin pada tahap-tahap berikutnya.",
+              "Padi dibersihkan sebelum mencapai pengering. Ayakan bertingkat dan hisapan udara memisahkan jerami, debu, batu, dan partikel logam, sehingga yang dikeringkan hanya padi — sekaligus menjaga presisi mesin pada tahap-tahap berikutnya.",
             ],
             points: [
               "Dipisahkan: jerami, debu, batu, dan partikel logam",
-              "Keluar: gabah bersih siap dikeringkan",
+              "Keluar: padi bersih siap dikeringkan",
             ],
           },
         },
@@ -272,7 +272,7 @@ export const id: LocaleContent = {
       images: [
         { src: "/images/gallery-1.jpg", alt: "Instalasi elevator dan silo" },
         { src: "/images/gallery-2.jpg", alt: "Silo dan konveyor di fasilitas produksi" },
-        { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling" },
+        { src: "/images/gallery-3.jpg", alt: "Butir padi sebelum digiling" },
         { src: "/images/gallery-4.jpg", alt: "Silo penyimpanan" },
         { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk" },
         { src: "/images/gallery-6.jpg", alt: "Terminal biji-bijian dilihat dari udara" },
@@ -282,7 +282,7 @@ export const id: LocaleContent = {
     },
 
     cta: {
-      headline: ["Menjual gabah, atau mencari", "pemasok beras?"],
+      headline: ["Menjual padi, atau mencari", "pemasok beras?"],
       button: { href: site.routes.id.contact, label: "Hubungi tim kami" },
     },
   },
@@ -293,7 +293,7 @@ export const id: LocaleContent = {
       background: { desktop: "/images/hero-about.jpg", mobile: "/images/hero-about.jpg" },
     },
     statement:
-      "PT Pangan Masa Depan adalah perusahaan agribisnis pengolahan padi dan beras di Kandanghaur, Indramayu. Dari penerimaan gabah hingga beras kemasan bermerk, seluruh tahap berjalan di fasilitas kami sendiri dengan kapasitas giling 300 ton gabah per hari.",
+      "PT Pangan Masa Depan adalah perusahaan agribisnis pengolahan padi dan beras di Kandanghaur, Indramayu. Dari penerimaan padi hingga beras kemasan bermerk, seluruh tahap berjalan di fasilitas kami sendiri dengan kapasitas giling 300 ton padi per hari.",
 
     vision: {
       eyebrow: "VISI KAMI",
@@ -316,7 +316,7 @@ export const id: LocaleContent = {
         "Menjadi benchmark industri beras Indonesia dalam efisiensi, keberlanjutan, dan tanggung jawab sosial.",
       ],
       media: [
-        { src: "/images/about-mission-1.jpg", alt: "Elevator gabah dan truk di unit penerimaan", width: 1000, height: 800 },
+        { src: "/images/about-mission-1.jpg", alt: "Elevator padi dan truk di unit penerimaan", width: 1000, height: 800 },
         { src: "/images/about-mission-2.jpg", alt: "Karung tersusun di gudang penyimpanan", width: 1000, height: 800 },
         { src: "/images/about-mission-3.jpg", alt: "Tim mengangkut karung di lantai produksi", width: 1000, height: 800 },
       ],
@@ -377,10 +377,10 @@ export const id: LocaleContent = {
       id: "overview",
       label: "Produk Kami",
       eyebrow: "Produk & Layanan",
-      headline: ["Produk Kami"],
+      headline: ["Kualitas Tanpa Kompromi,", "Layanan yang Terhubung"],
       body: [
-        "Produk utama kami adalah beras, dikemas menurut tingkat mutu, klasifikasi varietas, dan merk. Di sampingnya, seluruh hasil samping penggilingan kami perlakukan sebagai produk tersendiri yang bernomor batch dan tercatat dalam stok.",
-        "Selain menjual produk, kami membuka kemitraan pembelian gabah langsung dari petani, kemitraan strategis untuk pasokan berkelanjutan, dan jasa penggilingan bagi pemilik gabah.",
+        "Kami mempersembahkan beras pilihan dengan standar klasifikasi mutu dan varietas terbaik. Setiap fase pengolahan, termasuk produk turunannya, dikelola secara transparan dan terukur dengan sistem penelusuran batch yang ketat.",
+        "Kami juga membuka ruang kolaborasi yang luas melalui kemitraan strategis pengadaan padi bersama petani, serta menyediakan fasilitas layanan penggilingan modern yang andal.",
       ],
       image: { src: "/images/service-detail-1.jpg", alt: "Butir beras hasil sortir", width: 1200, height: 800 },
     },
@@ -452,7 +452,7 @@ export const id: LocaleContent = {
               "Bekatul — lapisan luar beras yang terlepas saat penyosohan — banyak diserap industri pakan ternak dan pangan olahan.",
               "Menir, butir beras yang pecah halus, umum digunakan sebagai bahan tepung beras dan bahan baku industri makanan.",
             ],
-            image: { src: "/images/gallery-3.jpg", alt: "Butir gabah sebelum digiling" },
+            image: { src: "/images/gallery-3.jpg", alt: "Butir padi sebelum digiling" },
           },
           {
             id: "samping-lain",
@@ -460,9 +460,9 @@ export const id: LocaleContent = {
             headline: ["Broken, Reject & Sekam"],
             body: [
               "Broken adalah beras patah hasil pemisahan pada tahap grading, dijual terpisah dari beras utuh.",
-              "Beras reject dipisahkan agar tidak masuk ke kemasan bermerk, dan sekam — kulit gabah dari unit PMD-1 — diserap sebagai bahan bakar, media tanam, dan bahan baku industri.",
+              "Beras reject dipisahkan agar tidak masuk ke kemasan bermerk, dan sekam — kulit padi dari unit PMD-1 — diserap sebagai bahan bakar, media tanam, dan bahan baku industri.",
             ],
-            image: { src: "/images/gallery-6.jpg", alt: "Lantai jemur gabah dilihat dari udara" },
+            image: { src: "/images/gallery-6.jpg", alt: "Lantai jemur padi dilihat dari udara" },
           },
         ],
       },
@@ -475,9 +475,9 @@ export const id: LocaleContent = {
           eyebrow: "Layanan",
           headline: ["Kemitraan & Jasa Olah"],
           body: [
-            "Kapasitas pengeringan dan penggilingan kami terbuka untuk tiga bentuk kemitraan: petani yang menjual gabah, industri dan lembaga yang membutuhkan pasokan beras berkelanjutan, serta pelaku usaha yang ingin mengolah dan mengemas berasnya di fasilitas kami.",
+            "Kapasitas pengeringan dan penggilingan kami terbuka untuk tiga bentuk kemitraan: petani yang menjual padi, industri dan lembaga yang membutuhkan pasokan beras berkelanjutan, serta pelaku usaha yang ingin mengolah dan mengemas berasnya di fasilitas kami.",
           ],
-          image: { src: "/images/service-detail-2.jpg", alt: "Lantai jemur gabah di unit produksi", width: 1200, height: 800 },
+          image: { src: "/images/service-detail-2.jpg", alt: "Lantai jemur padi di unit produksi", width: 1200, height: 800 },
         },
         children: [
           {
@@ -485,13 +485,13 @@ export const id: LocaleContent = {
             label: "Kemitraan Petani",
             headline: ["Kemitraan Petani"],
             body: [
-              "Kami membeli gabah kering panen maupun gabah kering giling langsung dari petani dan kelompok tani, dengan penimbangan dan penetapan mutu yang terbuka untuk disaksikan.",
-              "Alur di bawah ini adalah perjalanan gabah setelah diterima di unit PMD-1.",
+              "Kami membeli padi kering panen maupun padi kering giling langsung dari petani dan kelompok tani, dengan penimbangan dan penetapan mutu yang terbuka untuk disaksikan.",
+              "Alur di bawah ini adalah perjalanan padi setelah diterima di unit PMD-1.",
             ],
             diagram: {
               base: { src: "/brand/process-pmd1.svg", alt: "Alur unit PMD-1", width: 1460, height: 460 },
               hotspots: [
-                { id: "penerimaan", label: "Penerimaan Gabah", rect: [4.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd1-1.svg" },
+                { id: "penerimaan", label: "Penerimaan Padi", rect: [4.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd1-1.svg" },
                 { id: "pengeringan", label: "Pengeringan", rect: [28.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd1-2.svg" },
                 { id: "husking", label: "Pemecah Kulit", rect: [52.1, 39.1, 18.5, 41.3], preview: "/brand/process-pmd1-3.svg" },
                 { id: "pk", label: "Beras Pecah Kulit", rect: [76.0, 39.1, 18.5, 41.3], preview: "/brand/process-pmd1-4.svg" },
@@ -504,7 +504,7 @@ export const id: LocaleContent = {
             headline: ["Kemitraan Strategis"],
             body: [
               "Untuk industri pangan, distributor, lembaga pemerintah, dan jaringan ritel, kami menyediakan pasokan beras berkelanjutan dengan spesifikasi dan jadwal yang disepakati di muka — termasuk pengemasan dengan merk mitra.",
-              "Kapasitas 300 ton gabah per hari dan ketertelusuran per batch membuat volume besar tetap dapat dipertanggungjawabkan mutunya. Bentuk kerja samanya terbuka: kontrak pasokan berkala, pengemasan merk mitra, maupun penyerapan produk samping dalam jumlah tetap.",
+              "Kapasitas 300 ton padi per hari dan ketertelusuran per batch membuat volume besar tetap dapat dipertanggungjawabkan mutunya. Bentuk kerja samanya terbuka: kontrak pasokan berkala, pengemasan merk mitra, maupun penyerapan produk samping dalam jumlah tetap.",
             ],
             image: { src: "/images/facility-packing.jpg", alt: "Lini pengemasan di fasilitas PMD", width: 788, height: 444 },
           },
@@ -513,7 +513,7 @@ export const id: LocaleContent = {
             label: "Jasa Penggilingan",
             headline: ["Jasa Penggilingan & Pengemasan"],
             body: [
-              "Untuk pemilik gabah atau beras pecah kulit, kami menyediakan jasa pengeringan, penggilingan, penyosohan, hingga pengemasan dengan merk sendiri.",
+              "Untuk pemilik padi atau beras pecah kulit, kami menyediakan jasa pengeringan, penggilingan, penyosohan, hingga pengemasan dengan merk sendiri.",
               "Hasil olahan dilaporkan lengkap dengan rendemen dan rincian hasil samping yang diperoleh.",
             ],
             image: { src: "/images/gallery-5.jpg", alt: "Karung beras dimuat ke truk" },
