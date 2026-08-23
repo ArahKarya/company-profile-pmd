@@ -442,7 +442,7 @@ export const id: LocaleContent = {
               },
               {
                 label: "Kadar air (maks)",
-                values: ["14%", "14%", "14%", "13%"],
+                values: ["14%", "14%", "14%", "14%"],
               },
               {
                 label: "Butir patah (maks)",
@@ -454,7 +454,7 @@ export const id: LocaleContent = {
               },
             ],
             tierNote:
-              "Medium dan Premium mengikuti batas SNI 6128 tentang beras. Medium Super berada di antara keduanya, dan Premium Super di atas Premium — keduanya tingkatan internal PMD, dengan batas yang kami tetapkan sendiri lebih ketat daripada standar. Seluruh tingkat memenuhi derajat sosoh minimum yang sama.",
+              "Medium dan Premium mengikuti batas SNI 6128 tentang beras. Medium Super berada di antara keduanya, dan Premium Super di atas Premium — keduanya tingkatan internal PMD, dengan batas yang kami tetapkan sendiri lebih ketat daripada standar. Derajat sosoh dan kadar air sama di seluruh tingkat — keduanya batas SNI yang dipenuhi semuanya. Yang membedakan tingkat adalah butir patah dan proporsi beras kepala.",
           },
           {
             id: "beras-merk",

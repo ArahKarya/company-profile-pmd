@@ -442,7 +442,7 @@ export const en: LocaleContent = {
               },
               {
                 label: "Moisture (max)",
-                values: ["14%", "14%", "14%", "13%"],
+                values: ["14%", "14%", "14%", "14%"],
               },
               {
                 label: "Broken grain (max)",
@@ -454,7 +454,7 @@ export const en: LocaleContent = {
               },
             ],
             tierNote:
-              "Medium and Premium follow the limits set by SNI 6128, Indonesia's national rice standard. Medium Super sits between the two and Premium Super above Premium — both are PMD's own grades, held to limits we set tighter than the standard. Every tier meets the same minimum degree of milling.",
+              "Medium and Premium follow the limits set by SNI 6128, Indonesia's national rice standard. Medium Super sits between the two and Premium Super above Premium — both are PMD's own grades, held to limits we set tighter than the standard. Degree of milling and moisture are the same across every tier — both are SNI limits that all of them meet. What separates the tiers is broken grain and the share of head rice.",
           },
           {
             id: "rice-brands",
