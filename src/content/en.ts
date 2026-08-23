@@ -29,7 +29,7 @@ export const en: LocaleContent = {
     services: {
       title: "Products | PT Pangan Masa Depan",
       description:
-        "Rice from medium to premium super, marketable milling by-products, and milling and farmer partnership services.",
+        "Rice from medium to premium super, marketable milling by-products, plus farmer partnerships, strategic partnerships and contract milling.",
     },
     careers: {
       title: "Careers | PT Pangan Masa Depan",
@@ -379,7 +379,7 @@ export const en: LocaleContent = {
       headline: ["Our Products"],
       body: [
         "Rice is our main product, packed according to quality tier, varietal classification and brand. Alongside it, every milling by-product is treated as a product in its own right — batch numbered and carried in stock.",
-        "Beyond selling products, we also take in contract milling work and partner directly with farmers and farmer groups to buy paddy.",
+        "Beyond selling products, we buy paddy directly from farmers, enter strategic partnerships for continuing supply, and take in contract milling work.",
       ],
       image: { src: "/images/service-detail-1.jpg", alt: "Sorted rice grains", width: 1200, height: 800 },
     },
@@ -474,7 +474,7 @@ export const en: LocaleContent = {
           eyebrow: "Services",
           headline: ["Partnership & Contract Milling"],
           body: [
-            "Our drying and milling capacity is open to partners: farmers selling paddy, and businesses that want their rice processed and packed in our facilities.",
+            "Our drying and milling capacity is open to three kinds of partnership: farmers selling paddy, industry and institutions needing a continuing rice supply, and businesses that want their rice processed and packed in our facilities.",
           ],
           image: { src: "/images/service-detail-2.jpg", alt: "The paddy drying floor at the production unit", width: 1200, height: 800 },
         },
@@ -496,6 +496,16 @@ export const en: LocaleContent = {
                 { id: "brown-rice", label: "Brown rice", rect: [76.0, 39.1, 18.5, 41.3], preview: "/brand/process-pmd1-en-4.svg" },
               ],
             },
+          },
+          {
+            id: "layanan-strategis",
+            label: "Strategic Partnership",
+            headline: ["Strategic Partnership"],
+            body: [
+              "For food manufacturers, distributors, government agencies and retail networks, we supply rice on a continuing basis to specifications and a schedule agreed in advance — packing under the partner's own brand included.",
+              "A capacity of 300 tonnes of paddy per day and batch-level traceability keep large volumes accountable for quality. The form of the arrangement is open: a standing supply contract, packing under a partner brand, or a fixed offtake of by-products.",
+            ],
+            image: { src: "/images/facility-packing.jpg", alt: "The packing line at the PMD facility", width: 788, height: 444 },
           },
           {
             id: "services-contract",

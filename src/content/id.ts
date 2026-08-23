@@ -29,7 +29,7 @@ export const id: LocaleContent = {
     services: {
       title: "Produk | PT Pangan Masa Depan",
       description:
-        "Beras medium hingga premium super, produk samping bernilai jual, serta layanan penggilingan dan kemitraan petani.",
+        "Beras medium hingga premium super, produk samping bernilai jual, serta kemitraan petani, kemitraan strategis, dan jasa penggilingan.",
     },
     careers: {
       title: "Karier | PT Pangan Masa Depan",
@@ -379,7 +379,7 @@ export const id: LocaleContent = {
       headline: ["Produk Kami"],
       body: [
         "Produk utama kami adalah beras, dikemas menurut tingkat mutu, klasifikasi varietas, dan merk. Di sampingnya, seluruh hasil samping penggilingan kami perlakukan sebagai produk tersendiri yang bernomor batch dan tercatat dalam stok.",
-        "Selain menjual produk, kami juga menerima jasa penggilingan dan membuka kemitraan pembelian gabah langsung dari petani dan kelompok tani.",
+        "Selain menjual produk, kami membuka kemitraan pembelian gabah langsung dari petani, kemitraan strategis untuk pasokan berkelanjutan, dan jasa penggilingan bagi pemilik gabah.",
       ],
       image: { src: "/images/service-detail-1.jpg", alt: "Butir beras hasil sortir", width: 1200, height: 800 },
     },
@@ -474,7 +474,7 @@ export const id: LocaleContent = {
           eyebrow: "Layanan",
           headline: ["Kemitraan & Jasa Olah"],
           body: [
-            "Kapasitas pengeringan dan penggilingan kami terbuka untuk mitra: petani yang menjual gabah, maupun pelaku usaha yang ingin mengolah dan mengemas berasnya di fasilitas kami.",
+            "Kapasitas pengeringan dan penggilingan kami terbuka untuk tiga bentuk kemitraan: petani yang menjual gabah, industri dan lembaga yang membutuhkan pasokan beras berkelanjutan, serta pelaku usaha yang ingin mengolah dan mengemas berasnya di fasilitas kami.",
           ],
           image: { src: "/images/service-detail-2.jpg", alt: "Lantai jemur gabah di unit produksi", width: 1200, height: 800 },
         },
@@ -496,6 +496,16 @@ export const id: LocaleContent = {
                 { id: "pk", label: "Beras Pecah Kulit", rect: [76.0, 39.1, 18.5, 41.3], preview: "/brand/process-pmd1-4.svg" },
               ],
             },
+          },
+          {
+            id: "layanan-strategis",
+            label: "Kemitraan Strategis",
+            headline: ["Kemitraan Strategis"],
+            body: [
+              "Untuk industri pangan, distributor, lembaga pemerintah, dan jaringan ritel, kami menyediakan pasokan beras berkelanjutan dengan spesifikasi dan jadwal yang disepakati di muka — termasuk pengemasan dengan merk mitra.",
+              "Kapasitas 300 ton gabah per hari dan ketertelusuran per batch membuat volume besar tetap dapat dipertanggungjawabkan mutunya. Bentuk kerja samanya terbuka: kontrak pasokan berkala, pengemasan merk mitra, maupun penyerapan produk samping dalam jumlah tetap.",
+            ],
+            image: { src: "/images/facility-packing.jpg", alt: "Lini pengemasan di fasilitas PMD", width: 788, height: 444 },
           },
           {
             id: "layanan-maklon",
