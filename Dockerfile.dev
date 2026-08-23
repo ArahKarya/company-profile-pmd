@@ -1,0 +1,29 @@
+# Lingkungan pengembangan: `next dev` dengan hot reload di dalam container.
+#
+# Berkas proyek di-bind mount dari host, tapi node_modules TIDAK: paket seperti Prisma
+# memuat binary khusus platform, dan node_modules hasil `npm install` di macOS tidak bisa
+# dipakai di Linux. Karena itu dependensi dipasang di dalam image dan ditutupi volume
+# anonim pada compose, sehingga bind mount host tidak menimpanya.
+FROM node:24-alpine
+
+WORKDIR /app
+
+# Prisma butuh OpenSSL untuk memilih engine yang tepat di Alpine.
+RUN apk add --no-cache openssl
+
+# `npm ci` memicu postinstall `prisma generate`, dan prisma.config.ts membaca DATABASE_URL
+# meski generate hanya membaca schema tanpa menyentuh database. Nilai di sini semata agar
+# build tidak gagal; saat container berjalan ia ditimpa oleh environment dari compose.
+ENV DATABASE_URL="postgresql://pmd:pmd@db:5432/pangan_masa_depan?schema=public"
+
+# Lapisan dependensi terpisah supaya perubahan kode tidak memicu npm install ulang.
+COPY package.json package-lock.json prisma.config.ts ./
+COPY prisma ./prisma
+RUN npm ci
+
+COPY . .
+
+EXPOSE 3000
+
+# -H 0.0.0.0 wajib: tanpa itu server hanya mendengarkan di dalam container.
+CMD ["npm", "run", "dev", "--", "-H", "0.0.0.0"]

@@ -49,3 +49,6 @@ temp/
 
 # Kanvas desain hasil seed (dibuat ulang dari design/*.dc.html)
 design/beranda-pmd-tiga-arah.html
+
+# Cadangan dump database
+backup/

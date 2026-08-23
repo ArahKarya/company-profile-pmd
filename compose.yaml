@@ -1,0 +1,58 @@
+# Situs dan databasenya dijalankan sebagai satu unit.
+#
+#   docker compose up -d        # hidupkan
+#   docker compose logs -f web  # lihat log
+#   docker compose down         # matikan (data database tetap aman di volume)
+#
+# `restart: unless-stopped` membuat keduanya hidup kembali sendiri setelah Docker atau
+# komputer dinyalakan ulang — inilah bedanya dengan `npm run dev` di host, yang ikut mati
+# begitu terminal atau sesinya berakhir.
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: pmd-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pmd
+      POSTGRES_PASSWORD: pmd
+      POSTGRES_DB: pangan_masa_depan
+    ports:
+      # Tetap dipublikasikan ke host agar `npm run db:*` dari macOS masih bisa jalan.
+      - "5433:5432"
+    volumes:
+      - pmd-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pmd -d pangan_masa_depan"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: pmd-web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Di dalam jaringan compose, database dijangkau lewat nama servisnya — bukan
+      # localhost:5433 seperti dari macOS.
+      DATABASE_URL: postgresql://pmd:pmd@db:5432/pangan_masa_depan?schema=public
+      ADMIN_EMAIL: admin@panganmasadepan.com
+      ADMIN_PASSWORD: ubahsegera123
+      WATCHPACK_POLLING: "true"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      # Volume anonim: menutupi node_modules dan .next milik host, sehingga yang dipakai
+      # adalah hasil build Linux di dalam image.
+      - /app/node_modules
+      - /app/.next
+      - /app/src/generated
+
+volumes:
+  pmd-pgdata:

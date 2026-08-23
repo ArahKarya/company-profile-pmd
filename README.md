@@ -37,23 +37,42 @@ Masing-masing punya varian `-en` dengan label bahasa Inggris.
 
 ## 🚀 Menjalankan
 
+### Docker (disarankan)
+
+Situs dan databasenya berjalan sebagai satu unit, dan hidup kembali sendiri setelah
+komputer dinyalakan ulang:
+
+```bash
+docker compose up -d --build     # hidupkan
+docker compose exec web npm run db:migrate    # sekali, saat pertama
+docker compose exec web npm run db:seed       # sekali, saat pertama
+```
+
+Situs ada di http://localhost:3000, database di `localhost:5433`.
+
+| Perintah | Kegunaan |
+|---|---|
+| `docker compose logs -f web` | Melihat log |
+| `docker compose restart web` | Muat ulang server |
+| `docker compose up -d --build web` | Bangun ulang setelah dependensi berubah |
+| `docker compose down` | Matikan (data database tetap aman) |
+| `docker compose exec web npm run db:resync` | Dorong `src/content/` ke database |
+
+Berkas proyek di-*bind mount*, jadi menyunting kode di macOS langsung terlihat di
+peramban — kecuali `node_modules`, `.next`, dan `src/generated`, yang sengaja memakai
+salinan Linux di dalam container.
+
+### Tanpa Docker
+
 ```bash
 npm install
 cp .env.example .env      # isi DATABASE_URL
-npm run db:migrate:dev    # buat tabel
-npm run db:seed           # muat konten default + akun admin pertama
-npm run dev               # http://localhost:3000
+npm run db:migrate:dev
+npm run db:seed
+npm run dev
 ```
 
 Butuh Node **24+** (lihat `.nvmrc`) dan Postgres **14+**.
-
-Postgres lokal cepat lewat Docker:
-
-```bash
-docker run -d --name pmd-postgres \
-  -e POSTGRES_USER=pmd -e POSTGRES_PASSWORD=pmd -e POSTGRES_DB=pangan_masa_depan \
-  -p 5433:5432 postgres:16-alpine
-```
 
 Tanpa `DATABASE_URL`, situs tetap jalan memakai konten bawaan di `src/content/` — hanya panel
 admin yang tidak tersedia. Berguna untuk build statis atau sekadar melihat-lihat.
