@@ -44,7 +44,7 @@ export function Showcase({ content }: { readonly content: ServicesContent }) {
               category
             />
             {content.categories.map((category) => (
-              <div key={category.id}>
+              <div className="nav-group" key={category.id}>
                 <SidebarButton
                   label={category.label}
                   active={activeCategory === category.id}
