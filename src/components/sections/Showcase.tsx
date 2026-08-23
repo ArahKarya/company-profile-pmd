@@ -135,19 +135,36 @@ function PanelBody({ panel }: { readonly panel: ServicePanel }) {
           )}
         </div>
 
-        <div className="tier-table">
-          <div className="tier-head">
-            <span>Kode</span>
-            <span>Tingkat</span>
-            <span>Karakter butir</span>
-            <span>Pasar</span>
-          </div>
-          {panel.tiers.map((tier) => (
-            <div className="tier-row" key={tier.code}>
+        {/* Tabel dibalik: tingkat mutu menjadi kolom, sifatnya menjadi baris. Empat
+            tingkat berdampingan lebih mudah dibandingkan daripada dibaca berurutan ke
+            bawah. Kepala kolom menguat dari kiri ke kanan — dari netral ke sekam pekat —
+            sehingga warnanya menyampaikan urutan mutu, bukan sekadar menghias. */}
+        <div className="tier-grid">
+          <span className="tier-corner" aria-hidden="true" />
+          {panel.tiers.map((tier, index) => (
+            <div className={`tier-head-cell tier-step-${index + 1}`} key={tier.code}>
               <span className="tier-code">{tier.code}</span>
               <span className="tier-name">{tier.name}</span>
-              <span className="tier-character">{tier.character}</span>
-              <span className="tier-market">{tier.market}</span>
+            </div>
+          ))}
+
+          <span className="tier-label">Karakter butir</span>
+          {panel.tiers.map((tier) => (
+            <div className="tier-cell" key={`char-${tier.code}`}>
+              <span className="tier-cell-label" aria-hidden="true">
+                {tier.name}
+              </span>
+              {tier.character}
+            </div>
+          ))}
+
+          <span className="tier-label">Pasar</span>
+          {panel.tiers.map((tier) => (
+            <div className="tier-cell" key={`market-${tier.code}`}>
+              <span className="tier-cell-label" aria-hidden="true">
+                {tier.name}
+              </span>
+              {tier.market}
             </div>
           ))}
         </div>

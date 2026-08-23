@@ -9,7 +9,8 @@
  *
  * Foto milik PMD sendiri TIDAK terdaftar di sini — ia disalin langsung ke public/images/
  * dan namanya diawali `facility-`. Sejauh ini: mill, hall, tower, cleaning, drying, hulling,
- * whitening, grading, packing. Sebagian besar diekstrak dari company profile PMD 2025
+ * whitening, grading, packing. `beras-mutu.jpg` juga di luar daftar ini — foto kiriman
+ * langsung untuk panel Tingkat Mutu. Sebagian besar diekstrak dari company profile PMD 2025
  * (`pdfimages -j -f 7 …`), jadi resolusinya terbatas — ganti begitu ada foto langsung.
  */
 import { mkdir, writeFile, access } from 'node:fs/promises';

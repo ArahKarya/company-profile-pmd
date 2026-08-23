@@ -1632,78 +1632,110 @@ p.lede {
 
 /* --- Tabel tingkat mutu (halaman Produk) ---
 
-   Panel yang memuatnya dirender selebar halaman lewat .panel-wide; tabel lima kolom tidak
-   terbaca kalau dijejalkan ke separuh lebar di sebelah foto. */
+   Tingkat mutu menjadi kolom, sifatnya menjadi baris: empat tingkat berdampingan lebih
+   mudah dibandingkan daripada dibaca berurutan ke bawah. Selnya berupa blok terpisah
+   bercelah, bukan baris bergaris — bentuk yang sama dipakai pada tabel presentasi.
+
+   Kepala kolom menguat dari kiri ke kanan, dari netral ke sekam pekat, sehingga warnanya
+   menyampaikan urutan mutu dan bukan sekadar menghias. Itu sebabnya emas boleh muncul agak
+   banyak di sini: ia sedang membawa data. */
 
 .panel-wide { width: 100%; }
 
-.tier-table {
-  margin-top: 40px;
-  border-top: 2px solid var(--brand-dark);
-}
-
-.tier-head,
-.tier-row {
+.tier-grid {
   display: grid;
-  grid-template-columns: 90px 190px minmax(0, 1fr) minmax(0, 1fr);
-  gap: 24px;
-  align-items: baseline;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--hairline);
+  grid-template-columns: 150px repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 44px;
 }
 
-.tier-head {
-  padding: 12px 0;
+.tier-corner { display: block; }
+
+/* Kepala kolom */
+.tier-head-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 14px 18px;
+  min-height: 66px;
+}
+
+.tier-step-1 { background-color: var(--paper-alt); }
+.tier-step-2 { background-color: var(--gold-tint); }
+.tier-step-3 { background-color: var(--brand-accent); }
+.tier-step-4 { background-color: var(--brand-dark); }
+
+.tier-head-cell .tier-code {
+  font-family: var(--font-technical);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-muted-light);
+}
+
+.tier-head-cell .tier-name {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-dark);
+}
+
+.tier-step-3 .tier-code { color: var(--brand-dark); opacity: 0.65; }
+
+.tier-step-4 .tier-code { color: var(--brand-accent); }
+.tier-step-4 .tier-name { color: var(--text-on-dark); }
+
+/* Label baris, berdiri di luar kisi */
+.tier-label {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
   font-family: var(--font-technical);
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted-light);
 }
 
-.tier-code {
-  font-family: var(--font-technical);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--brand-accent-deep);
-}
-
-.tier-name {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--brand-dark);
-}
-
-.tier-character,
-.tier-market {
-  font-size: 0.98rem;
+/* Sel isi */
+.tier-cell {
+  padding: 16px 18px;
+  background-color: var(--paper);
+  border: 1px solid var(--hairline);
+  font-size: 0.95rem;
   line-height: 1.55;
   color: var(--text-body);
 }
 
-/* Baris terakhir adalah tingkat tertinggi — diberi latar emas tipis sebagai penanda. */
-.tier-row:last-child {
-  background-color: var(--gold-tint);
-  border-bottom-color: var(--brand-accent);
-}
-
-.tier-row:last-child .tier-name { color: var(--brand-dark); }
+/* Nama tingkat diulang di dalam sel, hanya tampil saat kisi melipat di layar sempit. */
+.tier-cell-label { display: none; }
 
 @media (max-width: 991.98px) {
-  .tier-head { display: none; }
-
-  .tier-row {
-    grid-template-columns: 74px minmax(0, 1fr);
-    gap: 6px 16px;
-    padding: 18px 0;
+  /* Kisi melipat menjadi kartu per tingkat: label baris di kiri tidak lagi punya ruang,
+     jadi tiap sel membawa nama tingkatnya sendiri. */
+  .tier-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
-  /* Tanpa baris kepala, tiap sel diberi labelnya sendiri. */
-  .tier-character::before { content: "Karakter: "; color: var(--text-muted-light); }
-  .tier-market::before { content: "Pasar: "; color: var(--text-muted-light); }
-  .tier-character,
-  .tier-market { grid-column: 2; font-size: 0.92rem; }
-  .tier-row:last-child { padding-left: 12px; padding-right: 12px; }
+  .tier-corner,
+  .tier-label { display: none; }
+
+  .tier-cell-label {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-technical);
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-accent-deep);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tier-grid { grid-template-columns: 1fr; }
 }
