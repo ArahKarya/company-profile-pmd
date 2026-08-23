@@ -1,4 +1,4 @@
-import { IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Archivo, Plus_Jakarta_Sans } from "next/font/google";
 
 /**
  * Plus Jakarta Sans — tipografi utama PMD.
@@ -13,15 +13,19 @@ export const jakarta = Plus_Jakarta_Sans({
 });
 
 /**
- * IBM Plex Mono — lapis teknis: nomor tahap, satuan, kode unit, keterangan foto, dan label
- * kecil huruf kapital.
+ * Archivo — lapis teknis: nomor tahap, satuan, kode unit, keterangan, dan label kecil
+ * huruf kapital.
  *
- * Perusahaan pengolahan hidup dari angka yang tercatat; huruf monospace membuat angka dan
- * kode terbaca sebagai data, bukan hiasan — dan itu yang memberi kesan pabrik, bukan brosur.
+ * Grotesk padat yang dirancang untuk cetakan berukuran kecil dan papan penanda. Dalam huruf
+ * kapital berjarak, ia terbaca seperti label mesin — memberi kesan pabrik tanpa memakai
+ * monospace yang cenderung terbaca seperti terminal komputer.
+ *
+ * Bukan monospace, jadi lebar angkanya tidak seragam secara bawaan; deretan angka yang perlu
+ * sejajar (pita statistik, nomor stasiun) meminta `font-variant-numeric: tabular-nums`.
  */
-export const plexMono = IBM_Plex_Mono({
+export const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-mono",
+  variable: "--font-archivo",
 });

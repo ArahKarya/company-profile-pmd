@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getSite, getTheme, themeStyleSheet } from "@/server/content";
-import { jakarta, plexMono } from "../fonts";
+import { archivo, jakarta } from "../fonts";
 import "../globals.css";
 
 /**
@@ -27,7 +27,7 @@ export default async function RootLayout({
   const theme = await getTheme();
 
   return (
-    <html lang="en" className={`${jakarta.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${jakarta.variable} ${archivo.variable}`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: themeStyleSheet(theme) }} />
       </head>

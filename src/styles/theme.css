@@ -35,8 +35,10 @@
      --font-body / --font-display di-override dari sana. */
   --font-body: var(--font-jakarta, var(--bs-font-sans-serif));
   --font-display: var(--font-body);
-  /* Lapis teknis: angka, kode, satuan, dan label kecil huruf kapital. */
-  --font-technical: var(--font-mono, ui-monospace, "SFMono-Regular", monospace);
+  /* Lapis teknis: angka, kode, satuan, dan label kecil huruf kapital. Archivo — grotesk
+     padat untuk cetakan kecil dan papan penanda; bukan monospace, jadi deretan angka yang
+     perlu sejajar memakai font-variant-numeric: tabular-nums. */
+  --font-technical: var(--font-archivo, var(--bs-font-sans-serif));
 
   /* Layout */
   --nav-height: 100px;
@@ -115,9 +117,9 @@ h4.marker { position: relative; }
 .eyebrow {
   display: inline-block;
   font-family: var(--font-technical);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--brand-accent-deep);
   margin-bottom: 0.75rem;
@@ -126,9 +128,10 @@ h4.marker { position: relative; }
 /* Nomor urut seksi — penanda halaman bergaya lembar spesifikasi. */
 .section-index {
   font-family: var(--font-technical);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-variant-numeric: tabular-nums;
   color: var(--text-muted-light);
 }
 
@@ -287,9 +290,9 @@ section {
   align-items: center;
   padding: 7px 12px;
   font-family: var(--font-technical);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   color: var(--text-muted-light);
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
@@ -381,9 +384,9 @@ section {
 
 .site-footer .footer-heading {
   font-family: var(--font-technical);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--brand-accent);
   padding-bottom: 8px;
@@ -894,8 +897,8 @@ section {
 .text-link {
   font-family: var(--font-technical);
   font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--brand-accent-deep);
   text-decoration: none;
@@ -974,8 +977,8 @@ p.lede {
 
 .stat-value {
   font-family: var(--font-technical);
-  font-size: 1.9rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
   color: var(--brand-dark);
@@ -983,9 +986,9 @@ p.lede {
 
 .stat-unit {
   font-family: var(--font-technical);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--brand-accent-deep);
 }
@@ -1026,9 +1029,10 @@ p.lede {
 /* Nomor urut kartu — dibaca sebagai daftar berurut, bukan tiga kotak serupa. */
 .card-index {
   font-family: var(--font-technical);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--brand-accent-deep);
 }
 
@@ -1133,8 +1137,9 @@ p.lede {
 
 .rail-end-label {
   font-family: var(--font-technical);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
@@ -1264,7 +1269,8 @@ p.lede {
 
 .station-no {
   font-family: var(--font-technical);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   color: var(--brand-accent);
 }
@@ -1283,8 +1289,9 @@ p.lede {
   margin-top: 26px;
   text-align: center;
   font-family: var(--font-technical);
-  font-size: 0.66rem;
-  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   color: var(--text-muted);
 }
 
@@ -1296,8 +1303,9 @@ p.lede {
   margin-top: 48px;
   text-align: center;
   font-family: var(--font-technical);
-  font-size: 0.64rem;
-  letter-spacing: 0.1em;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brand-accent);
   opacity: 0;
@@ -1336,8 +1344,9 @@ p.lede {
 .process-detail-step {
   font-family: var(--font-technical);
   font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.14em;
   color: var(--brand-accent);
 }
 
@@ -1461,8 +1470,9 @@ p.lede {
   display: flex;
   align-items: center;
   font-family: var(--font-technical);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted-light);
 }
@@ -1542,8 +1552,8 @@ p.lede {
 
 .value-letter {
   font-family: var(--font-technical);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
   line-height: 1;
   color: var(--brand-accent);
 }
