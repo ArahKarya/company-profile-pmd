@@ -16,18 +16,17 @@ export interface NavbarProps {
   readonly labels: Readonly<Record<PageKey, string>>;
   /** Short code shown on each language button, e.g. { id: "IDN", en: "ENG" }. */
   readonly localeNames: Readonly<Record<Locale, string>>;
-  /** Kontak yang ditampilkan pada bilah utilitas di atas navigasi. */
-  readonly contact: { readonly phones: readonly string[]; readonly email: string };
 }
 
 /** Halaman kontak keluar dari daftar menu — ia jadi tombol di ujung kanan. */
 const MENU_PAGES = PAGE_ORDER.filter((page) => page !== "contact");
 
 /**
- * Navigasi berlatar terang, sama di setiap halaman.
+ * Navigasi berlatar terang, satu baris, sama di setiap halaman.
  *
  * Tidak ada lagi keadaan transparan-lalu-gelap saat digulir: halaman dibuka dengan kanvas
- * terang, jadi bilah ini cukup satu wujud — logo warna, tautan gelap, dan satu tombol emas.
+ * terang, jadi bilah ini cukup satu wujud — logo warna, tautan gelap, pemilih bahasa, dan
+ * satu tombol emas. Kontak operasional hidup di footer, bukan di kepala halaman.
  *
  * Tetap client component karena memegang state menu; semua isinya datang sebagai props,
  * sehingga pembacaan database tetap di sisi server.
@@ -40,7 +39,6 @@ export function Navbar({
   routes,
   labels,
   localeNames,
-  contact,
 }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -56,26 +54,6 @@ export function Navbar({
   return (
     <header className="site-header">
       <div className="navbar-shell">
-        {/* Bilah utilitas: kontak operasional dan pilihan bahasa, lepas dari navigasi
-            halaman. Hanya di layar lebar — di ponsel keduanya sudah ada di menu. */}
-        <div className="utility-bar d-none d-lg-block">
-          <div className="container-fluid d-flex align-items-center justify-content-between">
-            <span className="utility-contact">
-              {contact.phones.slice(0, 2).map((phone, index) => (
-                <span key={phone}>
-                  {index > 0 && <span className="utility-sep" aria-hidden="true">·</span>}
-                  {phone}
-                </span>
-              ))}
-            </span>
-            <span className="utility-contact">
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
-              <span className="utility-sep" aria-hidden="true">·</span>
-              <LocaleSwitch {...{ locale, current, routes, localeNames }} />
-            </span>
-          </div>
-        </div>
-
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid d-flex align-items-center">
             <Link href={routes[locale].home} className="navbar-brand">
@@ -124,9 +102,7 @@ export function Navbar({
               </ul>
 
               <div className="nav-tail">
-                <span className="d-lg-none">
-                  <LocaleSwitch {...{ locale, current, routes, localeNames }} />
-                </span>
+                <LocaleSwitch {...{ locale, current, routes, localeNames }} />
                 <Link
                   href={routes[locale].contact}
                   className="btn-fill btn-sm d-none d-lg-inline-flex"
@@ -156,18 +132,16 @@ function LocaleSwitch({
   localeNames,
 }: Pick<NavbarProps, "locale" | "current" | "routes" | "localeNames">) {
   return (
-    <span className="lang-switch">
-      {LOCALES.map((code, index) => (
-        <span key={code}>
-          {index > 0 && <span className="lang-sep" aria-hidden="true">/</span>}
-          <Link
-            href={routes[code][current]}
-            className={`lang-btn${code === locale ? " active" : ""}`}
-            aria-current={code === locale ? "true" : undefined}
-          >
-            {localeNames[code]}
-          </Link>
-        </span>
+    <span className="lang-switch" role="group" aria-label="Bahasa">
+      {LOCALES.map((code) => (
+        <Link
+          key={code}
+          href={routes[code][current]}
+          className={`lang-btn${code === locale ? " active" : ""}`}
+          aria-current={code === locale ? "true" : undefined}
+        >
+          {localeNames[code]}
+        </Link>
       ))}
     </span>
   );

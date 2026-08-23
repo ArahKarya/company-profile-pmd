@@ -213,37 +213,17 @@ section {
 
 .site-header { position: relative; }
 
-/* Kepala halaman punya dua baris: bilah utilitas gelap berisi kontak operasional, lalu
-   navigasi terang. Keduanya duduk di dalam satu cangkang setinggi --nav-height, sehingga
-   token itu tetap menjadi satu-satunya sumber tinggi yang dipakai seksi lain. */
+/* Kepala halaman satu baris: kanvas terang, logo warna, garis rambut di bawahnya.
+   Kontak operasional tidak lagi berdiri di atas navigasi — tempatnya di footer. */
 .navbar-shell {
   position: fixed;
   z-index: 1030;
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: var(--nav-height);
   background-color: #ffffff;
   border-bottom: 1px solid var(--hairline);
 }
-
-.utility-bar {
-  flex: 0 0 34px;
-  display: flex;
-  align-items: center;
-  background-color: var(--brand-darker);
-  color: var(--text-muted);
-  font-family: var(--font-technical);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-}
-
-.utility-contact { display: inline-flex; align-items: center; }
-
-
-.utility-contact a { color: var(--text-muted); text-decoration: none; }
-.utility-contact a:hover { color: var(--brand-accent); }
-.utility-sep { margin: 0 10px; color: var(--brand-accent); }
 
 .site-header .navbar {
   position: static;
@@ -293,28 +273,36 @@ section {
   margin-left: 28px;
 }
 
+/* Pemilih bahasa: satu kendali tersegmen. Segmen aktif berlatar sekam gelap — bukan emas,
+   supaya tidak bersaing dengan tombol Kontak yang berdiri tepat di sebelahnya. */
 .site-header .lang-switch {
   display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  align-items: stretch;
+  border: 1px solid var(--hairline);
+  overflow: hidden;
 }
-
-.site-header .lang-sep { color: var(--text-muted-light); margin: 0 4px; }
 
 .site-header .lang-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  font-family: var(--font-technical);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   color: var(--text-muted-light);
   text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.site-header .lang-btn.active { color: var(--brand-dark); }
+.site-header .lang-btn + .lang-btn { border-left: 1px solid var(--hairline); }
 
-/* Pemilih bahasa yang duduk di bilah gelap: warnanya dibalik dari versi di navigasi. */
-.site-header .utility-bar .lang-btn { color: var(--text-muted); }
-.site-header .utility-bar .lang-btn.active { color: var(--text-on-dark); }
-.site-header .utility-bar .lang-sep { margin: 0 6px; color: rgba(255, 255, 255, 0.25); }
+.site-header .lang-btn:hover { background-color: var(--paper-alt); color: var(--brand-dark); }
+
+.site-header .lang-btn.active {
+  background-color: var(--brand-dark);
+  color: var(--text-on-dark);
+}
 
 .site-header .brand-logo { height: 40px; width: auto; }
 
@@ -369,8 +357,15 @@ section {
     margin: auto 0 32px;
   }
 
+  /* Di menu gelap, kendali bahasa membalik: bingkai terang di atas latar gelap. */
+  .site-header .lang-switch { border-color: rgba(255, 255, 255, 0.25); }
   .site-header .lang-btn { color: var(--text-muted); }
-  .site-header .lang-btn.active { color: var(--text-on-dark); }
+  .site-header .lang-btn + .lang-btn { border-left-color: rgba(255, 255, 255, 0.25); }
+  .site-header .lang-btn:hover { background-color: transparent; color: var(--text-on-dark); }
+  .site-header .lang-btn.active {
+    background-color: var(--brand-accent);
+    color: var(--brand-dark);
+  }
 }
 
 /* --------------------------------------------------------------------------
