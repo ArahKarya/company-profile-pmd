@@ -4405,27 +4405,6 @@ body.catalog-body {
   flex-shrink: 0;
 }
 
-.pie-detail-zoom-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 10px 20px;
-  background: transparent;
-  border: 1.5px solid var(--color-gold-deep, #8D5B4C);
-  border-radius: 999px;
-  color: var(--color-gold-deep, #8D5B4C);
-  font-size: 0.85rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.pie-detail-zoom-btn:hover {
-  background: var(--color-gold-deep, #8D5B4C);
-  color: #FFFFFF;
-}
-
 /* ==========================================================================
    LIGHTBOX ZOOM MODAL (FULL GAMBAR SAJA, UKURAN KOMPAK, SUDUT 0, TANPA TOMBOL X)
    ========================================================================== */
