@@ -1040,22 +1040,19 @@ function initProcessBand() {
 
   rail.querySelectorAll(".station").forEach((btn) => {
     const stepId = btn.dataset.step;
+    const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 
-    // 1. Sentuh / Hover (Pointerenter / Mouseenter) - langsung tampil tanpa harus klik
-    btn.addEventListener("pointerenter", () => {
-      if (activeStep !== stepId) {
-        renderStepDetail(stepId);
-      }
-    });
+    if (!isTouchDevice) {
+      // 1. Hover mouse asli (desktop) - langsung tampil tanpa harus klik
+      btn.addEventListener("pointerenter", () => {
+        if (activeStep !== stepId) {
+          renderStepDetail(stepId);
+        }
+      });
+    }
 
-    // 2. Sentuhan layar sentuh mobile / tablet
-    btn.addEventListener("touchstart", () => {
-      if (activeStep !== stepId) {
-        renderStepDetail(stepId);
-      }
-    }, { passive: true });
-
-    // 3. Klik tombol (tetap aktif jika pengguna ingin klik, atau toggle jika diklik ulang)
+    // 2. Klik/tap tombol (satu-satunya trigger di mobile, mencegah "mental"
+    //    akibat touchstart+click saling menimpa state aktif)
     btn.addEventListener("click", () => {
       if (activeStep === stepId) {
         renderStepDetail(null);
@@ -1064,7 +1061,7 @@ function initProcessBand() {
       }
     });
 
-    // 4. Fokus navigasi keyboard (Accessibility)
+    // 3. Fokus navigasi keyboard (Accessibility)
     btn.addEventListener("focus", () => {
       if (activeStep !== stepId) {
         renderStepDetail(stepId);

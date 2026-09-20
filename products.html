@@ -512,6 +512,9 @@
             <li><i class="fas fa-check-circle"></i> <span>Kerapatan tinggi, mudah disimpan, dan hemat biaya transportasi logistik.</span></li>
             <li><i class="fas fa-check-circle"></i> <span>Kadar abu rendah, pembakaran stabil &amp; efisien untuk boiler industri.</span></li>
           </ul>
+          <button type="button" class="pie-detail-zoom-btn" id="detailZoomBtn" aria-label="Lihat Foto Produk">
+            <i class="fas fa-search-plus"></i> Lihat Foto Produk
+          </button>
         </div>
       </div>
     </div>
@@ -644,13 +647,13 @@
       const drawerOverlay = document.getElementById('drawerOverlay');
 
       const openDrawer = () => {
-        if (mobileDrawer) mobileDrawer.classList.add('active');
+        if (mobileDrawer) mobileDrawer.classList.add('open');
         if (drawerOverlay) drawerOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
       };
 
       const closeDrawer = () => {
-        if (mobileDrawer) mobileDrawer.classList.remove('active');
+        if (mobileDrawer) mobileDrawer.classList.remove('open');
         if (drawerOverlay) drawerOverlay.classList.remove('active');
         document.body.style.overflow = '';
       };
@@ -658,6 +661,9 @@
       if (mobileToggle) mobileToggle.addEventListener('click', openDrawer);
       if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
       if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+      document.querySelectorAll('.drawer-link').forEach((link) => {
+        link.addEventListener('click', closeDrawer);
+      });
 
       // Interactive Byproducts Pie Chart Controller (5 Kategori Seimbang)
       const byproductData = {
@@ -797,14 +803,24 @@
       }
 
       // Attach click and hover events to pie slice groups
+      // Di mobile (tanpa hover asli), klik hanya memilih & menampilkan kartu detail.
+      // Lightbox foto full-screen dipicu terpisah lewat tombol "Lihat Foto Produk".
+      const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
       document.querySelectorAll('.pie-slice-group').forEach(slice => {
         const id = slice.getAttribute('data-id');
         slice.addEventListener('click', () => {
           selectByproduct(id);
-          openLightbox(id);
+          if (!isTouchDevice) {
+            openLightbox(id);
+          }
         });
         slice.addEventListener('mouseenter', () => selectByproduct(id));
       });
+
+      const detailZoomBtn = document.getElementById('detailZoomBtn');
+      if (detailZoomBtn) {
+        detailZoomBtn.addEventListener('click', () => openLightbox(currentByproductId));
+      }
 
       // Close handlers for lightbox (Klik di mana saja atau tekan Escape)
       const pieLightboxModal = document.getElementById('pieLightboxModal');

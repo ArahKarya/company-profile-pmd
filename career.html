@@ -272,13 +272,13 @@
       const drawerOverlay = document.getElementById('drawerOverlay');
 
       const openDrawer = () => {
-        if (mobileDrawer) mobileDrawer.classList.add('active');
+        if (mobileDrawer) mobileDrawer.classList.add('open');
         if (drawerOverlay) drawerOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
       };
 
       const closeDrawer = () => {
-        if (mobileDrawer) mobileDrawer.classList.remove('active');
+        if (mobileDrawer) mobileDrawer.classList.remove('open');
         if (drawerOverlay) drawerOverlay.classList.remove('active');
         document.body.style.overflow = '';
       };
@@ -286,6 +286,9 @@
       if (mobileToggle) mobileToggle.addEventListener('click', openDrawer);
       if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
       if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+      document.querySelectorAll('.drawer-link').forEach((link) => {
+        link.addEventListener('click', closeDrawer);
+      });
 
       // Header scroll background toggle
       const siteHeader = document.getElementById('siteHeader');
